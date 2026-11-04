@@ -1,14 +1,9 @@
 import type { Logger } from "pino";
 
-import type { PaseoOpenAIConfig, PaseoSpeechConfig } from "../bootstrap.js";
+import type { PaseoSpeechConfig } from "../bootstrap.js";
 import type { LocalSpeechModelId } from "./providers/local/config.js";
 import { ensureLocalSpeechModels, listMissingLocalSpeechModels } from "./providers/local/models.js";
 import { initializeLocalSpeechServices } from "./providers/local/runtime.js";
-import {
-  getOpenAiSpeechAvailability,
-  initializeOpenAiSpeechServices,
-  validateOpenAiCredentialRequirements,
-} from "./providers/openai/runtime.js";
 import type { SpeechToTextProvider, TextToSpeechProvider } from "./speech-provider.js";
 import type { RequestedSpeechProviders } from "./speech-types.js";
 import type { TurnDetectionProvider } from "./turn-detection-provider.js";
@@ -266,10 +261,10 @@ function describeRequestedProviders(providers: RequestedSpeechProviders): {
 function resolveVoiceTtsLabel(
   ttsService: TextToSpeechProvider | null,
   localVoiceTtsProvider: TextToSpeechProvider | null,
-): "unavailable" | "local" | "openai" {
+): "unavailable" | "local" {
   if (!ttsService) return "unavailable";
   if (ttsService === localVoiceTtsProvider) return "local";
-  return "openai";
+  return "unavailable";
 }
 
 function resolveEffectiveProviderIds(params: {
@@ -308,27 +303,16 @@ export interface SpeechService {
 
 export function createSpeechService(params: {
   logger: Logger;
-  openaiConfig?: PaseoOpenAIConfig;
   speechConfig?: PaseoSpeechConfig;
 }): SpeechService {
   const logger = params.logger.child({ module: "speech-runtime" });
   const speechConfig = params.speechConfig ?? null;
-  const openaiConfig = params.openaiConfig;
   const providers = resolveRequestedSpeechProviders(speechConfig);
   const requestedProviders = describeRequestedProviders(providers);
-
-  validateOpenAiCredentialRequirements({
-    providers,
-    openaiConfig,
-    logger,
-  });
 
   logger.info(
     {
       requestedProviders,
-      availability: {
-        openai: getOpenAiSpeechAvailability(openaiConfig),
-      },
     },
     "Speech provider reconciliation started",
   );
@@ -459,23 +443,12 @@ export function createSpeechService(params: {
       speechConfig,
       logger,
     });
-    const nextOpenAiSpeech = initializeOpenAiSpeechServices({
-      providers,
-      openaiConfig,
-      existing: {
-        turnDetectionService: nextLocalSpeech.turnDetectionService,
-        sttService: nextLocalSpeech.sttService,
-        ttsService: nextLocalSpeech.ttsService,
-        dictationSttService: nextLocalSpeech.dictationSttService,
-      },
-      logger,
-    });
 
     const previousLocalCleanup = localCleanup;
-    turnDetectionService = nextOpenAiSpeech.turnDetectionService;
-    sttService = nextOpenAiSpeech.sttService;
-    ttsService = nextOpenAiSpeech.ttsService;
-    dictationSttService = nextOpenAiSpeech.dictationSttService;
+    turnDetectionService = nextLocalSpeech.turnDetectionService;
+    sttService = nextLocalSpeech.sttService;
+    ttsService = nextLocalSpeech.ttsService;
+    dictationSttService = nextLocalSpeech.dictationSttService;
     localModelConfig = nextLocalSpeech.localModelConfig;
     localVoiceTtsProvider = nextLocalSpeech.localVoiceTtsProvider;
     localCleanup = nextLocalSpeech.cleanup;

@@ -11,6 +11,7 @@ An **Agent** is a configured AI coding-agent process (Claude Code, Codex, Copilo
 OpenCode, or other supported provider) managed by the AgentOpsHub daemon.
 
 Each agent has:
+
 - A unique ID
 - A provider (e.g. `claude/opus-4.6`)
 - A working directory or worktree path
@@ -21,6 +22,7 @@ Each agent has:
 ### Task
 
 A **Task** is a delegated unit of work. It carries:
+
 - **Prompt**: the natural-language instruction
 - **Repository/Worktree**: the isolated Git worktree where the task executes
 - **Policy**: the named policy profile governing tool use, network, and approvals
@@ -37,6 +39,7 @@ web, CLI) connect to a host's daemon. A host has a name, address, and trust leve
 ### Policy Profile
 
 A **Policy Profile** is a named set of constraints applied to an agent or task:
+
 - **Allowed tools**: which MCP tools and shell commands may execute without approval
 - **Network rules**: outbound network access restrictions
 - **Model/provider constraints**: allowed providers and models
@@ -44,6 +47,7 @@ A **Policy Profile** is a named set of constraints applied to an agent or task:
 - **Worktree isolation**: whether the task runs in an isolated Git worktree
 
 Built-in profiles:
+
 - `permissive`: allow most operations, approve only destructive ones
 - `standard`: approve shell execution, file writes outside workspace, git push
 - `strict`: approve all tool calls
@@ -55,6 +59,7 @@ An **Approval Gate** is a checkpoint where an agent must pause and wait for a
 human operator to approve or deny an operation before continuing.
 
 Default approval gates (in `standard` profile):
+
 - Shell command execution
 - File writes outside the task worktree
 - Dependency installation (`npm install`, `pip install`, etc.)
@@ -71,6 +76,7 @@ An **Audit Event** is an append-only record written to the daemon's audit log
 whenever a significant action occurs. Events are tamper-evident and time-stamped.
 
 Event types:
+
 - `task.created` — task was created with prompt, policy, and owner
 - `agent.spawned` — agent process was started for a task
 - `tool.requested` — agent requested a tool call

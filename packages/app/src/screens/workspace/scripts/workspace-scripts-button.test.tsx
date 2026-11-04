@@ -41,9 +41,9 @@ const {
     },
   };
 
-  const routePreferenceByServerId: Record<string, "public" | "paseo" | "direct"> = {};
+  const routePreferenceByServerId: Record<string, "public" | "agentopshub" | "direct"> = {};
   const routePreferenceListeners = new Set<() => void>();
-  const setPreferredRoute = vi.fn((serverId: string, kind: "public" | "paseo" | "direct") => {
+  const setPreferredRoute = vi.fn((serverId: string, kind: "public" | "agentopshub" | "direct") => {
     routePreferenceByServerId[serverId] = kind;
     for (const listener of routePreferenceListeners) listener();
   });

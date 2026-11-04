@@ -33,9 +33,10 @@ export const OPENCODE_PLUGIN_SOURCE = [
   "",
   "function runPaseoHook(event) {",
   "  if (!process.env.PASEO_TERMINAL_ID) return;",
+  "  const cli = process.env.AGENTOPSHUB_HOOK_CLI || process.env.PASEO_HOOK_CLI || 'agentopshub';",
   "  pendingHook = pendingHook.then(async () => {",
   "    try {",
-  '      const child = Bun.spawn(["paseo", "hooks", "opencode", event], {',
+  '      const child = Bun.spawn([cli, "hooks", "opencode", event], {',
   '        stdin: "ignore",',
   '        stdout: "ignore",',
   '        stderr: "ignore",',
@@ -77,7 +78,7 @@ export function createOpenCodePluginInstallStrategy(): AgentHookPluginFileInstal
     configDirBase: "xdg-config",
     configFile: "plugins/paseo-terminal-activity.js",
     configDirEnvOverride: "OPENCODE_CONFIG_DIR",
-    hookMarker: "paseo hooks opencode",
+    hookMarker: "agentopshub hooks opencode",
     source: OPENCODE_PLUGIN_SOURCE,
   };
 }

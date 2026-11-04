@@ -2,7 +2,10 @@ import { randomUUID } from "node:crypto";
 import { appendFile, mkdir, rm, writeFile } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
 
-import { FileTransferOpcode, type FileTransferFrame } from "@agentopshub/protocol/binary-frames/index";
+import {
+  FileTransferOpcode,
+  type FileTransferFrame,
+} from "@agentopshub/protocol/binary-frames/index";
 import { getErrorMessage } from "@agentopshub/protocol/error-utils";
 import type { FileUploadRequest, FileUploadResponse } from "../messages.js";
 

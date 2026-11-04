@@ -2,7 +2,10 @@ import { existsSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 import { spawnProcess } from "@agentopshub/server/process";
-import { buildAgentDeepLink, type AgentDeepLinkTarget } from "@agentopshub/protocol/agent-deep-link";
+import {
+  buildAgentDeepLink,
+  type AgentDeepLinkTarget,
+} from "@agentopshub/protocol/agent-deep-link";
 
 function findDesktopApp(): string | null {
   if (process.platform === "darwin") {

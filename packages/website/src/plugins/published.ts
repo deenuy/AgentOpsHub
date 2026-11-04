@@ -82,7 +82,9 @@ export async function handlePluginRegistryRequest(
       paths.add(`/plugins/${plugin.id.split("/")[0]}`);
       paths.add(`/plugins/${plugin.id}`);
     }
-    const urls = [...paths].sort().map((path) => `<url><loc>https://agentopshub.local${path}</loc></url>`);
+    const urls = [...paths]
+      .sort()
+      .map((path) => `<url><loc>https://agentopshub.local${path}</loc></url>`);
     return new Response(
       `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>`,
       {

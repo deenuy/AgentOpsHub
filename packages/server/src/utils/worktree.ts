@@ -812,12 +812,15 @@ export async function seedPaseoConfigFile(options: {
   sourceCwd: string;
   targetCwd: string;
 }): Promise<void> {
-  const sourceConfigPath = join(options.sourceCwd, "paseo.json");
-  const targetConfigPath = join(options.targetCwd, "paseo.json");
-  await copyFile(sourceConfigPath, targetConfigPath, fsConstants.COPYFILE_EXCL).catch((error) => {
-    const code = (error as NodeJS.ErrnoException).code;
-    if (code !== "EEXIST" && code !== "ENOENT") throw error;
-  });
+  // Try new config file name first, fall back to legacy; COMPAT(paseo): added in v0.13
+  for (const name of ["agentopshub.json", "paseo.json"]) {
+    const sourceConfigPath = join(options.sourceCwd, name);
+    const targetConfigPath = join(options.targetCwd, name);
+    await copyFile(sourceConfigPath, targetConfigPath, fsConstants.COPYFILE_EXCL).catch((error) => {
+      const code = (error as NodeJS.ErrnoException).code;
+      if (code !== "EEXIST" && code !== "ENOENT") throw error;
+    });
+  }
 }
 
 /**

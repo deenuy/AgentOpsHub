@@ -10,7 +10,10 @@ interface WorkspaceServiceRoutePreferencesState {
   setPreferredRoute: (serverId: string, kind: WorkspaceScriptLinkKind) => void;
 }
 
-const WorkspaceScriptLinkKindSchema = z.enum(["public", "paseo", "direct"]);
+// Accept both new and legacy (COMPAT paseo→agentopshub migration, v0.13); remove "paseo" after 2027-01
+const WorkspaceScriptLinkKindSchema = z
+  .enum(["public", "agentopshub", "direct", "paseo"])
+  .transform((v): WorkspaceScriptLinkKind => (v === "paseo" ? "agentopshub" : v));
 const WorkspaceServiceRoutePreferencesSchema = z.strictObject({
   byServerId: z.record(z.string(), WorkspaceScriptLinkKindSchema),
 });

@@ -18,7 +18,10 @@ import type {
   ImportAgentRequestMessageSchema,
   RecentProviderSessionDescriptorPayload,
 } from "@agentopshub/protocol/messages";
-import { getParentAgentIdFromLabels, PARENT_AGENT_ID_LABEL } from "@agentopshub/protocol/agent-labels";
+import {
+  getParentAgentIdFromLabels,
+  PARENT_AGENT_ID_LABEL,
+} from "@agentopshub/protocol/agent-labels";
 import { createRealpathAwarePathMatcher } from "../../utils/path.js";
 
 type ImportAgentRequestMessage = z.infer<typeof ImportAgentRequestMessageSchema>;

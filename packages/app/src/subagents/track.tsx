@@ -224,13 +224,13 @@ function SubagentsTrackRow({
           <Text style={styles.rowTitle} numberOfLines={1}>
             {displayLabel}
           </Text>
-          {row.kind === "paseo" ? (
-            <PaseoSubagentFacts serverId={serverId} agentId={row.id} />
+          {row.kind === "agentopshub" ? (
+            <AgentOpsHubSubagentFacts serverId={serverId} agentId={row.id} />
           ) : (
             <SubagentFacts rowId={row.id} text={presentation.subtitle} />
           )}
         </View>
-        {row.kind === "paseo" ? (
+        {row.kind === "agentopshub" ? (
           <SubagentRowActions
             rowId={row.id}
             displayLabel={displayLabel}
@@ -269,7 +269,7 @@ function SubagentsTrackRow({
 }
 
 /** The same facts line the agent's sheet shows when it opens without its composer. */
-function PaseoSubagentFacts({ serverId, agentId }: { serverId: string; agentId: string }) {
+function AgentOpsHubSubagentFacts({ serverId, agentId }: { serverId: string; agentId: string }) {
   const text = useAgentFactsLine(serverId, agentId);
   return <SubagentFacts rowId={agentId} text={text} />;
 }

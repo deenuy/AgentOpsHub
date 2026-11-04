@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 
-const cliHome = mkdtempSync(join(tmpdir(), "paseo-test-cli-os-home-"));
+const cliHome = mkdtempSync(join(tmpdir(), "agentopshub-test-cli-os-home-"));
 process.once("exit", () => rmSync(cliHome, { recursive: true, force: true }));
 
 const CLI_ENTRY = join(import.meta.dirname, "..", "..", "dist", "index.js");
@@ -18,7 +18,9 @@ export function runLocalPaseo(
     cwd,
     env: {
       ...Object.fromEntries(
-        Object.entries(process.env).filter(([key]) => !key.startsWith("PASEO_")),
+        Object.entries(process.env).filter(
+          ([key]) => !key.startsWith("PASEO_") && !key.startsWith("AGENTOPSHUB_"),
+        ),
       ),
       ...env,
       HOME: cliHome,

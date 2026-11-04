@@ -13,22 +13,23 @@ may proceed.
 
 The following operations require approval in the `standard` profile:
 
-| Operation | Risk | Default action |
-|---|---|---|
-| Shell execution (`run_command`, `execute_bash`) | High — arbitrary code | **Approve required** |
-| File writes outside worktree | High — affects shared state | **Approve required** |
-| Dependency installation (`npm install`, `pip install`, `brew install`) | High — supply-chain risk | **Approve required** |
-| `git push` to any remote | High — permanent public change | **Approve required** |
-| Deployment (`fly deploy`, `vercel deploy`, `kubectl apply`) | Critical — production impact | **Approve required** |
-| External network access from agent-spawned code | Medium — data exfiltration risk | **Approve required** |
-| File reads within worktree | Low | Auto-approved |
-| File writes within worktree | Low | Auto-approved |
-| `git commit`, `git add` within worktree | Low | Auto-approved |
-| MCP tool calls on allow-list | Low | Auto-approved |
+| Operation                                                              | Risk                            | Default action       |
+| ---------------------------------------------------------------------- | ------------------------------- | -------------------- |
+| Shell execution (`run_command`, `execute_bash`)                        | High — arbitrary code           | **Approve required** |
+| File writes outside worktree                                           | High — affects shared state     | **Approve required** |
+| Dependency installation (`npm install`, `pip install`, `brew install`) | High — supply-chain risk        | **Approve required** |
+| `git push` to any remote                                               | High — permanent public change  | **Approve required** |
+| Deployment (`fly deploy`, `vercel deploy`, `kubectl apply`)            | Critical — production impact    | **Approve required** |
+| External network access from agent-spawned code                        | Medium — data exfiltration risk | **Approve required** |
+| File reads within worktree                                             | Low                             | Auto-approved        |
+| File writes within worktree                                            | Low                             | Auto-approved        |
+| `git commit`, `git add` within worktree                                | Low                             | Auto-approved        |
+| MCP tool calls on allow-list                                           | Low                             | Auto-approved        |
 
 ### Strict Profile
 
 In `strict` mode, every tool call requires approval:
+
 - No auto-approved operations
 - Agent is paused at every tool boundary
 - Useful for audits or sensitive repositories
@@ -36,6 +37,7 @@ In `strict` mode, every tool call requires approval:
 ### Permissive Profile
 
 In `permissive` mode, only destructive or irreversible operations require approval:
+
 - Shell execution: auto-approved
 - File writes: auto-approved
 - `git push`: **Approve required**
@@ -49,6 +51,7 @@ produce a plan or summary. Approval is not needed because no mutations occur.
 ## Worktree Isolation
 
 Every task that modifies code should run in an isolated Git worktree:
+
 - The worktree is a temporary branch forked from the base branch at task start
 - The agent's working directory is scoped to the worktree path
 - File write approvals outside this path are always required
@@ -67,6 +70,7 @@ JSON-lines format. The log is not rotated by default; configure
 `AGENTOPSHUB_LOG_FILE_ROTATE_SIZE` to enable rotation.
 
 Each entry:
+
 ```json
 {
   "ts": "2026-11-04T00:00:00.000Z",

@@ -1,4 +1,7 @@
-import type { ProviderEvent, ProviderPermissionResponse } from "@agentopshub/plugin/server/provider";
+import type {
+  ProviderEvent,
+  ProviderPermissionResponse,
+} from "@agentopshub/plugin/server/provider";
 import type { z } from "zod";
 import { MspConnection } from "./connection.js";
 import { MuseError } from "./errors.js";

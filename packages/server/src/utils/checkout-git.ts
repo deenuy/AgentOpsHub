@@ -5,7 +5,10 @@ import { open as openFile, readFile, stat as statFile } from "fs/promises";
 import { setImmediate } from "node:timers/promises";
 import { TTLCache } from "@isaacs/ttlcache";
 import type { CheckoutCommit, CheckoutCommitFile } from "@agentopshub/protocol/messages";
-import { parseGitHubRemoteIdentity, parseGitRemoteLocation } from "@agentopshub/protocol/git-remote";
+import {
+  parseGitHubRemoteIdentity,
+  parseGitRemoteLocation,
+} from "@agentopshub/protocol/git-remote";
 import { maxBase64EncryptedPlaintextByteLength } from "@agentopshub/relay";
 import type { Logger } from "pino";
 import type { ParsedDiffFile } from "../server/utils/diff-highlighter.js";

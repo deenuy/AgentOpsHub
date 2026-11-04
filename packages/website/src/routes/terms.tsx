@@ -16,9 +16,10 @@ function Terms() {
   return (
     <LegalPage title="Terms of Service" lastUpdated="August 29, 2026">
       <p>
-        These Terms govern the official services operated at agentopshub.local, relay.agentopshub.local, and
-        hub.agentopshub.local. By using the official relay or hosted Hub, you agree to them. Our{" "}
-        <a href="/privacy">Privacy Policy</a> explains how those services process data.
+        These Terms govern the official services operated at agentopshub.local,
+        relay.agentopshub.local, and hub.agentopshub.local. By using the official relay or hosted
+        Hub, you agree to them. Our <a href="/privacy">Privacy Policy</a> explains how those
+        services process data.
       </p>
 
       <section>
@@ -29,9 +30,9 @@ function Terms() {
       <section>
         <h2>Paseo&apos;s open-source software</h2>
         <p>
-          AgentOpsHub is open-source software licensed under the Apache License 2.0. You can install,
-          modify, and self-host it under that license without purchasing AgentOpsHub Hub or using the
-          official relay.
+          AgentOpsHub is open-source software licensed under the Apache License 2.0. You can
+          install, modify, and self-host it under that license without purchasing AgentOpsHub Hub or
+          using the official relay.
         </p>
         <p>
           These Terms do not replace or restrict the open-source license. They apply only to
@@ -124,8 +125,8 @@ function Terms() {
         <h2>Third-party services</h2>
         <p>
           AgentOpsHub can connect to services such as GitHub, Slack, Discord, Linear, Anthropic, and
-          OpenAI. Those services have their own terms and privacy policies. AgentOpsHub is not responsible
-          for their availability, output, or handling of data.
+          OpenAI. Those services have their own terms and privacy policies. AgentOpsHub is not
+          responsible for their availability, output, or handling of data.
         </p>
       </section>
 

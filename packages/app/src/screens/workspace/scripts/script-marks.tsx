@@ -49,7 +49,7 @@ export function routeLabelKey(
   switch (kind) {
     case "public":
       return "workspace.scripts.routes.public";
-    case "paseo":
+    case "agentopshub":
       return "workspace.scripts.routes.paseo";
     case "direct":
       return "workspace.scripts.routes.direct";

@@ -1,5 +1,8 @@
 import { expect, type BrowserContext, type Page } from "@playwright/test";
-import type { CreateAgentRequestMessage, SessionInboundMessage } from "@agentopshub/protocol/messages";
+import type {
+  CreateAgentRequestMessage,
+  SessionInboundMessage,
+} from "@agentopshub/protocol/messages";
 import type { DaemonClient as InternalDaemonClient } from "@agentopshub/client/internal/daemon-client";
 import { decodeWorkspaceIdFromPathSegment } from "@/utils/host-routes";
 import { connectDaemonClient, loadProtocolSchemas } from "./daemon-client-loader";

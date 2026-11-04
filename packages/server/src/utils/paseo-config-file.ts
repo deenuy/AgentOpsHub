@@ -14,7 +14,9 @@ export {
   type ProjectConfigRpcError,
 } from "@agentopshub/protocol/paseo-config-schema";
 
-export const PASEO_CONFIG_FILE_NAME = "paseo.json";
+export const PASEO_CONFIG_FILE_NAME = "agentopshub.json";
+// COMPAT(paseo): legacy config file name; added in v0.13, remove after 2027-01
+const LEGACY_CONFIG_FILE_NAME = "paseo.json";
 
 export type ReadPaseoConfigForEditResult =
   | { ok: true; config: PaseoConfigRaw | null; revision: PaseoConfigRevision | null }
@@ -34,8 +36,17 @@ export function resolvePaseoConfigPath(repoRoot: string): string {
   return join(repoRoot, PASEO_CONFIG_FILE_NAME);
 }
 
+/** Resolves the config path that actually exists: new name first, legacy name as fallback. */
+function resolveExistingConfigPath(repoRoot: string): string {
+  const primary = join(repoRoot, PASEO_CONFIG_FILE_NAME);
+  if (existsSync(primary)) return primary;
+  const legacy = join(repoRoot, LEGACY_CONFIG_FILE_NAME);
+  if (existsSync(legacy)) return legacy;
+  return primary;
+}
+
 export function statPaseoConfigPath(repoRoot: string): PaseoConfigRevision | null {
-  const configPath = resolvePaseoConfigPath(repoRoot);
+  const configPath = resolveExistingConfigPath(repoRoot);
   if (!existsSync(configPath)) {
     return null;
   }
@@ -47,7 +58,7 @@ export function statPaseoConfigPath(repoRoot: string): PaseoConfigRevision | nul
 }
 
 export function readPaseoConfigJson(repoRoot: string): unknown {
-  const configPath = resolvePaseoConfigPath(repoRoot);
+  const configPath = resolveExistingConfigPath(repoRoot);
   if (!existsSync(configPath)) {
     return null;
   }

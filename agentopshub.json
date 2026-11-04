@@ -1,0 +1,32 @@
+{
+  "worktree": {
+    "setup": [
+      "npm ci",
+      "node ./scripts/seed-ios-native-cache.mjs",
+      "node ./scripts/seed-worktree-dev-state.mjs",
+      "npm run build:server",
+      "npm run build --workspace=@agentopshub/expo-two-way-audio"
+    ]
+  },
+  "scripts": {
+    "daemon": {
+      "type": "service",
+      "command": "AGENTOPSHUB_DEV_MANAGED_HOME=1 AGENTOPSHUB_DEV_ROOT=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}\" AGENTOPSHUB_HOME=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}/.dev/agentopshub-home\" AGENTOPSHUB_SKIP_DEV_SERVER_BUILD=1 AGENTOPSHUB_LISTEN=0.0.0.0:${AGENTOPSHUB_PORT:-6768} ./scripts/dev-daemon.sh"
+    },
+    "app": {
+      "type": "service",
+      "command": "AGENTOPSHUB_DEV_MANAGED_HOME=1 AGENTOPSHUB_DEV_ROOT=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}\" AGENTOPSHUB_HOME=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}/.dev/agentopshub-home\" AGENTOPSHUB_LISTEN=0.0.0.0:${AGENTOPSHUB_SERVICE_DAEMON_PORT:-6768} AGENTOPSHUB_DEV_DAEMON_ENDPOINT=localhost:${AGENTOPSHUB_SERVICE_DAEMON_PORT:-6768} EXPO_PORT=${AGENTOPSHUB_PORT:-} ./scripts/dev-app.sh"
+    },
+    "desktop": {
+      "type": "service",
+      "command": "AGENTOPSHUB_DEV_MANAGED_HOME=1 AGENTOPSHUB_DEV_ROOT=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}\" AGENTOPSHUB_HOME=\"${AGENTOPSHUB_WORKTREE_PATH:-$PWD}/.dev/agentopshub-home\" AGENTOPSHUB_LISTEN=0.0.0.0:${AGENTOPSHUB_SERVICE_DAEMON_PORT:-6768} AGENTOPSHUB_DEV_DAEMON_ENDPOINT=localhost:${AGENTOPSHUB_SERVICE_DAEMON_PORT:-6768} EXPO_PORT=${AGENTOPSHUB_PORT:-} exec ./packages/desktop/scripts/dev.sh"
+    },
+    "ios-simulator": {
+      "type": "service",
+      "command": "AGENTOPSHUB_DEV_MANAGED_HOME=1 AGENTOPSHUB_DEV_ROOT=\"$PWD\" AGENTOPSHUB_HOME=\"$PWD/.dev/agentopshub-home\" AGENTOPSHUB_LISTEN=0.0.0.0:${AGENTOPSHUB_SERVICE_DAEMON_PORT} AGENTOPSHUB_DEV_DAEMON_ENDPOINT=localhost:${AGENTOPSHUB_SERVICE_DAEMON_PORT} ./scripts/agentopshub-ios-simulator-service.sh"
+    },
+    "typecheck": {
+      "command": "npm run typecheck"
+    }
+  }
+}

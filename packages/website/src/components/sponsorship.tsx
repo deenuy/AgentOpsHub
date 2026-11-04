@@ -219,7 +219,9 @@ export function SponsorSection() {
       <SectionHeading as="h2" title="Sponsor Paseo" />
       <div className="space-y-10">
         <div className="max-w-2xl space-y-5 leading-relaxed text-white/70">
-          <p>AgentOpsHub is an independent project used by tens of thousands of developers daily.</p>
+          <p>
+            AgentOpsHub is an independent project used by tens of thousands of developers daily.
+          </p>
           <p>
             It is maintained by one person, full time, and shaped by the community. There are no
             investors and no company behind it. I have turned down funding to keep it that way. A

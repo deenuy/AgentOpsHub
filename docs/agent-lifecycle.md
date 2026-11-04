@@ -26,14 +26,14 @@ running                                                                      │
 
 ### State Descriptions
 
-| State | Description |
-|---|---|
-| `pending` | Task created, waiting for a free agent slot |
-| `delegated` | Agent process spawned, initializing |
-| `running` | Agent is actively processing, executing tool calls |
+| State               | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| `pending`           | Task created, waiting for a free agent slot            |
+| `delegated`         | Agent process spawned, initializing                    |
+| `running`           | Agent is actively processing, executing tool calls     |
 | `awaiting_approval` | Agent paused at an approval gate; waiting for operator |
-| `completed` | Agent finished successfully; result and diff available |
-| `failed` | Agent terminated with an error or denial |
+| `completed`         | Agent finished successfully; result and diff available |
+| `failed`            | Agent terminated with an error or denial               |
 
 ## Worktree Isolation
 
@@ -47,6 +47,7 @@ Each task that modifies code runs in an isolated Git worktree:
 6. The operator can inspect the diff, approve, or discard the worktree branch.
 
 Worktree isolation prevents:
+
 - Agents from accidentally modifying each other's work in parallel runs
 - Agents from touching files outside their designated scope
 - Loss of work before operator review
@@ -54,6 +55,7 @@ Worktree isolation prevents:
 ## Parent / Child Agents
 
 An agent can spawn child agents via the MCP `launch_agent` tool. Each child:
+
 - Inherits the parent's policy profile unless overridden
 - Runs in its own worktree (derived from the parent's worktree branch)
 - Is tracked as a sub-task of the parent task
@@ -64,6 +66,7 @@ Orphaned child agents (parent fails) are terminated and their worktrees archived
 ## Archive Semantics
 
 Archived tasks:
+
 - Are read-only (no further agent activity)
 - Retain their full timeline, audit log, and worktree diff
 - Are searchable and can be referenced by new tasks
@@ -72,6 +75,7 @@ Archived tasks:
 ## Tabs vs Archive
 
 The UI distinguishes:
+
 - **Active tab**: running or awaiting_approval agents
 - **Recent tab**: completed or failed agents in the last session
 - **Archive**: all historical tasks; searchable, never shown in active tab

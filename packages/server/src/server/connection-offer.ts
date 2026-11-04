@@ -1,6 +1,9 @@
 import os from "node:os";
 
-import { ConnectionOfferV2Schema, type ConnectionOffer } from "@agentopshub/protocol/connection-offer";
+import {
+  ConnectionOfferV2Schema,
+  type ConnectionOffer,
+} from "@agentopshub/protocol/connection-offer";
 
 interface BuildOfferEndpointsArgs {
   listenHost: string;

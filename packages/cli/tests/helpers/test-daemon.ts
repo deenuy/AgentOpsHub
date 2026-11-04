@@ -1,13 +1,13 @@
 /**
  * Test Daemon Helper
  *
- * Provides utilities for launching real Paseo daemons in E2E tests.
- * Each test gets an isolated daemon on an available local port with its own PASEO_HOME.
+ * Provides utilities for launching real AgentOpsHub daemons in E2E tests.
+ * Each test gets an isolated daemon on an available local port with its own AGENTOPSHUB_HOME.
  *
  * CRITICAL RULES (from design doc):
  * 1. Port: Use an available ephemeral local port - NEVER use 6767 (production)
  * 2. Protocol: WebSocket ONLY - daemon has no HTTP endpoints
- * 3. Temp dirs: Create temp directories for PASEO_HOME and agent --cwd
+ * 3. Temp dirs: Create temp directories for AGENTOPSHUB_HOME and agent --cwd
  * 4. Model: Always use claude provider with haiku model for fast, cheap tests
  * 5. Cleanup: Kill daemon and remove temp dirs after each test
  */
@@ -25,7 +25,7 @@ export interface TestDaemonContext {
   port: number;
   /** WebSocket URL for connecting to daemon */
   wsUrl: string;
-  /** Temp directory for PASEO_HOME */
+  /** Temp directory for AGENTOPSHUB_HOME */
   paseoHome: string;
   /** Temp directory for agent working directory */
   workDir: string;
@@ -38,17 +38,24 @@ export interface TestDaemonContext {
 }
 
 const TEST_DAEMON_ENV_DEFAULTS: Record<string, string> = {
-  PASEO_RELAY_ENABLED: "false",
-  PASEO_LOCAL_SPEECH_AUTO_DOWNLOAD: process.env.PASEO_LOCAL_SPEECH_AUTO_DOWNLOAD ?? "0",
-  PASEO_DICTATION_ENABLED: process.env.PASEO_DICTATION_ENABLED ?? "0",
-  PASEO_VOICE_MODE_ENABLED: process.env.PASEO_VOICE_MODE_ENABLED ?? "0",
+  AGENTOPSHUB_RELAY_ENABLED: "false",
+  AGENTOPSHUB_LOCAL_SPEECH_AUTO_DOWNLOAD:
+    process.env.AGENTOPSHUB_LOCAL_SPEECH_AUTO_DOWNLOAD ??
+    process.env.PASEO_LOCAL_SPEECH_AUTO_DOWNLOAD ??
+    "0",
+  AGENTOPSHUB_DICTATION_ENABLED:
+    process.env.AGENTOPSHUB_DICTATION_ENABLED ?? process.env.PASEO_DICTATION_ENABLED ?? "0",
+  AGENTOPSHUB_VOICE_MODE_ENABLED:
+    process.env.AGENTOPSHUB_VOICE_MODE_ENABLED ?? process.env.PASEO_VOICE_MODE_ENABLED ?? "0",
 };
 const TEST_DAEMON_HOST = "127.0.0.1";
 const TSX_ENTRY = fileURLToPath(import.meta.resolve("tsx/cli"));
 
 const DEFAULT_OUTPUT_CAPTURE_LIMIT = 256 * 1024;
 const TEST_OUTPUT_CAPTURE_LIMIT = Number.parseInt(
-  process.env.PASEO_TEST_OUTPUT_CAPTURE_BYTES ?? `${DEFAULT_OUTPUT_CAPTURE_LIMIT}`,
+  process.env.AGENTOPSHUB_TEST_OUTPUT_CAPTURE_BYTES ??
+    process.env.PASEO_TEST_OUTPUT_CAPTURE_BYTES ??
+    `${DEFAULT_OUTPUT_CAPTURE_LIMIT}`,
   10,
 );
 
@@ -155,8 +162,8 @@ export function getRandomPort(): number {
  * Create isolated temp directories for testing
  */
 export async function createTempDirs(): Promise<{ paseoHome: string; workDir: string }> {
-  const paseoHome = await mkdtemp(join(tmpdir(), "paseo-e2e-home-"));
-  const workDir = await mkdtemp(join(tmpdir(), "paseo-e2e-work-"));
+  const paseoHome = await mkdtemp(join(tmpdir(), "agentopshub-e2e-home-"));
+  const workDir = await mkdtemp(join(tmpdir(), "agentopshub-e2e-work-"));
 
   // Create the agents directory that the daemon expects
   const agentsDir = join(paseoHome, "agents");
@@ -222,7 +229,7 @@ function sleep(ms: number): Promise<void> {
  * Start a test daemon programmatically using the server's bootstrap API
  *
  * This starts the daemon in a separate process using the CLI's daemon start command
- * with isolated PASEO_HOME and PASEO_LISTEN environment variables.
+ * with isolated AGENTOPSHUB_HOME and AGENTOPSHUB_LISTEN environment variables.
  */
 export async function startTestDaemon(options?: {
   port?: number;
@@ -248,11 +255,13 @@ export async function startTestDaemon(options?: {
   const daemonProcess = spawn(process.execPath, [TSX_ENTRY, cliSrcPath, "daemon", "run"], {
     env: {
       ...Object.fromEntries(
-        Object.entries(process.env).filter(([key]) => !key.startsWith("PASEO_")),
+        Object.entries(process.env).filter(
+          ([key]) => !key.startsWith("PASEO_") && !key.startsWith("AGENTOPSHUB_"),
+        ),
       ),
       ...TEST_DAEMON_ENV_DEFAULTS,
-      PASEO_HOME: paseoHome,
-      PASEO_LISTEN: `${TEST_DAEMON_HOST}:${port}`,
+      AGENTOPSHUB_HOME: paseoHome,
+      AGENTOPSHUB_LISTEN: `${TEST_DAEMON_HOST}:${port}`,
       // Force no TTY to prevent QR code output
       CI: "true",
       ...options?.env,
@@ -366,10 +375,12 @@ export async function runPaseoCli(
     const proc = spawn(process.execPath, [TSX_ENTRY, cliSrcPath, ...args], {
       env: {
         ...Object.fromEntries(
-          Object.entries(process.env).filter(([key]) => !key.startsWith("PASEO_")),
+          Object.entries(process.env).filter(
+            ([key]) => !key.startsWith("PASEO_") && !key.startsWith("AGENTOPSHUB_"),
+          ),
         ),
         ...TEST_DAEMON_ENV_DEFAULTS,
-        PASEO_HOME: ctx.paseoHome,
+        AGENTOPSHUB_HOME: ctx.paseoHome,
         ...options?.env,
         HOME: ctx.paseoHome,
         USERPROFILE: ctx.paseoHome,

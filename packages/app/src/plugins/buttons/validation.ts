@@ -1,4 +1,8 @@
-import type { PluginButton, PluginButtonBehavior, PluginButtonIcon } from "@agentopshub/plugin/client";
+import type {
+  PluginButton,
+  PluginButtonBehavior,
+  PluginButtonIcon,
+} from "@agentopshub/plugin/client";
 
 export interface ButtonValidation {
   /** Returns the normalized icon, or throws naming why the icon is unusable. */

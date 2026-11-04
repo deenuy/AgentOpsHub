@@ -65,11 +65,22 @@ function normalizeTarget(target: string): string | null {
   }
 }
 
+function readPidFile(home: string): { listen?: unknown } | null {
+  for (const name of ["agentopshub.pid", "paseo.pid"]) {
+    // COMPAT(paseo): check both names; added in v0.13, remove paseo.pid fallback after 2027-01
+    try {
+      return JSON.parse(readFileSync(join(home, name), "utf8")) as { listen?: unknown };
+    } catch {
+      // try next
+    }
+  }
+  return null;
+}
+
 export function readLocalCredentialForTarget(home: string, target: string): string | null {
   try {
-    const lock = JSON.parse(readFileSync(join(home, "paseo.pid"), "utf8")) as {
-      listen?: unknown;
-    };
+    const lock = readPidFile(home);
+    if (!lock) return null;
     if (typeof lock.listen !== "string") return null;
     const selected = normalizeTarget(target);
     const listening = normalizeTarget(lock.listen);

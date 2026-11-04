@@ -43,6 +43,15 @@ export const GIT_METADATA_EVENT_RULES = [
     refreshBase: true,
   },
   {
+    id: "agentopshub-worktree-metadata",
+    scope: "worktree",
+    match: "exact",
+    path: "agentopshub/worktree.json",
+    route: "owner",
+    refreshBase: true,
+  },
+  {
+    // COMPAT(paseo): read legacy path; added in v0.13, remove after 2027-01
     id: "paseo-worktree-metadata",
     scope: "worktree",
     match: "exact",

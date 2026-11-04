@@ -1213,17 +1213,17 @@ function FAQ() {
           if you configure them.
         </FAQItem>
         <FAQItem question="Does my code leave my machine?">
-          AgentOpsHub doesn&apos;t send your code anywhere. Agents run locally and talk to their own APIs
-          as they normally would. For remote access, you can use the optional{" "}
+          AgentOpsHub doesn&apos;t send your code anywhere. Agents run locally and talk to their own
+          APIs as they normally would. For remote access, you can use the optional{" "}
           <a href="/docs/security" className="underline hover:text-white/80">
             end-to-end encrypted relay
           </a>
           , connect directly over your local network, or use your own tunnel.
         </FAQItem>
         <FAQItem question="What agents does it support?">
-          AgentOpsHub supports many providers. It has custom implementations for Claude, Codex, OpenCode,
-          Pi, OMP, Antigravity, and Muse Code, and supports many more via ACP. See the full list
-          here:{" "}
+          AgentOpsHub supports many providers. It has custom implementations for Claude, Codex,
+          OpenCode, Pi, OMP, Antigravity, and Muse Code, and supports many more via ACP. See the
+          full list here:{" "}
           <a href="/agents" className="underline hover:text-white/80">
             all supported providers
           </a>
@@ -1234,8 +1234,8 @@ function FAQ() {
           .
         </FAQItem>
         <FAQItem question="How does Paseo run providers?">
-          AgentOpsHub runs the providers installed on your machine as you&apos;d normally run them. Paseo
-          doesn&apos;t modify or change their behavior.
+          AgentOpsHub runs the providers installed on your machine as you&apos;d normally run them.
+          Paseo doesn&apos;t modify or change their behavior.
         </FAQItem>
         <FAQItem question="Do I need the desktop app?">
           No. You can run the daemon headless and use any client to connect. The desktop app just
@@ -1260,12 +1260,12 @@ function FAQ() {
           .
         </FAQItem>
         <FAQItem question="Do I need git or GitHub?">
-          No. AgentOpsHub works in any directory. Worktrees are optional and only relevant if you use git.
-          You can run agents anywhere you&apos;d normally work.
+          No. AgentOpsHub works in any directory. Worktrees are optional and only relevant if you
+          use git. You can run agents anywhere you&apos;d normally work.
         </FAQItem>
         <FAQItem question="Can I get banned for using Paseo?">
-          AgentOpsHub is designed to use each provider&apos;s officially supported integration and does
-          not attempt to bypass its terms of service. It doesn&apos;t extract tokens or call
+          AgentOpsHub is designed to use each provider&apos;s officially supported integration and
+          does not attempt to bypass its terms of service. It doesn&apos;t extract tokens or call
           inference APIs directly.
         </FAQItem>
         <FAQItem question="How do worktrees work?">

@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { getPaseoToolLeafName, isPaseoToolName } from "@agentopshub/protocol/tool-name-normalization";
+import {
+  getPaseoToolLeafName,
+  isPaseoToolName,
+} from "@agentopshub/protocol/tool-name-normalization";
 
 describe("isPaseoToolName", () => {
   it("detects Claude Code format", () => {

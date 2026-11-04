@@ -84,7 +84,7 @@ function thumbnailRequest(
   accept = "image/avif,image/webp",
 ) {
   return new Request(
-    `https://paseo.sh/plugins/thumb/${width}/${encodeURIComponent(sourceUrl)}?plugin=${encodeURIComponent(id)}`,
+    `https://agentopshub.local/plugins/thumb/${width}/${encodeURIComponent(sourceUrl)}?plugin=${encodeURIComponent(id)}`,
     { headers: { accept } },
   );
 }
@@ -188,13 +188,13 @@ describe("thumbnail route", () => {
     ["wrong plugin ID", thumbnailRequest(source, 592, "acme/other"), [plugin], 404],
     [
       "missing plugin ID",
-      new Request(`https://paseo.sh/plugins/thumb/592/${encodeURIComponent(source)}`),
+      new Request(`https://agentopshub.local/plugins/thumb/592/${encodeURIComponent(source)}`),
       [plugin],
       404,
     ],
     ["removed plugin", thumbnailRequest(), [], 404],
     ["listed video", thumbnailRequest(video), [{ ...plugin, media: [video, source] }], 404],
-    ["malformed encoding", new Request("https://paseo.sh/plugins/thumb/592/%ZZ"), [plugin], 400],
+    ["malformed encoding", new Request("https://agentopshub.local/plugins/thumb/592/%ZZ"), [plugin], 400],
     ["malformed URL", thumbnailRequest("not a URL"), [plugin], 400],
     ...[
       "https://example.com/preview.png",
@@ -245,7 +245,7 @@ describe("thumbnail route", () => {
     const screenshot = source + "?name=a&other=b#preview";
     const upstream = imageFetch(imageResponse("thumbnail"));
     const request = new Request(
-      "https://paseo.sh" + pluginCardScreenshot(plugin.id, screenshot).src,
+      "https://agentopshub.local" + pluginCardScreenshot(plugin.id, screenshot).src,
     );
     const response = await handlePluginThumbnailRequest(
       request,

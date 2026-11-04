@@ -38,7 +38,7 @@ With a custom root, Paseo keeps the same hashed layout under that directory:
 1. Create a workspace with worktree isolation, Paseo creates the worktree and runs your setup hooks
 2. Launch one or more agents in that workspace
 3. Review the diff against the base branch
-4. Merge or archive the workspace; after the last workspace using it is archived, Paseo runs teardown and removes the worktree
+4. Merge or archive the workspace; after the last workspace using it is archived, AgentOpsHub runs teardown and removes the worktree
 
 Scheduled runs archive their workspaces when they finish by default. Turn off **Archive on finish** in the schedule's app form to [keep run workspaces](/docs/schedules#keep-run-workspaces) and their worktrees until you archive them.
 
@@ -78,7 +78,7 @@ paseo workspace create \
   --pr-number 2186
 ```
 
-Add `--forge <name>` when Paseo cannot infer the forge from the source checkout.
+Add `--forge <name>` when AgentOpsHub cannot infer the forge from the source checkout.
 
 ## paseo.json
 
@@ -188,7 +188,7 @@ For an external allocator, configure `portScript` instead:
 }
 ```
 
-Paseo runs the executable in the workspace directory with four arguments: service name, workspace
+AgentOpsHub runs the executable in the workspace directory with four arguments: service name, workspace
 ID, branch name, and worktree path. Since the script is executed directly without a shell, `portScript` must point to a real executable (such as a compiled binary or a script with a proper shebang line like `#!/bin/bash`) rather than an inline shell command or pipeline. If you need shell evaluation or pipelines, wrap them in a small executable script. A missing branch is passed as an empty string. The same values
 are available as `PASEO_SCRIPTNAME`, `PASEO_WORKSPACE_ID`, `PASEO_BRANCH_NAME`, and
 `PASEO_WORKTREE_PATH`. It must print one valid TCP port to stdout. `portScript` wins over `range` in
@@ -263,4 +263,4 @@ paseo workspace rename <workspace-id> "Auth rework"
 paseo workspace archive <workspace-id>
 ```
 
-For the common case, `paseo run --new-workspace worktree --worktree-mode branch-off --new-branch feature/auth --base origin/main "implement auth"` creates both the workspace and its first agent.
+For the common case, `agentopshub run --new-workspace worktree --worktree-mode branch-off --new-branch feature/auth --base origin/main "implement auth"` creates both the workspace and its first agent.

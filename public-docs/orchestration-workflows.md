@@ -53,7 +53,7 @@ Agents can prompt each other by **agent ID**, the identifier Paseo uses to addre
 
 The receiving agent gets the prompt in its existing conversation. Agent-originated sends default to steering a running turn, with interruption fallback when steering is unavailable. Set MCP `activeTurnBehavior` or CLI `--behavior` to `steer` or `interrupt` to override that default. To have it send a separate message back, give it the sender's agent ID too.
 
-Underneath, the agent calls `send_agent_prompt` with the recipient's `agentId` and a `prompt`. Agents can also discover IDs with `list_agents`; the CLI uses [`paseo send <id>`](/docs/cli#sending-messages). For another host, use the [remote CLI workflow](#work-on-another-machine).
+Underneath, the agent calls `send_agent_prompt` with the recipient's `agentId` and a `prompt`. Agents can also discover IDs with `list_agents`; the CLI uses [`agentopshub send <id>`](/docs/cli#sending-messages). For another host, use the [remote CLI workflow](#work-on-another-machine).
 
 ## Check, redirect, or continue work
 
@@ -75,7 +75,7 @@ The current task stops; the worker remains available for a follow-up.
 
 The CLI can target another Paseo host. First [connect it to the remote daemon](/docs/cli#connecting-to-a-remote-daemon) and identify a workspace on that host. The repository and required provider must be available there.
 
-> Use the Paseo CLI with the remote host and workspace I supplied. Launch an agent there to investigate the failing build, inspect its output, and summarize the findings here. Do not change files.
+> Use the AgentOpsHub CLI with the remote host and workspace I supplied. Launch an agent there to investigate the failing build, inspect its output, and summarize the findings here. Do not change files.
 
 The worker runs on the remote machine. Use the CLI's global `--host` option for that destination; injected Paseo tools operate on the main agent's own host.
 

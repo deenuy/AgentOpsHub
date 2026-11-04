@@ -8,7 +8,7 @@ category: Plugins
 
 # Plugin quickstart
 
-A plugin is a TypeScript project installed into one Paseo daemon. It can add
+A plugin is a TypeScript project installed into one AgentOpsHub daemon. It can add
 [screens and sidebar items](/docs/plugins/reference#screens-and-sidebar-items),
 [workspace panels](/docs/plugins/reference#workspace-panels),
 [Command Center items](/docs/plugins/reference#command-center-items),
@@ -21,7 +21,7 @@ A plugin is a TypeScript project installed into one Paseo daemon. It can add
 [connect a coding agent as a provider](/docs/plugins/providers). Client
 contributions run on every Paseo client connected to that daemon, including mobile.
 
-Browse [published plugins](https://paseo.sh/plugins), then install one on your daemon:
+Browse [published plugins](https://agentopshub.local/plugins), then install one on your daemon:
 
 ```bash
 paseo plugin add owner/slug
@@ -53,7 +53,7 @@ greeting through an RPC.
 ```text
 workspace-plugin/
   paseo-plugin.json      # plugin ID and supported Paseo versions
-  index.client.tsx       # runs in the Paseo app
+  index.client.tsx       # runs in the AgentOpsHub app
   index.server.ts        # runs in a daemon subprocess
   client/greeting.tsx    # the screen component
   client/web.ts          # the only file allowed to touch browser APIs
@@ -115,7 +115,7 @@ API behind `Platform.OS` with a native fallback. See
 ## Install and try it
 
 Plugins are trusted, unsandboxed code: server code and preparation commands run with the daemon
-user's access on the daemon machine, and client code runs inside the Paseo app. Installing a plugin
+user's access on the daemon machine, and client code runs inside the AgentOpsHub app. Installing a plugin
 means you trust that codebase, its dependencies, and its future updates.
 
 Turn on **Enable plugins** under **Settings → Plugins** on the daemon you are installing into. It is
@@ -145,12 +145,12 @@ management actions remain available.
 Each installed plugin row shows its status and description. Use its switch to enable or disable it,
 and open its three-dot menu for settings, logs, reload, and removal.
 
-`paseo plugin ls` should report the plugin as `running`. Open Paseo, choose **Greeting** in the
+`agentopshub plugin ls` should report the plugin as `running`. Open Paseo, choose **Greeting** in the
 sidebar, and press **Create greeting**. The message comes back from the daemon subprocess through
 the RPC.
 
 If the sidebar item is missing, check that **Enable plugins** is on, the plugin is `running`, and
-the client is viewing the host you installed into. `paseo plugin logs workspace-plugin` shows the
+the client is viewing the host you installed into. `agentopshub plugin logs workspace-plugin` shows the
 daemon-side output, including load errors.
 
 ## Add a workspace panel
@@ -235,7 +235,7 @@ paseo plugin reload workspace-plugin
 ```
 
 A reload stops the old plugin, runs its cleanup, compiles the current source, and starts it again.
-A failed reload stays failed and reports its error in `paseo plugin ls`; fix the source and reload
+A failed reload stays failed and reports its error in `agentopshub plugin ls`; fix the source and reload
 again.
 
 Open a workspace, press **⌘K** on macOS or **Ctrl+K** on Windows and Linux, and choose **Open

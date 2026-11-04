@@ -25,7 +25,7 @@ Profiles are saved on that host. The available settings depend on the provider a
 
 ## Apply settings in one click
 
-When creating an agent, open the model picker and select a saved profile under **Profiles**. Paseo applies its settings together; you can still adjust them before sending your prompt.
+When creating an agent, open the model picker and select a saved profile under **Profiles**. AgentOpsHub applies its settings together; you can still adjust them before sending your prompt.
 
 Changing a saved profile affects future selections. It does not update agents you already launched.
 

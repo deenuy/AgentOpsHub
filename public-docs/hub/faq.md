@@ -1,6 +1,6 @@
 ---
 title: Hub FAQ
-description: Common questions about projects, connections, configuration, and daemons in Paseo Hub.
+description: Common questions about projects, connections, configuration, and daemons in AgentOpsHub Hub.
 nav: FAQ
 order: 78
 category: Hub
@@ -10,7 +10,7 @@ category: Hub
 
 ## Do I need Hub to use Paseo?
 
-No. Paseo runs agents on your machines without it. Hub adds what a single daemon cannot do on its own: starting agents from external activity, versioned configuration, a shared record of what ran, and team access.
+No. AgentOpsHub runs agents on your machines without it. Hub adds what a single daemon cannot do on its own: starting agents from external activity, versioned configuration, a shared record of what ran, and team access.
 
 ## Can one organization connect several GitHub organizations?
 

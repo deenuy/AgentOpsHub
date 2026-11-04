@@ -50,7 +50,7 @@ Approve the login in the browser tab that opens. Leave the Hub tab open: it watc
 
 ## 4. Create the starter trigger
 
-After approving login, answer **Yes** to **Connect this daemon to Paseo Hub?** and **Allow Hub automations to run agents on this daemon?**. Execution permission defaults to no, so enable it explicitly for this setup. If you answered no, Home shows the daemon as connected but unable to run agents, with the command that fixes it: `paseo hub permissions grant hub.execute`.
+After approving login, answer **Yes** to **Connect this daemon to AgentOpsHub Hub?** and **Allow Hub automations to run agents on this daemon?**. Execution permission defaults to no, so enable it explicitly for this setup. If you answered no, Home shows the daemon as connected but unable to run agents, with the command that fixes it: `paseo hub permissions grant hub.execute`.
 
 Then run:
 

@@ -11,7 +11,7 @@ category: Plugins
 Start with the [plugin quickstart](/docs/plugins) if you have not built a Paseo plugin before.
 
 A provider plugin connects a coding agent to Paseo without adding it to Paseo core. [Publish the plugin](/docs/plugins/publishing) on npm or in a Git repository so users can
-install it with `paseo plugin install`.
+install it with `agentopshub plugin install`.
 
 Choose one implementation path:
 
@@ -287,7 +287,7 @@ Paseo refreshes an agent by closing its current provider session and opening it 
 configuration and persistence. Re-read credentials, environment, global configuration, and MCP
 servers during `session.open`. There is no separate reload operation.
 
-Use `restoration: "core"` when Paseo can reopen a session from persistence. A provider-owned child
+Use `restoration: "core"` when AgentOpsHub can reopen a session from persistence. A provider-owned child
 uses `restoration: "parent"`; emit it as another `session.opened` event with `parentSessionId` and
 recreate it while restoring the parent.
 

@@ -142,7 +142,7 @@ export function SiteFooter({ width = "default", sponsors = true }: SiteFooterPro
           <p className="text-extra-muted-foreground">Community</p>
           <div className="space-y-2">
             <a
-              href="https://discord.gg/jz8T2uahpH"
+              href="https://"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-muted-foreground hover:text-foreground transition-colors"
@@ -150,7 +150,7 @@ export function SiteFooter({ width = "default", sponsors = true }: SiteFooterPro
               Discord
             </a>
             <a
-              href="https://www.reddit.com/r/PaseoAI/"
+              href="https://www./"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-muted-foreground hover:text-foreground transition-colors"

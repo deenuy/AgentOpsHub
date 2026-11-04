@@ -8,11 +8,11 @@ category: Getting started
 
 # Getting started
 
-Paseo is an agentic development environment for running coding agents, editing files, reviewing changes, and testing your work. Agents run on your machines; desktop, mobile, web, and CLI clients let you work from anywhere. Choose how to install it below.
+AgentOpsHub is an agentic development environment for running coding agents, editing files, reviewing changes, and testing your work. Agents run on your machines; desktop, mobile, web, and CLI clients let you work from anywhere. Choose how to install it below.
 
 ## Desktop app (recommended)
 
-Download from [paseo.sh/download](https://paseo.sh/download) or the [GitHub releases page](https://github.com/getpaseo/paseo/releases). Open it and you're done.
+Download from [agentopshub.local/download](https://agentopshub.local/download) or the [GitHub releases page](https://github.com/getpaseo/paseo/releases). Open it and you're done.
 
 The desktop app bundles its own daemon and starts it automatically, no separate install required. On first launch you'll see a brief startup screen, then connect from your phone using **Settings → your host → Pair Device**.
 
@@ -53,7 +53,7 @@ The image runs the daemon and serves the bundled web UI. It does not bundle agen
 - [Run parallel tasks](/docs/parallel-development), use separate worktrees, review diffs, and test changes in the desktop app.
 - [Connectivity](/docs/connectivity), connect through the relay or Tailscale.
 - [Docker](/docs/docker), run the daemon and bundled web UI in a container.
-- [Workspaces](/docs/workspaces), the project, workspace, and session model Paseo is built around.
+- [Workspaces](/docs/workspaces), the project, workspace, and session model AgentOpsHub is built around.
 - [Providers](/docs/providers), what a provider is and how Paseo wraps existing CLIs.
 - [Orchestration](/docs/orchestration), let one agent delegate work to other providers and models.
 - [Plugins](/docs/plugins), add trusted local surfaces, sidebar actions, daemon behavior, and composer attachments.

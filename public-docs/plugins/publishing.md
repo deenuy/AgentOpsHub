@@ -10,7 +10,7 @@ category: Plugins
 
 Start with a working [plugin project](/docs/plugins). Prepare its listing, publish it on npm
 or push it to GitHub, then submit it to the registry. After approval, users install the reviewed
-version with `paseo plugin add owner/slug`.
+version with `agentopshub plugin add owner/slug`.
 
 1. Prepare your [listing page](#your-listing-page) and, for a visual plugin, an
    [interface image](#icons-and-screenshots).
@@ -43,7 +43,7 @@ Use plain factual language and sentence case. Omit marketing, unsupported claims
 changelogs, contributing and license sections, and implementation details that do not help someone
 choose the plugin. The listing already provides plugin installation instructions.
 
-The publication validator rejects `paseo plugin add`, `npm install` and `npm i` anywhere in an
+The publication validator rejects `agentopshub plugin add`, `npm install` and `npm i` anywhere in an
 overview, including development or setup examples. Link to your README for those commands.
 
 Also supply a one-sentence description: use `package.json`'s `description` for npm or the manifest's

@@ -51,7 +51,7 @@ export function SiteHeader() {
           Sponsor
         </a>
         <a
-          href="https://discord.gg/jz8T2uahpH"
+          href="https://"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Discord"

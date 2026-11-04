@@ -8,7 +8,7 @@ category: Browser
 
 # Browser automation
 
-Agents in Paseo can drive real browser tabs — the same tabs you see in the Paseo desktop app. An agent can open your dev server, read the page, click through a flow, fill a form, and take a screenshot, all without leaving your machine.
+Agents in AgentOpsHub can drive real browser tabs — the same tabs you see in the Paseo desktop app. An agent can open your dev server, read the page, click through a flow, fill a form, and take a screenshot, all without leaving your machine.
 
 This closes the loop on frontend work: instead of telling you "the change should work," an agent opens the page and checks.
 

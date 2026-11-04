@@ -8,7 +8,7 @@ category: Providers
 
 # Codex
 
-Paseo runs Codex through the official `codex` CLI and its app-server interface.
+AgentOpsHub runs Codex through the official `codex` CLI and its app-server interface.
 
 ## Does Codex cost extra in Paseo?
 
@@ -71,7 +71,7 @@ If the command is not found:
 3. Restart Paseo if its daemon was already running when you installed the CLI.
 4. In Paseo, open **Settings → Providers → Codex** and select **Refresh**.
 
-The provider should become available once Paseo can find and start the `codex` command.
+The provider should become available once AgentOpsHub can find and start the `codex` command.
 
 ## Use Codex in the Paseo terminal
 

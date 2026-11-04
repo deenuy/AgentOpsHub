@@ -239,7 +239,7 @@ const SOCIAL_PROOF_TWEETS = [
     date: "May 28, 2026",
     avatar: "/social-proof/arnoldgamboa.jpg",
     url: "https://x.com/arnoldgamboa/status/2059832028099436921",
-    text: "Paseo is a really good interface for Pi. It’s not the only thing it does, but that’s my current use case for now.",
+    text: "AgentOpsHub is a really good interface for Pi. It’s not the only thing it does, but that’s my current use case for now.",
   },
   {
     name: "Dong",
@@ -247,7 +247,7 @@ const SOCIAL_PROOF_TWEETS = [
     date: "Apr 12, 2026",
     avatar: "/social-proof/dongnaebi.jpg",
     url: "https://x.com/dongnaebi/status/2043162391941398735",
-    text: "Paseo is the best software I've used this year. Absolutely amazing!",
+    text: "AgentOpsHub is the best software I've used this year. Absolutely amazing!",
   },
 ] as const;
 
@@ -494,7 +494,7 @@ function TurnkeySection() {
             title="Teams and triggers"
             description="Share access or start work from GitHub, Slack, and Discord"
             ctaHref="/hub"
-            ctaLabel="Paseo Hub"
+            ctaLabel="AgentOpsHub Hub"
             showIntegrationIcons
           />
         </div>
@@ -804,11 +804,11 @@ function AgentListOutput() {
 function SdkAutomationExample() {
   return (
     <pre className="overflow-x-auto font-mono text-[11px] leading-5 text-white/60">
-      <span className="text-purple-300">import</span> {"{"} createPaseoClient {"}"}{" "}
+      <span className="text-purple-300">import</span> {"{"} createAgentOpsHubClient {"}"}{" "}
       <span className="text-purple-300">from</span>{" "}
       <span className="text-emerald-300/80">{'"@agentopshub/client"'}</span>;{"\n\n"}
       <span className="text-purple-300">const</span> client ={" "}
-      <span className="text-sky-300">createPaseoClient</span>({"{"}
+      <span className="text-sky-300">createAgentOpsHubClient</span>({"{"}
       {"\n"} url: <span className="text-emerald-300/80">{'"ws://127.0.0.1:6767/ws"'}</span>,{"\n"}
       {"}"});
       {"\n"}
@@ -845,7 +845,7 @@ function ExtensibleSection() {
           ))}
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-white/45">Paseo is Apache 2.0.</p>
+          <p className="text-sm text-white/45">AgentOpsHub is Apache 2.0.</p>
           <a
             href="https://github.com/getpaseo/paseo"
             target="_blank"
@@ -916,7 +916,7 @@ const PRINCIPLES: ReadonlyArray<{ icon: LucideIcon; title: string; description: 
   {
     icon: Compass,
     title: "Independent",
-    description: "Paseo doesn't answer to investors. Its users guide what gets built.",
+    description: "AgentOpsHub doesn't answer to investors. Its users guide what gets built.",
   },
   {
     icon: Gem,
@@ -936,7 +936,7 @@ const PRINCIPLES: ReadonlyArray<{ icon: LucideIcon; title: string; description: 
   {
     icon: Puzzle,
     title: "Extensible",
-    description: "If Paseo doesn't fit how you work, change it with a plugin or fork.",
+    description: "If AgentOpsHub doesn't fit how you work, change it with a plugin or fork.",
   },
 ];
 
@@ -1075,7 +1075,7 @@ function ServerInstallButton() {
     <CommandDialog
       trigger={SERVER_INSTALL_TRIGGER}
       title="Run agents on a remote machine"
-      description="For headless machines you want to connect to from the Paseo apps. The desktop app already includes a built-in daemon"
+      description="For headless machines you want to connect to from the AgentOpsHub apps. The desktop app already includes a built-in daemon"
       command="npm install -g @agentopshub/cli && paseo"
       footnote={SERVER_INSTALL_FOOTNOTE}
     />
@@ -1159,7 +1159,7 @@ function PhoneShowcase() {
           style={leftPhoneStyle}
           className="w-[160px] md:w-[240px] absolute"
           role="img"
-          aria-label="Paseo workspace drawer"
+          aria-label="AgentOpsHub workspace drawer"
         >
           <PhoneFrame time="18:54" depth="right">
             <MobileSidebar />
@@ -1208,12 +1208,12 @@ function FAQ() {
       <h2 className="text-3xl font-medium">FAQ</h2>
       <div className="space-y-6">
         <FAQItem question="Is this free?">
-          Yes. Paseo is free and open source. You need agent providers installed with your own
+          Yes. AgentOpsHub is free and open source. You need agent providers installed with your own
           credentials. Voice is local-first by default and can optionally use cloud speech providers
           if you configure them.
         </FAQItem>
         <FAQItem question="Does my code leave my machine?">
-          Paseo doesn&apos;t send your code anywhere. Agents run locally and talk to their own APIs
+          AgentOpsHub doesn&apos;t send your code anywhere. Agents run locally and talk to their own APIs
           as they normally would. For remote access, you can use the optional{" "}
           <a href="/docs/security" className="underline hover:text-white/80">
             end-to-end encrypted relay
@@ -1221,7 +1221,7 @@ function FAQ() {
           , connect directly over your local network, or use your own tunnel.
         </FAQItem>
         <FAQItem question="What agents does it support?">
-          Paseo supports many providers. It has custom implementations for Claude, Codex, OpenCode,
+          AgentOpsHub supports many providers. It has custom implementations for Claude, Codex, OpenCode,
           Pi, OMP, Antigravity, and Muse Code, and supports many more via ACP. See the full list
           here:{" "}
           <a href="/agents" className="underline hover:text-white/80">
@@ -1234,7 +1234,7 @@ function FAQ() {
           .
         </FAQItem>
         <FAQItem question="How does Paseo run providers?">
-          Paseo runs the providers installed on your machine as you&apos;d normally run them. Paseo
+          AgentOpsHub runs the providers installed on your machine as you&apos;d normally run them. Paseo
           doesn&apos;t modify or change their behavior.
         </FAQItem>
         <FAQItem question="Do I need the desktop app?">
@@ -1251,7 +1251,7 @@ function FAQ() {
           .
         </FAQItem>
         <FAQItem question="Can I connect from outside my network?">
-          Yes. You can use the hosted relay (end-to-end encrypted, Paseo can&apos;t read your
+          Yes. You can use the hosted relay (end-to-end encrypted, AgentOpsHub can&apos;t read your
           traffic), set up your own tunnel (Tailscale, Cloudflare Tunnel, etc.), or expose the
           daemon port directly. See{" "}
           <a href="/docs/configuration" className="underline hover:text-white/80">
@@ -1260,11 +1260,11 @@ function FAQ() {
           .
         </FAQItem>
         <FAQItem question="Do I need git or GitHub?">
-          No. Paseo works in any directory. Worktrees are optional and only relevant if you use git.
+          No. AgentOpsHub works in any directory. Worktrees are optional and only relevant if you use git.
           You can run agents anywhere you&apos;d normally work.
         </FAQItem>
         <FAQItem question="Can I get banned for using Paseo?">
-          Paseo is designed to use each provider&apos;s officially supported integration and does
+          AgentOpsHub is designed to use each provider&apos;s officially supported integration and does
           not attempt to bypass its terms of service. It doesn&apos;t extract tokens or call
           inference APIs directly.
         </FAQItem>

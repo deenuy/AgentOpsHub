@@ -30,7 +30,7 @@ Use built-in Paseo tools or the CLI. Both let an agent launch and coordinate wor
 
 ### Built-in Paseo tools (MCP)
 
-Enable Paseo tools so agents running inside Paseo can manage agents and workspaces on their host directly.
+Enable Paseo tools so agents running inside AgentOpsHub can manage agents and workspaces on their host directly.
 
 1. Open **Settings → your host → Agents**.
 2. Turn on **Enable Paseo tools**. Tool injection is off by default.
@@ -45,7 +45,7 @@ See the [MCP reference](/docs/mcp) for tool configuration and the full catalog. 
 
 ### CLI
 
-Agents with shell access can also use the Paseo CLI. This route does not require enabling tool injection. With Paseo installed, a running host, and Codex configured:
+Agents with shell access can also use the AgentOpsHub CLI. This route does not require enabling tool injection. With Paseo installed, a running host, and Codex configured:
 
 ```bash
 paseo run --provider codex --no-wait \

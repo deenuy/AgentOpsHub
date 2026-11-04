@@ -1,6 +1,6 @@
 ---
 title: SDK quickstart
-description: Connect to a Paseo daemon, run one coding agent, and read its reply.
+description: Connect to a AgentOpsHub daemon, run one coding agent, and read its reply.
 nav: Quickstart
 order: 51
 category: TypeScript SDK
@@ -17,16 +17,16 @@ Requires Node.js 22 or newer.
 ## Connect
 
 ```ts
-import { createPaseoClient } from "@getpaseo/client";
+import { createAgentOpsHubClient } from "@getpaseo/client";
 
-const client = createPaseoClient({ url: "ws://127.0.0.1:6767/ws" });
+const client = createAgentOpsHubClient({ url: "ws://127.0.0.1:6767/ws" });
 await client.connect();
 ```
 
 `connect()` resolves once the daemon has identified itself. If the daemon has a password, pass it:
 
 ```ts
-const client = createPaseoClient({
+const client = createAgentOpsHubClient({
   url: "wss://devbox.example.com/ws",
   password: "my-secret",
 });

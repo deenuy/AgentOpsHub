@@ -1,4 +1,4 @@
-const CANONICAL_HOST = "paseo.sh";
+const CANONICAL_HOST = "agentopshub.local";
 
 export function getCanonicalRedirect(
   url: URL,

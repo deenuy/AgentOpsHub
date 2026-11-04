@@ -1,6 +1,6 @@
 ---
 title: Orca Alternative for Agentic Development
-description: Paseo is an open source agentic development environment with parallel worktrees, an editor, terminals, diffs, pull requests, and a built-in browser.
+description: AgentOpsHub is an open source agentic development environment with parallel worktrees, an editor, terminals, diffs, pull requests, and a built-in browser.
 nav: Orca
 order: 57
 ---
@@ -9,7 +9,7 @@ order: 57
 
 Orca is an MIT-licensed desktop app for running terminal coding agents in parallel Git worktrees. It includes a mobile companion app, SSH worktrees, remote Orca servers, an embedded browser, and a CLI.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
@@ -17,9 +17,9 @@ Paseo is an open source agentic development environment. Run parallel agents in 
 
 Orca is built around terminals. Each agent runs in a terminal pane, and an experimental Chat UI can show supported agents as a chat transcript. Orca ships a broad set of built-in tools around those terminals.
 
-Paseo is built around agent chat. The app ships what every developer uses: editor, terminals, diffs, pull requests, and a browser. Features only some teams need, like issue boards or cloud VMs, are plugins you install, so nothing you do not use is in the way.
+AgentOpsHub is built around agent chat. The app ships what every developer uses: editor, terminals, diffs, pull requests, and a browser. Features only some teams need, like issue boards or cloud VMs, are plugins you install, so nothing you do not use is in the way.
 
-Orca is made by Stably AI, a venture-funded company (Y Combinator). Paseo is independent and open source.
+Orca is made by Stably AI, a venture-funded company (Y Combinator). AgentOpsHub is independent and open source.
 
 ## Architecture and remote machines
 
@@ -37,7 +37,7 @@ Orca's mobile companion is in beta, on the App Store for iOS and as an APK downl
 
 ## Chat
 
-Paseo's main interface is a chat with the agent on desktop, web, and mobile. Paseo runs supported providers through structured harnesses, so messages, tool calls, permission requests, modes, slash commands, and file attachments come from the agent's own protocol.
+Paseo's main interface is a chat with the agent on desktop, web, and mobile. AgentOpsHub runs supported providers through structured harnesses, so messages, tool calls, permission requests, modes, slash commands, and file attachments come from the agent's own protocol.
 
 Orca's main interface is the agent's terminal. Its Chat UI is an experimental view over the same terminal session and is turned on under **Settings → Experimental**. It decodes transcripts for Claude, Codex, Grok, and OMP, and the terminal remains the source of truth.
 
@@ -45,13 +45,13 @@ Orca's main interface is the agent's terminal. Its Chat UI is an experimental vi
 
 Orca runs any CLI agent in a terminal and lists more than 30 supported agents.
 
-Paseo runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code through native structured harnesses, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code through native structured harnesses, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 
 [Paseo plugins](/docs/plugins) extend Paseo itself. A plugin can add workspace panels, sidebar items, Command Center items, slash commands, composer pills, settings screens, themes, attachment sources, and agent providers. Its server code runs beside the daemon, and its client code runs in every connected client: desktop, browser, iOS, and Android.
 
-Community plugins are listed at [paseo.sh/plugins](/plugins).
+Community plugins are listed at [agentopshub.local/plugins](/plugins).
 
 Orca has an experimental plugin system that is off by default. Orca plugins can add desktop panels rendered in a sandboxed frame, commands, keybindings, language packs, VM recipes, and agent profiles, and can be installed from git marketplaces. Plugin workers run on the desktop computer, and Orca does not document plugin surfaces in its mobile app.
 

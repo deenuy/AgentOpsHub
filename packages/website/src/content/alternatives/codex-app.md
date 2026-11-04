@@ -1,6 +1,6 @@
 ---
 title: Open Source Codex App Alternative With Native Mobile and Multi-Provider Support
-description: Paseo is an open source Codex alternative that runs on your machines without a required Paseo account, telemetry, or cloud service.
+description: AgentOpsHub is an open source Codex alternative that runs on your machines without a required Paseo account, telemetry, or cloud service.
 nav: Codex App
 order: 54
 ---
@@ -9,7 +9,7 @@ order: 54
 
 OpenAI provides Codex through the ChatGPT desktop app on macOS, Windows, and Linux, with local, worktree, cloud, and remote workflows.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
@@ -17,13 +17,13 @@ Paseo is an open source agentic development environment. Run parallel agents in 
 
 OpenAI provides Codex through the ChatGPT desktop and mobile apps. Using those product surfaces requires an OpenAI account, and cloud work runs on OpenAI-managed infrastructure.
 
-Paseo runs your installed Codex CLI on machines you control. It does not require a Paseo account, collect telemetry, or depend on a Paseo cloud service. Connect directly from desktop, mobile, web, or the CLI, or use the optional end-to-end encrypted relay.
+AgentOpsHub runs your installed Codex CLI on machines you control. It does not require a Paseo account, collect telemetry, or depend on a Paseo cloud service. Connect directly from desktop, mobile, web, or the CLI, or use the optional end-to-end encrypted relay.
 
 Paseo does not upload or store your code. The relay cannot read your code, messages, or agent output. You can self-host the daemon, web client, and relay, and use the same control plane with Codex, Claude Code, OpenCode, Pi, ACP agents, and custom providers.
 
 ## Architecture
 
-Paseo runs an independent daemon on your laptop, workstation, VM, home lab, or cloud machine. The daemon launches your installed Codex CLI with its existing credentials and configuration. Clients connect directly or through the optional end-to-end encrypted relay.
+AgentOpsHub runs an independent daemon on your laptop, workstation, VM, home lab, or cloud machine. The daemon launches your installed Codex CLI with its existing credentials and configuration. Clients connect directly or through the optional end-to-end encrypted relay.
 
 OpenAI provides local, worktree, remote, and cloud Codex workflows through its ChatGPT product surfaces. Local and remote work use a connected host, while cloud work runs on OpenAI-managed infrastructure.
 
@@ -31,7 +31,7 @@ OpenAI provides local, worktree, remote, and cloud Codex workflows through its C
 
 Codex App runs Codex.
 
-Paseo runs Codex too, plus Claude Code, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Codex too, plus Claude Code, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 
@@ -84,7 +84,7 @@ paseo schedule create --cron "0 9 * * 1" "audit the codebase"
 
 Codex App supports voice dictation.
 
-Paseo supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
+AgentOpsHub supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
 
 ## Comparison
 

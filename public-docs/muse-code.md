@@ -12,7 +12,7 @@ Run Meta's terminal coding agent in Paseo with your existing Muse installation a
 
 ## Getting started
 
-Install Muse Code on the machine running the Paseo daemon:
+Install Muse Code on the machine running the AgentOpsHub daemon:
 
 ```bash
 curl -fsSL https://dev.meta.ai/install.sh | sh
@@ -24,7 +24,7 @@ Use Muse 1.3.0 or newer. This integration was verified with 1.4.1. For API acces
 [provider environment overrides](/docs/custom-providers).
 
 In Paseo, select **Muse Code**, then choose a model, approval mode, and reasoning effort.
-Paseo runs `muse serve` and communicates over the Muse Session Protocol (MSP). Your Muse
+AgentOpsHub runs `muse serve` and communicates over the Muse Session Protocol (MSP). Your Muse
 configuration determines the available models.
 
 ## Provider options

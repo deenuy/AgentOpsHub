@@ -54,7 +54,7 @@ const MAINTAINER_LINK = (
 export function FounderNote() {
   return (
     <div className="max-w-2xl space-y-5 leading-relaxed text-white/70">
-      <p>Paseo is an independent project used by tens of thousands of developers daily.</p>
+      <p>AgentOpsHub is an independent project used by tens of thousands of developers daily.</p>
       <p>
         It is maintained by one person, full time, and shaped by the community. There are no
         investors, no board and no company behind it. I have turned down funding offers to keep it
@@ -70,9 +70,9 @@ export function FounderNote() {
         monetize, and that pressure changes what gets built.
       </p>
       <p>
-        Paseo is self-funded: the work is paid for by sponsorship and by{" "}
+        AgentOpsHub is self-funded: the work is paid for by sponsorship and by{" "}
         <a href="/hub" className="underline hover:text-white/90">
-          Paseo Hub
+          AgentOpsHub Hub
         </a>
         , an optional hosted service. Your support is what lets me keep working on it.
       </p>
@@ -150,7 +150,7 @@ export function BackingOptions() {
 }
 
 const SPOT_FEATURES: ReadonlyArray<string> = [
-  "Your logo on the paseo.sh homepage and docs, around 70,000 visitors a month",
+  "Your logo on the agentopshub.local homepage and docs, around 70,000 visitors a month",
   "Your logo in the GitHub README, around 30,000 visitors a month",
   "An announcement in the Discord, around 2,000 members",
   "An announcement from me on X",
@@ -219,7 +219,7 @@ export function SponsorSection() {
       <SectionHeading as="h2" title="Sponsor Paseo" />
       <div className="space-y-10">
         <div className="max-w-2xl space-y-5 leading-relaxed text-white/70">
-          <p>Paseo is an independent project used by tens of thousands of developers daily.</p>
+          <p>AgentOpsHub is an independent project used by tens of thousands of developers daily.</p>
           <p>
             It is maintained by one person, full time, and shaped by the community. There are no
             investors and no company behind it. I have turned down funding to keep it that way. A
@@ -227,9 +227,9 @@ export function SponsorSection() {
             neutral, and funding creates pressure to monetize.
           </p>
           <p>
-            Paseo is self-funded through sponsorship and{" "}
+            AgentOpsHub is self-funded through sponsorship and{" "}
             <a href="/hub" className="underline hover:text-white/90">
-              Paseo Hub
+              AgentOpsHub Hub
             </a>
             . Your support is what lets me keep working on it.
           </p>

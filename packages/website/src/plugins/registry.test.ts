@@ -229,7 +229,7 @@ describe("plugin registry", () => {
       }),
     );
     const response = await handlePluginRegistryRequest(
-      new Request("https://paseo.sh/api/plugins/installs"),
+      new Request("https://agentopshub.local/api/plugins/installs"),
       { PLUGINS_REGISTRY_URL: base },
       { cache, waitUntil: () => undefined },
     );
@@ -342,7 +342,7 @@ async function resolvePlugin(
   const pending: Promise<unknown>[] = [];
   const path = staticDetail ? `/plugins/${id}.json` : `/api/plugins/resolve/${id}`;
   const response = await handlePluginRegistryRequest(
-    new Request(`https://paseo.sh${path}${query}`, { headers }),
+    new Request(`https://agentopshub.local${path}${query}`, { headers }),
     { PLUGINS_REGISTRY_URL: base },
     { cache, waitUntil: (promise) => pending.push(promise) },
   );

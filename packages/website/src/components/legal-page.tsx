@@ -32,7 +32,7 @@ export function PaseoLegalIdentity() {
       <br />
       08005 Barcelona, Spain
       <br />
-      Email: <a href="mailto:hello@moboudra.com">hello@moboudra.com</a>
+      Email: <a href="mailto:hello.com">hello.com</a>
     </address>
   );
 }

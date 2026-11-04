@@ -30,7 +30,7 @@ const COMMUNITY = [
     name: "Discord",
     icon: <DiscordIcon className="h-6 w-6" />,
     body: "Get help and share feedback.",
-    href: "https://discord.gg/jz8T2uahpH",
+    href: "https://",
   },
   {
     name: "GitHub",
@@ -42,7 +42,7 @@ const COMMUNITY = [
     name: "Reddit",
     icon: <RedditIcon className="h-6 w-6" />,
     body: "Workflows and questions.",
-    href: "https://www.reddit.com/r/PaseoAI/",
+    href: "https://www./",
   },
 ];
 

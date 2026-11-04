@@ -8,7 +8,7 @@ category: Getting started
 
 # Why Paseo?
 
-Paseo is a full agentic development environment. Run coding agents, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. For agent-driven development, Paseo replaces your IDE: take a task from the first prompt through review and testing in one app.
+AgentOpsHub is a full agentic development environment. Run coding agents, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. For agent-driven development, Paseo replaces your IDE: take a task from the first prompt through review and testing in one app.
 
 ## Develop in one workspace
 
@@ -24,7 +24,7 @@ Configure [workspace scripts](/docs/worktrees#scripts-and-services) to start dev
 
 ## Use your agents and tools
 
-Paseo runs the coding agents you already use, with your subscriptions, credentials, configuration, skills, and MCP servers. Your agents work with the files and tools on your machine. See [supported providers](/docs/supported-providers).
+AgentOpsHub runs the coding agents you already use, with your subscriptions, credentials, configuration, skills, and MCP servers. Your agents work with the files and tools on your machine. See [supported providers](/docs/supported-providers).
 
 Dictate tasks or use [voice mode](/docs/voice). Speech-to-text and text-to-speech run locally by default, with cloud providers available in settings.
 
@@ -40,4 +40,4 @@ Give agents [Paseo tools](/docs/orchestration) to create worktrees, launch other
 
 [Plugins](/docs/plugins) add providers, workspace panels, commands, and workflows. [Hub](/docs/hub) connects external events to agents running on your machines.
 
-Paseo is open source under Apache-2.0, with no telemetry, tracking, or required Paseo account.
+AgentOpsHub is open source under Apache-2.0, with no telemetry, tracking, or required Paseo account.

@@ -1,6 +1,6 @@
 ---
 title: CLI reference
-description: "Paseo CLI reference: manage projects, workspaces, agents, plugins, scripts, schedules, daemons, and permissions from your terminal."
+description: "AgentOpsHub CLI reference: manage projects, workspaces, agents, plugins, scripts, schedules, daemons, and permissions from your terminal."
 nav: CLI reference
 order: 35
 category: Orchestration
@@ -8,9 +8,9 @@ category: Orchestration
 
 # CLI reference
 
-The Paseo CLI lets you manage agents from your terminal. It's the same interface exposed by the daemon's API, so anything you can do in the app you can do from the command line.
+The AgentOpsHub CLI lets you manage agents from your terminal. It's the same interface exposed by the daemon's API, so anything you can do in the app you can do from the command line.
 
-> **Agent orchestration:** You can tell coding agents to use the Paseo CLI to spawn and manage other agents. Paseo recognizes the calling agent, so CLI-created workers get the same workspace and parent defaults as MCP-created workers.
+> **Agent orchestration:** You can tell coding agents to use the AgentOpsHub CLI to spawn and manage other agents. Paseo recognizes the calling agent, so CLI-created workers get the same workspace and parent defaults as MCP-created workers.
 
 ## Quick reference
 
@@ -78,7 +78,7 @@ The diagnostic includes the configured command, daemon `PATH` and shell, matchin
 
 ## Running agents
 
-Use `paseo run` to start a new agent with a task:
+Use `agentopshub run` to start a new agent with a task:
 
 ```bash
 paseo run "implement user authentication"
@@ -91,7 +91,7 @@ paseo run --output-schema schema.json "extract release notes"
 paseo run --output-schema '{"type":"object","properties":{"summary":{"type":"string"}},"required":["summary"]}' "summarize release notes"
 ```
 
-From a human shell, a bare `paseo run` creates a new local workspace for the current directory. Use `--workspace <id>` to add the agent to an existing workspace, or `--new-workspace local|worktree` to explicitly create a separate workspace for the run.
+From a human shell, a bare `agentopshub run` creates a new local workspace for the current directory. Use `--workspace <id>` to add the agent to an existing workspace, or `--new-workspace local|worktree` to explicitly create a separate workspace for the run.
 
 Worktree creation accepts `--worktree-mode branch-off|checkout-branch|checkout-pr` plus the matching `--new-branch`/`--base`, `--branch`, or `--pr-number`/`--forge` options. Use `--worktree-slug` to choose the managed directory slug.
 
@@ -99,7 +99,7 @@ When an existing Paseo agent runs the same command, Paseo recognizes it through 
 
 Use `--output-schema` to return only matching JSON output. You can pass a schema file path or an inline JSON schema object. This mode cannot be used with `--no-wait`.
 
-By default, `paseo run` waits for completion. Use `--no-wait` to return immediately while the agent keeps running, the same flag `paseo send` takes.
+By default, `agentopshub run` waits for completion. Use `--no-wait` to return immediately while the agent keeps running, the same flag `agentopshub send` takes.
 
 The old `run --background` and `-d` aliases still mean `--no-wait`. They are deprecated, hidden
 from help, and print a warning to stderr. Use `--no-wait` in scripts. Workspace visibility is
@@ -186,7 +186,7 @@ paseo workspace rename <workspace-id> --reset   # back to the branch or director
 paseo workspace archive <workspace-id>
 ```
 
-Add `--forge <name>` to PR checkout when Paseo cannot infer the forge from the source checkout. See [Git worktrees](/docs/worktrees) for setup hooks and services.
+Add `--forge <name>` to PR checkout when AgentOpsHub cannot infer the forge from the source checkout. See [Git worktrees](/docs/worktrees) for setup hooks and services.
 
 ## Terminals
 
@@ -223,7 +223,7 @@ The output includes each script's lifecycle and supervised terminal ID. Services
 
 ## Plugins
 
-> **Trust every plugin you add.** `paseo plugin add` and `paseo plugin install` mean “I trust this codebase.” Plugin server code and Git preparation commands run unsandboxed with the daemon user's access on the daemon host; client contributions run inside Paseo. Dependencies and future updates are part of that decision. With the global `--host` option, commands run on the remote daemon host.
+> **Trust every plugin you add.** `agentopshub plugin add` and `agentopshub plugin install` mean “I trust this codebase.” Plugin server code and Git preparation commands run unsandboxed with the daemon user's access on the daemon host; client contributions run inside Paseo. Dependencies and future updates are part of that decision. With the global `--host` option, commands run on the remote daemon host.
 
 Create and manage trusted plugins on a daemon:
 
@@ -244,7 +244,7 @@ paseo plugin enable my-plugin
 paseo plugin remove my-plugin
 ```
 
-`paseo plugin reload <id>` reports the result of the reload itself: it waits while the daemon stops
+`agentopshub plugin reload <id>` reports the result of the reload itself: it waits while the daemon stops
 and starts the plugin, however long that takes, and it queues behind the daemon's other plugin work.
 Cancelling the command or losing the connection does not stop the daemon's work, and no listing or
 log entry settles what a cancelled reload did — the [Plugin reference](/docs/plugins/reference)
@@ -254,7 +254,7 @@ outstanding one, then stops and starts the plugin once more.
 Bare `owner/slug` installs a reviewed registry listing. Use `git:owner/repository` for GitHub
 source, or `./plugin` for a local directory. Append `:<directory>` for a plugin in a monorepo.
 
-`paseo plugin ls [id]` does not contact the remote. `paseo plugin logs <id>` returns the
+`agentopshub plugin ls [id]` does not contact the remote. `agentopshub plugin logs <id>` returns the
 plugin's recent daemon-side stdout and stderr. Add `--json` for structured entries, or run
 `paseo --host <target> plugin logs <id>` for another daemon. See the
 [Plugin reference](/docs/plugins/reference) for installation, trust, lifecycle, and log-retention
@@ -272,7 +272,7 @@ paseo ls --background       # Also include agents in background workspaces
 
 ## Streaming output
 
-Use `paseo attach` to stream an agent's output in real-time:
+Use `agentopshub attach` to stream an agent's output in real-time:
 
 ```bash
 paseo attach abc123   # Attach to agent (Ctrl+C to detach)
@@ -284,7 +284,7 @@ Agent IDs can be shortened, `abc` works if it's unambiguous.
 
 Send follow-up tasks to a running or idle agent:
 
-Use the recipient's agent ID from `paseo ls`, or [copy it from the agent's tab](/docs/orchestration-workflows#send-a-prompt-to-another-agent).
+Use the recipient's agent ID from `agentopshub ls`, or [copy it from the agent's tab](/docs/orchestration-workflows#send-a-prompt-to-another-agent).
 
 ```bash
 paseo send <id> "now run the tests"
@@ -430,7 +430,7 @@ Setup asks which agent provider, model, and mode to run. Providers must be enabl
 
 Interactive logout checks the same-origin daemon relationship and asks whether to disconnect before deleting the login. Declining removes only the login. JSON and noninteractive logout never prompt or disconnect implicitly; `--disconnect-daemon` is the explicit automation path, and `--force` applies to that daemon disconnection. If a requested disconnection fails, the login is preserved.
 
-Every command resolves and normalizes its destination before Hub or daemon work. Origin precedence is an explicit command origin or `--hub`, then `PASEO_HUB_URL`, then the active stored login origin, then the hosted default `https://hub.paseo.sh`. The hosted default never overrides an active login. Credential precedence is `--api-key <secret>`, then `PASEO_HUB_API_KEY`, then a stored login for the exact resolved origin. A stored credential is never sent to a different origin. API keys passed through flags or the environment are not stored.
+Every command resolves and normalizes its destination before Hub or daemon work. Origin precedence is an explicit command origin or `--hub`, then `PASEO_HUB_URL`, then the active stored login origin, then the hosted default `https://hub.agentopshub.local`. The hosted default never overrides an active login. Credential precedence is `--api-key <secret>`, then `PASEO_HUB_API_KEY`, then a stored login for the exact resolved origin. A stored credential is never sent to a different origin. API keys passed through flags or the environment are not stored.
 
 Human output reports the resolved destination before each action. JSON output keeps stdout machine-readable and includes the normalized Hub origin. Bundle diagnostics identify paths without printing configuration contents or credentials.
 
@@ -438,7 +438,7 @@ See [Daemons in Hub](/docs/hub/daemons), [Hub configuration](/docs/hub/configura
 
 ## Connecting to a remote daemon
 
-The global `--host` option accepts either a local target (`host:port`, a unix socket, or a Windows pipe) or a pairing offer URL, the same `https://app.paseo.sh/#offer=...` link the mobile app uses for QR pairing. With an offer URL the CLI connects through the Paseo relay with end-to-end encryption, so you can drive a daemon on another machine without exposing it to the network.
+The global `--host` option accepts either a local target (`host:port`, a unix socket, or a Windows pipe) or a pairing offer URL, the same `https://app.agentopshub.local/#offer=...` link the mobile app uses for QR pairing. With an offer URL the CLI connects through the Paseo relay with end-to-end encryption, so you can drive a daemon on another machine without exposing it to the network.
 
 Get an offer URL from the daemon you want to control:
 
@@ -453,7 +453,7 @@ Relay is off for new installations. A disabled relay returns a `RELAY_DISABLED` 
 Use it from anywhere:
 
 ```bash
-paseo --host 'https://app.paseo.sh/#offer=eyJ2IjoyLC...' ls
+paseo --host 'https://app.agentopshub.local/#offer=eyJ2IjoyLC...' ls
 paseo --host "$OFFER_URL" run "fix the failing tests"
 ```
 
@@ -501,7 +501,7 @@ paseo ls -q                    # IDs only (quiet)
 
 ## Global options
 
-- `--host <target>`, connect to a different daemon (`host:port`, unix socket, or `https://app.paseo.sh/#offer=...` for relay). See [Connecting to a remote daemon](#connecting-to-a-remote-daemon).
+- `--host <target>`, connect to a different daemon (`host:port`, unix socket, or `https://app.agentopshub.local/#offer=...` for relay). See [Connecting to a remote daemon](#connecting-to-a-remote-daemon).
 - `--json`, JSON output
 - `-q, --quiet`, minimal output
 - `--no-color`, disable colors

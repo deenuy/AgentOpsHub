@@ -1,6 +1,6 @@
 ---
 title: Open Source Superset Alternative With Native Mobile
-description: Paseo is an Apache-2.0 Superset alternative that runs locally without an account and supports application plugins across its server and clients.
+description: AgentOpsHub is an Apache-2.0 Superset alternative that runs locally without an account and supports application plugins across its server and clients.
 nav: Superset
 order: 51
 ---
@@ -17,11 +17,11 @@ Paseo orchestrates coding agents from desktop, mobile, web, and the CLI. Open so
 
 Superset provides a terminal-centered workspace for running many CLI agents in parallel Git worktrees. It requires a Superset account and GitHub sign-in, and its source is published under the Elastic License 2.0.
 
-Paseo runs locally without an account, is licensed under Apache 2.0, provides structured interfaces for supported agent harnesses, and supports application plugins with server-side behavior and native client components.
+AgentOpsHub runs locally without an account, is licensed under Apache 2.0, provides structured interfaces for supported agent harnesses, and supports application plugins with server-side behavior and native client components.
 
 ## License
 
-Paseo is open source under Apache-2.0. You can audit, fork, modify, and redistribute it.
+AgentOpsHub is open source under Apache-2.0. You can audit, fork, modify, and redistribute it.
 
 Superset publishes its source under the Elastic License 2.0. You can use and modify it, but the license restricts offering Superset as a managed service and bypassing license-protected functionality.
 
@@ -37,7 +37,7 @@ Superset requires a Superset account and GitHub sign-in when opening the app. It
 
 Superset supports many CLI-based coding agents and lets you add custom terminal agents.
 
-Paseo runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code through native structured harnesses, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code through native structured harnesses, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 
@@ -59,7 +59,7 @@ Both tools expose workspace and agent operations through a CLI, TypeScript SDK, 
 
 ## Pricing
 
-Paseo is free with no seat limits.
+AgentOpsHub is free with no seat limits.
 
 Superset has a free individual tier. Team features, remote access, and integrations are part of its paid plans.
 

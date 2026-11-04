@@ -1,6 +1,6 @@
 ---
 title: Open Source Conductor Alternative With Linux, Windows, and Mobile
-description: Paseo is an open source Conductor alternative with Linux, Windows, native mobile apps, a self-hosted daemon, and an extensible client.
+description: AgentOpsHub is an open source Conductor alternative with Linux, Windows, native mobile apps, a self-hosted daemon, and an extensible client.
 nav: Conductor
 order: 50
 ---
@@ -9,7 +9,7 @@ order: 50
 
 Conductor is a proprietary macOS app for running Claude Code, Codex, Cursor, and OpenCode in parallel Git worktrees and managed cloud workspaces.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
@@ -17,17 +17,17 @@ Paseo is an open source agentic development environment. Run parallel agents in 
 
 Conductor provides free local workspaces on macOS. Its managed cloud workspaces, API, collaboration features, and forthcoming mobile app are included in the $50 per month Pro plan.
 
-Conductor raised a $22 million Series A and is proprietary. Paseo is independent, Apache 2.0 licensed, available on macOS, Linux, Windows, iOS, and Android, and can connect to machines you control.
+Conductor raised a $22 million Series A and is proprietary. AgentOpsHub is independent, Apache 2.0 licensed, available on macOS, Linux, Windows, iOS, and Android, and can connect to machines you control.
 
 ## Architecture
 
-The Paseo daemon runs as its own process. Desktop, web, mobile, and CLI all connect to it over a websocket. Run the daemon on your laptop, on a VM, in Docker, or across a fleet, and connect to any of them from any client.
+The AgentOpsHub daemon runs as its own process. Desktop, web, mobile, and CLI all connect to it over a websocket. Run the daemon on your laptop, on a VM, in Docker, or across a fleet, and connect to any of them from any client.
 
 Conductor runs local workspaces through its macOS app and cloud workspaces in managed Vercel sandboxes. It does not currently support connecting its clients to a cloud machine you operate.
 
 ## Providers
 
-Paseo runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
 
 Conductor supports Claude Code, Codex, Cursor, and OpenCode.
 
@@ -75,7 +75,7 @@ The mobile app is the full app, native on iOS and Android, with full feature par
 
 ## Voice
 
-Paseo supports local speech-to-text and text-to-speech. Conductor does not currently document a voice interface.
+AgentOpsHub supports local speech-to-text and text-to-speech. Conductor does not currently document a voice interface.
 
 ## Comparison
 

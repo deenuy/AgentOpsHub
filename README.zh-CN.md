@@ -87,7 +87,7 @@ Paseo 会运行一个名为 daemon 的本地服务，用来管理你的 coding a
 安装 CLI 并启动 Paseo：
 
 ```bash
-npm install -g @getpaseo/cli
+npm install -g @agentopshub/cli
 paseo
 ```
 

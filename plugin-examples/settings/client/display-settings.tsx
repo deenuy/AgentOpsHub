@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Text, View } from "react-native";
-import { useSettings, type PluginSurfaceProps } from "@getpaseo/plugin/client";
-import type { SettingsState } from "@getpaseo/plugin/client";
+import { useSettings, type PluginSurfaceProps } from "@agentopshub/plugin/client";
+import type { SettingsState } from "@agentopshub/plugin/client";
 import {
   SettingsAction,
   SettingsCard,
@@ -10,7 +10,7 @@ import {
   SettingsSection,
   SettingsSelect,
   SettingsSwitch,
-} from "@getpaseo/plugin/client/ui";
+} from "@agentopshub/plugin/client/ui";
 import { preferences } from "../shared/preferences";
 
 const grouping = [

@@ -2,8 +2,8 @@ import type { createPluginHosts } from "./hosts";
 import { openExternalUrl } from "@/utils/open-external-url";
 import * as pluginUiRuntime from "./react-native/ui";
 import { useSettings } from "./settings/use-settings";
-import * as pluginSharedRuntime from "@getpaseo/plugin";
-import * as pluginClientRuntime from "@getpaseo/plugin/client";
+import * as pluginSharedRuntime from "@agentopshub/plugin";
+import * as pluginClientRuntime from "@agentopshub/plugin/client";
 import * as React from "react";
 import * as ReactJsxRuntime from "react/jsx-runtime";
 // eslint-disable-next-line no-restricted-imports -- plugin client runtime injects host ReactNative.
@@ -15,7 +15,7 @@ import {
   type PluginAttachmentSourceContribution,
   type PluginCleanup,
   type PluginThemeContribution,
-} from "@getpaseo/plugin";
+} from "@agentopshub/plugin";
 import {
   type PluginCommandCenterItemContribution,
   type PluginClientContext,
@@ -30,7 +30,7 @@ import {
   type PluginTimelineTransformerContribution,
   type PluginWorkspacePanelContribution,
   type PluginButtonRegistration,
-} from "@getpaseo/plugin/client";
+} from "@agentopshub/plugin/client";
 import type { EvaluatedPlugin, PluginSidebarSection } from "./types";
 import type { ComponentType } from "react";
 import { parsePluginIcon, parseSerializablePluginIcon } from "./icons";
@@ -432,12 +432,12 @@ export function runPluginClientBundle(
     },
   };
   const runtimeRequire = (name: string): unknown => {
-    if (name === "@getpaseo/plugin/client/ui") return pluginUiRuntime;
+    if (name === "@agentopshub/plugin/client/ui") return pluginUiRuntime;
     if (name === "react") return React;
     if (name === "react/jsx-runtime") return ReactJsxRuntime;
     if (name === "react-native") return ReactNative;
-    if (name === "@getpaseo/plugin") return pluginSharedRuntime;
-    if (name === "@getpaseo/plugin/client")
+    if (name === "@agentopshub/plugin") return pluginSharedRuntime;
+    if (name === "@agentopshub/plugin/client")
       return {
         ...pluginClientRuntime,
         useSettings,
@@ -450,7 +450,7 @@ export function runPluginClientBundle(
             runtime.hosts.getSnapshot,
           ),
       };
-    if (name === "@getpaseo/plugin/client/react-native") {
+    if (name === "@agentopshub/plugin/client/react-native") {
       return pluginReactNativeRuntime;
     }
     if (name === "@tanstack/react-query") return ReactQuery;

@@ -1,16 +1,16 @@
 import { AgentDirectory } from "./agent/directory.js";
 import { searchTimeline } from "./agent/chat-search/index.js";
 import type { BrowserToolsBroker } from "./browser-tools/broker.js";
-import { BrowserAutomationHostCapabilitySchema } from "@getpaseo/protocol/browser-automation/capabilities";
+import { BrowserAutomationHostCapabilitySchema } from "@agentopshub/protocol/browser-automation/capabilities";
 import type {
   SessionEventSubscription,
   UsageReportEntry,
   ProviderUsage,
-} from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/messages";
 import { relative } from "node:path";
 import { isAbsolute } from "node:path";
 import { CreationService, type CreatedAgent } from "./creation/index.js";
-import type { CreationSnapshot, AgentCreateRequest } from "@getpaseo/protocol/messages";
+import type { CreationSnapshot, AgentCreateRequest } from "@agentopshub/protocol/messages";
 import type { MessageReceipts } from "./message-receipts/index.js";
 import equal from "fast-deep-equal";
 import { WorkspaceSetupObservation } from "./workspace-setup-observation.js";
@@ -19,8 +19,8 @@ import { v4 as uuidv4 } from "uuid";
 import { lstat, mkdir, mkdtemp, rename, rm, stat } from "node:fs/promises";
 import { basename, join, resolve, sep } from "path";
 import { homedir } from "node:os";
-import { CLIENT_CAPS, type ClientCapability } from "@getpaseo/protocol/client-capabilities";
-import { formatPluginSourceReference } from "@getpaseo/protocol/plugin-source-reference";
+import { CLIENT_CAPS, type ClientCapability } from "@agentopshub/protocol/client-capabilities";
+import { formatPluginSourceReference } from "@agentopshub/protocol/plugin-source-reference";
 import {
   serializeAgentStreamEvent,
   type AgentSnapshotPayload,
@@ -45,8 +45,8 @@ import type {
   TerminalWorkspaceContributionChangedEvent,
 } from "../terminal/terminal-manager.js";
 import { TerminalSessionController } from "../terminal/terminal-session-controller.js";
-import type { TerminalActivity } from "@getpaseo/protocol/terminal-activity";
-import type { BinaryFrame } from "@getpaseo/protocol/binary-frames/index";
+import type { TerminalActivity } from "@agentopshub/protocol/terminal-activity";
+import type { BinaryFrame } from "@agentopshub/protocol/binary-frames/index";
 import { CursorError } from "./pagination/cursor.js";
 import { SortablePager, type SortSpec } from "./pagination/sortable-pager.js";
 import { matchesAgentHistoryQuery } from "./agent-history-search.js";
@@ -80,9 +80,9 @@ import {
 import type { DaemonConfigStore } from "./daemon-config-store.js";
 import { loadPersistedConfig } from "./persisted-config.js";
 import { releaseWorkspaceServicePortPlan } from "./workspace-service-port-registry.js";
-import { getErrorMessage, getErrorMessageOr } from "@getpaseo/protocol/error-utils";
-import { getAgentStatusPriority } from "@getpaseo/protocol/agent-state-bucket";
-import { getParentAgentIdFromLabels } from "@getpaseo/protocol/agent-labels";
+import { getErrorMessage, getErrorMessageOr } from "@agentopshub/protocol/error-utils";
+import { getAgentStatusPriority } from "@agentopshub/protocol/agent-state-bucket";
+import { getParentAgentIdFromLabels } from "@agentopshub/protocol/agent-labels";
 import type { WorkspaceGitRuntimeSnapshot, WorkspaceGitService } from "./workspace-git-service.js";
 import type { ProjectUpdate } from "./workspace-reconciliation-service.js";
 import {
@@ -270,7 +270,7 @@ function resolveWorkspaceSetupRuntime(
   return runtime ?? new WorkspaceSetupRuntime();
 }
 import { WorktreeRequestError, toWorktreeWireError } from "./worktree-errors.js";
-import { parseGitRemoteLocation } from "@getpaseo/protocol/git-remote";
+import { parseGitRemoteLocation } from "@agentopshub/protocol/git-remote";
 import {
   createProjectDirectory,
   ProjectDirectoryRequestError,
@@ -482,34 +482,34 @@ export interface SessionOptions {
   pluginRuntime?: {
     before: import("./plugins/lifecycle/index.js").PluginLifecycle["before"];
     emit: import("./plugins/lifecycle/index.js").PluginLifecycle["emit"];
-    listPlugins(): Promise<import("@getpaseo/protocol/messages").PluginListItem[]>;
-    getLogs(pluginId: string): import("@getpaseo/protocol/messages").PluginLogEntry[];
+    listPlugins(): Promise<import("@agentopshub/protocol/messages").PluginListItem[]>;
+    getLogs(pluginId: string): import("@agentopshub/protocol/messages").PluginLogEntry[];
     installDirectory(input: {
       path: string;
       id?: string;
-    }): Promise<import("@getpaseo/protocol/messages").PluginListItem>;
+    }): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
     inspectDirectory(path: string): Promise<{ id: string }>;
     installSource(input: {
       source: string;
       id?: string;
       ref?: string;
-    }): Promise<import("@getpaseo/protocol/messages").PluginListItem>;
+    }): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
     statusSources(
       pluginId?: string,
-    ): Promise<import("@getpaseo/protocol/messages").PluginSourceStatusItem[]>;
+    ): Promise<import("@agentopshub/protocol/messages").PluginSourceStatusItem[]>;
     previewUpdates(input: {
       pluginId?: string;
-      target?: import("@getpaseo/protocol/messages").PluginUpdateSelection;
-    }): Promise<import("@getpaseo/protocol/messages").PluginUpdatePreview[]>;
+      target?: import("@agentopshub/protocol/messages").PluginUpdateSelection;
+    }): Promise<import("@agentopshub/protocol/messages").PluginUpdatePreview[]>;
     applyUpdates(
-      proposals: import("@getpaseo/protocol/messages").PluginUpdateProposal[],
-    ): Promise<import("@getpaseo/protocol/messages").PluginUpdateResult[]>;
+      proposals: import("@agentopshub/protocol/messages").PluginUpdateProposal[],
+    ): Promise<import("@agentopshub/protocol/messages").PluginUpdateResult[]>;
     updateSources(
       pluginId?: string,
-    ): Promise<import("@getpaseo/protocol/messages").PluginSourceUpdateItem[]>;
-    reloadPlugin(pluginId: string): Promise<import("@getpaseo/protocol/messages").PluginListItem>;
-    enablePlugin(pluginId: string): Promise<import("@getpaseo/protocol/messages").PluginListItem>;
-    disablePlugin(pluginId: string): Promise<import("@getpaseo/protocol/messages").PluginListItem>;
+    ): Promise<import("@agentopshub/protocol/messages").PluginSourceUpdateItem[]>;
+    reloadPlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
+    enablePlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
+    disablePlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
     removePlugin(pluginId: string): Promise<void>;
     subscribe(listener: (pluginId: string) => void): () => void;
     subscribeSettings?(listener: (pluginId: string, settingsId: string) => void): () => void;

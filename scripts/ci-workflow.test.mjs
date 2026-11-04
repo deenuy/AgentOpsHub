@@ -381,15 +381,15 @@ test("quality preserves commands and routes each domain independently after fail
       "npm run lint",
       "node --test scripts/oxlint/paseo-plugin.test.mjs",
     ],
-    relay: ["npm run build:relay", "npm run test --workspace=@getpaseo/relay"],
+    relay: ["npm run build:relay", "npm run test --workspace=@agentopshub/relay"],
     sdk: [
       "npm run build:relay && npm run build:client",
       "npm run build:plugin",
-      "npm run test --workspace=@getpaseo/plugin",
-      "npm run test --workspace=@getpaseo/protocol",
-      "npm run test --workspace=@getpaseo/client",
-      "npm run test --workspace=@getpaseo/highlight",
-      "npm run typecheck:examples --workspace=@getpaseo/client",
+      "npm run test --workspace=@agentopshub/plugin",
+      "npm run test --workspace=@agentopshub/protocol",
+      "npm run test --workspace=@agentopshub/client",
+      "npm run test --workspace=@agentopshub/highlight",
+      "npm run typecheck:examples --workspace=@agentopshub/client",
     ],
   };
   const checks = [...quality.matchAll(/        if: \$\{\{ (.+) \}\}\n        run: (.+)/g)];

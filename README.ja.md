@@ -87,7 +87,7 @@ Paseo はコーディングエージェントを管理するローカルサー�
 CLI をインストールして Paseo を起動します。
 
 ```bash
-npm install -g @getpaseo/cli
+npm install -g @agentopshub/cli
 paseo
 ```
 

@@ -1,4 +1,4 @@
-import type { PluginSurfaceProps } from "@getpaseo/plugin/client";
+import type { PluginSurfaceProps } from "@agentopshub/plugin/client";
 import {
   Modal,
   ScrollView,
@@ -6,7 +6,7 @@ import {
   TextInput,
   copyText,
   useToast,
-} from "@getpaseo/plugin/client/react-native";
+} from "@agentopshub/plugin/client/react-native";
 import { useCallback, useMemo, useRef, useState } from "react";
 import {
   Pressable,

@@ -11,9 +11,9 @@
  * still maps to GitHub so old daemons (which never send a forge) render exactly
  * as before.
  */
-import { FORGE_DEFINITIONS, getForgeDefinitionOrNeutral } from "@getpaseo/protocol/forge-manifest";
-import { normalizeHost, parseGitRemoteLocation } from "@getpaseo/protocol/git-remote";
-import type { ForgeAuthState } from "@getpaseo/protocol/messages";
+import { FORGE_DEFINITIONS, getForgeDefinitionOrNeutral } from "@agentopshub/protocol/forge-manifest";
+import { normalizeHost, parseGitRemoteLocation } from "@agentopshub/protocol/git-remote";
+import type { ForgeAuthState } from "@agentopshub/protocol/messages";
 import {
   buildForgeBlobUrl,
   buildForgeBranchTreeUrl,

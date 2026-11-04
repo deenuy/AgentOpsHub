@@ -1,6 +1,6 @@
 import type { Command } from "commander";
 import { connectToDaemon } from "../../utils/client.js";
-import type { AgentDeepLinkTarget } from "@getpaseo/protocol/agent-deep-link";
+import type { AgentDeepLinkTarget } from "@agentopshub/protocol/agent-deep-link";
 import { openDesktopWithAgent } from "../open.js";
 import type {
   CommandError,

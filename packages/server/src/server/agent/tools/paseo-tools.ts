@@ -6,7 +6,7 @@ import type { Logger } from "pino";
 
 import type { AgentMode, AgentProvider, AgentSessionConfig } from "../agent-sdk-types.js";
 import type { AgentManager } from "../agent-manager.js";
-import { ActiveTurnBehaviorSchema, AgentProfileSchema } from "@getpaseo/protocol/messages";
+import { ActiveTurnBehaviorSchema, AgentProfileSchema } from "@agentopshub/protocol/messages";
 import type { DaemonConfigStore } from "../../daemon-config-store.js";
 import {
   AgentFeatureSchema,
@@ -36,11 +36,11 @@ import {
 import { createAgentCommand, type CreateAgentFromMcpInput } from "../create-agent/create.js";
 import type { VoiceCallerContext, VoiceSpeakHandler } from "../../voice-types.js";
 import type { FirstAgentContext } from "../../messages.js";
-import { everyMsToFiveFieldCron } from "@getpaseo/protocol/schedule/cadence";
+import { everyMsToFiveFieldCron } from "@agentopshub/protocol/schedule/cadence";
 import { expandUserPath, isSameOrDescendantPath, resolvePathFromBase } from "../../path-utils.js";
 import type { TerminalManager } from "../../../terminal/terminal-manager.js";
-import { encodeTerminalKeyInput } from "@getpaseo/protocol/terminal-key-input";
-import { TerminalInputModeTracker } from "@getpaseo/protocol/terminal-input-mode";
+import { encodeTerminalKeyInput } from "@agentopshub/protocol/terminal-key-input";
+import { TerminalInputModeTracker } from "@agentopshub/protocol/terminal-input-mode";
 import type { CreatePaseoWorktreeWorkflowFn } from "../../worktree-session.js";
 import { computeNextRunAt, validateScheduleCadence } from "../../schedule/cron.js";
 import {
@@ -54,7 +54,7 @@ import {
   StoredScheduleSchema,
   type ScheduleCadence,
   type UpdateScheduleInput,
-} from "@getpaseo/protocol/schedule/types";
+} from "@agentopshub/protocol/schedule/types";
 import type { ProviderSnapshotManager } from "../provider-snapshot-manager.js";
 import {
   AgentModelSchema,
@@ -106,7 +106,7 @@ import {
   type PaseoToolExecutionContext,
   type PaseoToolResult,
 } from "./types.js";
-import type { ProviderPaseoToolsPolicy } from "@getpaseo/protocol/provider-config";
+import type { ProviderPaseoToolsPolicy } from "@agentopshub/protocol/provider-config";
 import { isPaseoToolEnabled } from "../paseo-tool-policy.js";
 
 export interface PaseoToolHostDependencies {

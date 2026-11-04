@@ -1,6 +1,6 @@
 import path from "path";
 import type { Command } from "commander";
-import type { DaemonClient } from "@getpaseo/client/internal/daemon-client";
+import type { DaemonClient } from "@agentopshub/client/internal/daemon-client";
 import { connectToDaemon, getDaemonHost } from "../../utils/client.js";
 import { resolveRepositoryDirectory } from "./repository-directory.js";
 import type {

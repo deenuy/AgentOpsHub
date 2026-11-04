@@ -1,5 +1,5 @@
-import type { DaemonClient } from "@getpaseo/client/internal/daemon-client";
-import type { ActiveTurnBehavior } from "@getpaseo/protocol/messages";
+import type { DaemonClient } from "@agentopshub/client/internal/daemon-client";
+import type { ActiveTurnBehavior } from "@agentopshub/protocol/messages";
 import type { MessagePayload, TextReplacement } from "@/composer/types";
 import type { MessageInputKeyboardActionKind } from "@/keyboard/actions";
 

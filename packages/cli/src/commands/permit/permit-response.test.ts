@@ -3,7 +3,7 @@ import { Command } from "commander";
 import type {
   AgentPermissionRequest,
   AgentPermissionResponse,
-} from "@getpaseo/protocol/agent-types";
+} from "@agentopshub/protocol/agent-types";
 import { describe, expect, it } from "vitest";
 import { createAllowCommand, type PermitClient } from "./allow.js";
 import { createDenyCommand } from "./deny.js";

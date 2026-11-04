@@ -1,4 +1,4 @@
-import type { PaseoTerminal } from "@getpaseo/client";
+import type { PaseoTerminal } from "@agentopshub/client";
 import type { OutputSchema } from "../../output/index.js";
 
 export type TerminalRow = PaseoTerminal;

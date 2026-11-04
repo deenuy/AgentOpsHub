@@ -1,1 +1,1 @@
-export { renderTerminalSnapshotToAnsi } from "@getpaseo/protocol/terminal-snapshot";
+export { renderTerminalSnapshotToAnsi } from "@agentopshub/protocol/terminal-snapshot";

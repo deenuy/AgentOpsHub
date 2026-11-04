@@ -1,11 +1,11 @@
-import type { PaseoApi } from "@getpaseo/client";
+import type { PaseoApi } from "@agentopshub/client";
 import type { QueryClient } from "@tanstack/react-query";
-import type { PluginRequirements } from "@getpaseo/protocol/messages";
+import type { PluginRequirements } from "@agentopshub/protocol/messages";
 import type {
   PluginAttachmentSourceContribution,
   PluginCleanup,
   PluginThemeContribution,
-} from "@getpaseo/plugin";
+} from "@agentopshub/plugin";
 import type {
   PluginCommandCenterItemContribution,
   PluginClientSlashCommandContribution,
@@ -18,7 +18,7 @@ import type {
   PluginTimelineTransformerContribution,
   PluginPanelLocation,
   PluginWorkspacePanelContribution,
-} from "@getpaseo/plugin/client";
+} from "@agentopshub/plugin/client";
 
 export type PluginSidebarSection = "header" | "footer";
 

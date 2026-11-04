@@ -3,10 +3,10 @@ import {
   isGitHubHost,
   parseGitHubRemoteIdentity,
   parseGitRemoteLocation,
-} from "@getpaseo/protocol/git-remote";
-import { pluginOverviewUrl } from "@getpaseo/protocol/plugin-overview";
-import { pluginMediaKind, type PublishedPluginSchema } from "@getpaseo/protocol/plugin-registry";
-import { scoreTextFields } from "@getpaseo/protocol/search/text-match";
+} from "@agentopshub/protocol/git-remote";
+import { pluginOverviewUrl } from "@agentopshub/protocol/plugin-overview";
+import { pluginMediaKind, type PublishedPluginSchema } from "@agentopshub/protocol/plugin-registry";
+import { scoreTextFields } from "@agentopshub/protocol/search/text-match";
 import { CATEGORIES, type Category, type CategorySlug } from "./categories";
 import type { InstallCounts, InstallWindow } from "./installs";
 export { CATEGORIES, type Category, type CategorySlug };

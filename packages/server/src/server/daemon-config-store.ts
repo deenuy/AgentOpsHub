@@ -7,13 +7,13 @@ import { ProviderOverrideSchema } from "./agent/provider-launch-config.js";
 import {
   MutableDaemonConfigSchema,
   MutableDaemonConfigPatchSchema,
-} from "@getpaseo/protocol/messages";
-import type { AgentSkillSelection } from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/messages";
+import type { AgentSkillSelection } from "@agentopshub/protocol/messages";
 
-export type { MutableDaemonConfig, MutableDaemonConfigPatch } from "@getpaseo/protocol/messages";
+export type { MutableDaemonConfig, MutableDaemonConfigPatch } from "@agentopshub/protocol/messages";
 
-type MutableDaemonConfig = import("@getpaseo/protocol/messages").MutableDaemonConfig;
-type MutableDaemonConfigPatch = import("@getpaseo/protocol/messages").MutableDaemonConfigPatch;
+type MutableDaemonConfig = import("@agentopshub/protocol/messages").MutableDaemonConfig;
+type MutableDaemonConfigPatch = import("@agentopshub/protocol/messages").MutableDaemonConfigPatch;
 type ProviderOverride = import("./agent/provider-launch-config.js").ProviderOverride;
 
 interface SupportedMutableConfigPatch {

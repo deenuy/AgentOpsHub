@@ -6,7 +6,7 @@ import {
   StoredScheduleSchema,
   type ScheduleTarget,
   type StoredSchedule,
-} from "@getpaseo/protocol/schedule/types";
+} from "@agentopshub/protocol/schedule/types";
 import { writeJsonFileAtomic } from "../atomic-file.js";
 
 function generateScheduleId(): string {

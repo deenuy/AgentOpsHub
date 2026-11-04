@@ -6,8 +6,8 @@ import {
   TerminalStreamOpcode,
   decodeTerminalStreamFrame,
   type TerminalStreamFrame,
-} from "@getpaseo/protocol/binary-frames/index";
-import type { TerminalCell, TerminalState } from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/binary-frames/index";
+import type { TerminalCell, TerminalState } from "@agentopshub/protocol/messages";
 import type { ServerMessage, TerminalSession, TerminalStateSnapshot } from "./terminal.js";
 import {
   TerminalSessionController,

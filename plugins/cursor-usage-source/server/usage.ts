@@ -13,7 +13,7 @@ import {
   type UsageReport,
   type UsageBalance,
   type UsageScope,
-} from "@getpaseo/plugin/server/usage";
+} from "@agentopshub/plugin/server/usage";
 
 const ApiNumberSchema = z.coerce.number().finite();
 const ApiNullableNumberSchema = z.preprocess(

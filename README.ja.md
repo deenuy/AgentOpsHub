@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="packages/website/public/logo.svg" width="64" height="64" alt="Paseo logo">
-</p>
-
-<h1 align="center">Paseo</h1>
+<h1 align="center">AgentOpsHub</h1>
 
 <p align="center">
   <a href="README.md">English</a> ·
@@ -11,8 +7,10 @@
   <a href="README.ko.md">한국어</a>
 </p>
 
+> **帰属:** AgentOpsHub は Apache-2.0 ライセンスの [Paseo](https://github.com/getpaseo/paseo) プロジェクトを基にしています。詳細は [NOTICE.md](NOTICE.md) を参照してください。
+
 <p align="center">
-  <a href="https://github.com/getpaseo/paseo/stargazers">
+  <a href="https://github.com/deenuy/AgentOpsHub/stargazers">
     <img src="https://img.shields.io/github/stars/getpaseo/paseo?style=flat&logo=github" alt="GitHub stars">
   </a>
   <a href="https://github.com/getpaseo/paseo/releases">

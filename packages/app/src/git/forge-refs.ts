@@ -1,5 +1,5 @@
-import { FORGE_DEFINITIONS } from "@getpaseo/protocol/forge-manifest";
-import { normalizeHost, parseGitRemoteLocation } from "@getpaseo/protocol/git-remote";
+import { FORGE_DEFINITIONS } from "@agentopshub/protocol/forge-manifest";
+import { normalizeHost, parseGitRemoteLocation } from "@agentopshub/protocol/git-remote";
 import type { ForgeReferencePath } from "@/git/client-forge-module";
 import { CLIENT_FORGE_LOGIC_MODULES } from "@/git/forges";
 

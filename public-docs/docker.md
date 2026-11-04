@@ -1,6 +1,6 @@
 ---
 title: Docker
-description: Run the Paseo daemon and bundled web UI with the official Docker image.
+description: Run the AgentOpsHub daemon and bundled web UI with the official Docker image.
 nav: Docker
 order: 6
 category: Getting started
@@ -33,7 +33,7 @@ If you set `PASEO_PASSWORD`, use that same password when adding the direct daemo
 
 The image:
 
-- installs the Paseo daemon and CLI
+- installs the AgentOpsHub daemon and CLI
 - serves the bundled web UI
 - listens on `0.0.0.0:6767` inside the container
 - stores daemon state under `/home/paseo/.paseo`

@@ -4,8 +4,8 @@ import {
   formatResolvedCommand,
   profileTakesPrompt,
   substitutePrompt,
-} from "@getpaseo/protocol/terminal-profiles";
-import type { TerminalProfile } from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/terminal-profiles";
+import type { TerminalProfile } from "@agentopshub/protocol/messages";
 import { resolveLaunchProfile, type LaunchTarget } from "./target";
 
 export interface TerminalComposerState {

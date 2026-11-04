@@ -8,7 +8,7 @@ import {
   SYNTAX_THEME_OPTIONS,
   type SyntaxThemeId,
   type SyntaxThemeOption,
-} from "@getpaseo/highlight";
+} from "@agentopshub/highlight";
 import {
   DropdownMenu,
   DropdownMenuContent,

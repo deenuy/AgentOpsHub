@@ -5,8 +5,8 @@ import net from "node:net";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { hashDaemonPassword } from "@getpaseo/server/auth";
-import { startDaemonInstance, readDaemonInstance } from "@getpaseo/server/daemon-control";
+import { hashDaemonPassword } from "@agentopshub/server/auth";
+import { startDaemonInstance, readDaemonInstance } from "@agentopshub/server/daemon-control";
 import { expect, test } from "vitest";
 import { connectToDaemon } from "../../utils/client.js";
 

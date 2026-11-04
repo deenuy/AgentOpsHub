@@ -24,8 +24,8 @@ import { pageMeta } from "~/meta";
 export const Route = createFileRoute("/hub")({
   head: () =>
     pageMeta(
-      "Paseo Hub - GitHub, Slack, and Discord triggers",
-      "Run Paseo Hub yourself and start agents on your own machines from GitHub, Slack, and Discord.",
+      "AgentOpsHub Hub - GitHub, Slack, and Discord triggers",
+      "Run AgentOpsHub Hub yourself and start agents on your own machines from GitHub, Slack, and Discord.",
       "/hub",
     ),
   loader: async () => {
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/hub")({
   component: Hub,
 });
 
-const HOSTED_HUB_URL = "https://hub.paseo.sh";
+const HOSTED_HUB_URL = "https://hub.agentopshub.local";
 
 const LINK_CLASS = "underline hover:text-white/80";
 
@@ -46,7 +46,7 @@ function Hub() {
   const { plans } = Route.useLoaderData();
   return (
     <SiteShell width="default">
-      <h1 className="text-3xl font-medium tracking-tight mb-4">Paseo Hub</h1>
+      <h1 className="text-3xl font-medium tracking-tight mb-4">AgentOpsHub Hub</h1>
       <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
         An optional service that sits above your daemons and gives them extra capabilities.
       </p>
@@ -487,7 +487,7 @@ function Shape() {
 
           <Connector label="direct connection or relay" />
 
-          <DiagramRow label="Paseo apps">
+          <DiagramRow label="AgentOpsHub apps">
             {DIAGRAM_CLIENTS.map((client) => (
               <DiagramCard key={client} name={client} />
             ))}
@@ -553,9 +553,9 @@ function FaqSection() {
       <h2 className="text-3xl font-medium">FAQ</h2>
       <div className="space-y-6">
         <FAQItem question="What is the Hub?">
-          A separate service that sits above your Paseo daemons. You connect one or more daemons to
+          A separate service that sits above your AgentOpsHub daemons. You connect one or more daemons to
           it and it gives them GitHub, Slack, and Discord triggers, with collaboration features
-          planned. Paseo works fully without it.
+          planned. AgentOpsHub works fully without it.
         </FAQItem>
         <FAQItem question="Why is it a separate service instead of part of the daemon?">
           <p>
@@ -568,7 +568,7 @@ function FaqSection() {
           </p>
         </FAQItem>
         <FAQItem question="Can I run it myself?">
-          Yes. Run <code>npx @getpaseo/hub</code> and complete setup in the browser. The source is
+          Yes. Run <code>npx @agentopshub/hub</code> and complete setup in the browser. The source is
           available on{" "}
           <a href="https://github.com/getpaseo/hub" className={LINK_CLASS}>
             GitHub
@@ -580,7 +580,7 @@ function FaqSection() {
           covers more involved deployments.
         </FAQItem>
         <FAQItem question="What do I need to run it?">
-          Node.js and a running Paseo daemon. Hub guides you through connecting the provider apps
+          Node.js and a running AgentOpsHub daemon. Hub guides you through connecting the provider apps
           you want.
         </FAQItem>
         <FAQItem question="Is there a hosted version?">
@@ -596,7 +596,7 @@ function FaqSection() {
         </FAQItem>
         <FAQItem question="Do I have to move my team to a new tool?">
           No. The Hub works in the Slack or Discord your team already uses, and on the daemons you
-          already run. When the work gets serious you switch to the Paseo app on those same daemons.
+          already run. When the work gets serious you switch to the AgentOpsHub app on those same daemons.
         </FAQItem>
         <FAQItem question="Which agents does it run?">
           Whichever ones your daemons have configured, with your own subscriptions and skills. The

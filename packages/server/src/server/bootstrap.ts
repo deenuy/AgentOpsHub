@@ -1,4 +1,4 @@
-import type { PluginRegistries } from "@getpaseo/protocol/plugin-registry";
+import type { PluginRegistries } from "@agentopshub/protocol/plugin-registry";
 import { describeHookWorkspace } from "./plugins/lifecycle/index.js";
 import express from "express";
 import { createServer as createHTTPServer, type IncomingMessage, type ServerResponse } from "http";
@@ -182,7 +182,7 @@ import type {
   FirstAgentContext,
   PluginSource,
   TerminalProfile,
-} from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/messages";
 import type {
   AgentProviderRuntimeSettingsMap,
   ProviderOverride,

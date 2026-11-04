@@ -61,7 +61,7 @@ describe("cli-install-path", () => {
 
 describe("CLI executable selection", () => {
   const resolveWorkspaceCli = () =>
-    createRequire(import.meta.url).resolve("@getpaseo/cli/bin/paseo");
+    createRequire(import.meta.url).resolve("@agentopshub/cli/bin/paseo");
 
   it("uses the workspace CLI for an unpackaged Electron launcher", () => {
     expect(

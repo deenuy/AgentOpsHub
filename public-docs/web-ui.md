@@ -8,7 +8,7 @@ category: Getting started
 
 # Self-hosting the web UI
 
-Paseo's daemon can serve the browser web app itself, from the same address it already uses for the API. You don't need the hosted app at [app.paseo.sh](https://app.paseo.sh): point a browser at your own daemon and you get the full UI, connected to your own agents, on infrastructure you control.
+Paseo's daemon can serve the browser web app itself, from the same address it already uses for the API. You don't need the hosted app at [app.agentopshub.local](https://app.agentopshub.local): point a browser at your own daemon and you get the full UI, connected to your own agents, on infrastructure you control.
 
 This is useful when you want to:
 
@@ -223,7 +223,7 @@ For the full threat model, relay encryption, and DNS-rebinding details, see [Sec
 
 ## Troubleshooting
 
-- **Blank page or 404 at `/`.** The web UI isn't enabled. Start the daemon with `--web-ui` and confirm with `paseo daemon status` that it's the daemon you're hitting.
+- **Blank page or 404 at `/`.** The web UI isn't enabled. Start the daemon with `--web-ui` and confirm with `agentopshub daemon status` that it's the daemon you're hitting.
 - **Page loads but never connects.** The proxy isn't forwarding the WebSocket upgrade, or it's stripping the `Host` header. Check the upgrade headers in your proxy config.
 - **Connects, then output freezes.** Response buffering is on, or read timeouts are too short. Disable buffering and raise the timeouts.
 - **"Mixed content" / connection blocked over HTTPS.** The app fell back to `ws://`. Either the proxy isn't sending `X-Forwarded-Proto: https`, or the daemon doesn't trust the proxy address. Forward the header and configure `daemon.trustedProxies` if the proxy is not loopback.
@@ -234,5 +234,5 @@ For the full threat model, relay encryption, and DNS-rebinding details, see [Sec
 
 - [Security](/docs/security), connection methods, relay encryption, password auth, host allowlist.
 - [Configuration](/docs/configuration), `config.json`, environment variables, and CLI overrides.
-- [CLI](/docs/cli), the `paseo daemon` commands.
+- [CLI](/docs/cli), the `agentopshub daemon` commands.
 - [Community projects](/docs/community), community-built self-hosting tooling.

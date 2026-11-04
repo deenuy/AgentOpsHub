@@ -1,19 +1,19 @@
 import { confirm, isCancel, log } from "@clack/prompts";
 import { Command } from "commander";
 import chalk from "chalk";
-import { generateLocalPairingOffer } from "@getpaseo/server/pairing";
-import { readDaemonInstance } from "@getpaseo/server/daemon-control";
+import { generateLocalPairingOffer } from "@agentopshub/server/pairing";
+import { readDaemonInstance } from "@agentopshub/server/daemon-control";
 import {
   readPersistedConfig,
   editPersistedConfig,
   resolveConfigFromPersisted,
-} from "@getpaseo/server/configuration";
+} from "@agentopshub/server/configuration";
 import { connectToDaemon } from "../../utils/client.js";
 import type { DaemonTarget } from "../../utils/daemon-target.js";
 import { addJsonAndDaemonHostOptions, withGlobalOptions } from "../../utils/command-options.js";
 import { formatPairingInstructions } from "../../output/pairing.js";
-import { parseConnectionOfferFromUrl } from "@getpaseo/protocol/connection-offer";
-import { serializeRelayConnectionUri } from "@getpaseo/protocol/daemon-endpoints";
+import { parseConnectionOfferFromUrl } from "@agentopshub/protocol/connection-offer";
+import { serializeRelayConnectionUri } from "@agentopshub/protocol/daemon-endpoints";
 
 interface PairOptions {
   daemonTarget: DaemonTarget;

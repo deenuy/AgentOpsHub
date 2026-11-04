@@ -7,7 +7,7 @@ import {
   type DaemonClientConfig,
   type ConnectionState,
   type FetchAgentsOptions,
-} from "@getpaseo/client/internal/daemon-client";
+} from "@agentopshub/client/internal/daemon-client";
 import {
   connectionFromListen,
   createRemoteSshHostConnection,
@@ -29,7 +29,7 @@ import {
   shouldUseTlsForDefaultHostedRelay,
 } from "@/utils/daemon-endpoints";
 import { resolveAppVersion } from "@/utils/app-version";
-import { ConnectionOfferSchema, type ConnectionOffer } from "@getpaseo/protocol/connection-offer";
+import { ConnectionOfferSchema, type ConnectionOffer } from "@agentopshub/protocol/connection-offer";
 import { HostConfirmations, type HostConfirmationRequest } from "./host-confirmation";
 import { shouldUseDesktopDaemon } from "@/desktop/daemon/desktop-daemon";
 import { isWeb } from "@/constants/platform";
@@ -48,8 +48,8 @@ import {
 } from "@/desktop/daemon/desktop-daemon-transport";
 import { getDesktopHost } from "@/desktop/host";
 import { readDesktopManagedLocalCredential } from "@/desktop/daemon/local-credential";
-import { CLIENT_CAPS } from "@getpaseo/protocol/client-capabilities";
-import { BROWSER_AUTOMATION_COMMAND_NAMES } from "@getpaseo/protocol/browser-automation/rpc-schemas";
+import { CLIENT_CAPS } from "@agentopshub/protocol/client-capabilities";
+import { BROWSER_AUTOMATION_COMMAND_NAMES } from "@agentopshub/protocol/browser-automation/rpc-schemas";
 import {
   useSessionStore,
   toDaemonServerInfo,

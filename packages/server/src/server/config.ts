@@ -19,7 +19,7 @@ import type {
   ProviderOverride,
 } from "./agent/provider-launch-config.js";
 import { ProviderOverrideSchema } from "./agent/provider-launch-config.js";
-import { AgentProviderSchema } from "@getpaseo/protocol/provider-manifest";
+import { AgentProviderSchema } from "@agentopshub/protocol/provider-manifest";
 import { hashDaemonPassword } from "./auth.js";
 import { resolveSpeechConfig } from "./speech/speech-config-resolver.js";
 import type { RequestedSpeechProviders } from "./speech/speech-types.js";
@@ -463,7 +463,7 @@ function resolveTrustedProxiesConfig(
   );
 }
 
-// PASEO_LISTEN can be:
+// AGENTOPSHUB_LISTEN (or legacy PASEO_LISTEN) can be:
 // - host:port (TCP)
 // - /path/to/socket (Unix socket)
 // - unix:///path/to/socket (Unix socket)
@@ -473,8 +473,12 @@ function resolveListenAddress(
   cli: CliConfigOverrides | undefined,
   persisted: ReturnType<typeof loadPersistedConfig>,
 ): string {
+  if (env.PASEO_LISTEN && !env.AGENTOPSHUB_LISTEN) {
+    console.warn("[AgentOpsHub] PASEO_LISTEN is deprecated; use AGENTOPSHUB_LISTEN instead.");
+  }
   return (
     cli?.listen ??
+    env.AGENTOPSHUB_LISTEN ??
     env.PASEO_LISTEN ??
     persisted.daemon?.listen ??
     `127.0.0.1:${env.PORT ?? DEFAULT_PORT}`
@@ -485,7 +489,10 @@ function resolveAuthConfig(
   env: NodeJS.ProcessEnv,
   persisted: ReturnType<typeof loadPersistedConfig>,
 ): PaseoDaemonConfig["auth"] {
-  const envPassword = env.PASEO_PASSWORD?.trim();
+  if (env.PASEO_PASSWORD && !env.AGENTOPSHUB_PASSWORD) {
+    console.warn("[AgentOpsHub] PASEO_PASSWORD is deprecated; use AGENTOPSHUB_PASSWORD instead.");
+  }
+  const envPassword = (env.AGENTOPSHUB_PASSWORD ?? env.PASEO_PASSWORD)?.trim();
   if (envPassword) {
     return { password: hashDaemonPassword(envPassword) };
   }
@@ -707,7 +714,7 @@ function resolveCoreDaemonOverridePaths(
   cli: CliConfigOverrides | undefined,
 ): string[] {
   const paths: string[] = [];
-  if (cli?.listen !== undefined || env.PASEO_LISTEN !== undefined) {
+  if (cli?.listen !== undefined || env.AGENTOPSHUB_LISTEN !== undefined || env.PASEO_LISTEN !== undefined) {
     paths.push("daemon.listen");
   }
   if (cli?.mcpEnabled !== undefined) paths.push("daemon.mcp.enabled");
@@ -725,8 +732,8 @@ function resolveCoreDaemonOverridePaths(
   ) {
     paths.push("daemon.git.maxProcessConcurrency");
   }
-  if (env.PASEO_APP_BASE_URL !== undefined) paths.push("app.baseUrl");
-  if (env.PASEO_PASSWORD?.trim()) paths.push("daemon.auth.password");
+  if ((env.AGENTOPSHUB_APP_BASE_URL ?? env.PASEO_APP_BASE_URL) !== undefined) paths.push("app.baseUrl");
+  if ((env.AGENTOPSHUB_PASSWORD ?? env.PASEO_PASSWORD)?.trim()) paths.push("daemon.auth.password");
   return paths;
 }
 

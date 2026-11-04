@@ -1,7 +1,7 @@
 import type {
   ProviderTimelineItem,
   ProviderToolCallDetail,
-} from "@getpaseo/plugin/server/provider";
+} from "@agentopshub/plugin/server/provider";
 import type { Step } from "./wire.js";
 
 export function toolItem(

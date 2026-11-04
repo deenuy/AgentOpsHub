@@ -6,7 +6,7 @@ export const Route = createFileRoute("/terms")({
   head: () =>
     pageMeta(
       "Terms of Service - Paseo",
-      "Terms for the official Paseo Relay and hosted Paseo Hub services.",
+      "Terms for the official Paseo Relay and hosted AgentOpsHub Hub services.",
       "/terms",
     ),
   component: Terms,
@@ -16,8 +16,8 @@ function Terms() {
   return (
     <LegalPage title="Terms of Service" lastUpdated="August 29, 2026">
       <p>
-        These Terms govern the official services operated at paseo.sh, relay.paseo.sh, and
-        hub.paseo.sh. By using the official relay or hosted Hub, you agree to them. Our{" "}
+        These Terms govern the official services operated at agentopshub.local, relay.agentopshub.local, and
+        hub.agentopshub.local. By using the official relay or hosted Hub, you agree to them. Our{" "}
         <a href="/privacy">Privacy Policy</a> explains how those services process data.
       </p>
 
@@ -29,8 +29,8 @@ function Terms() {
       <section>
         <h2>Paseo&apos;s open-source software</h2>
         <p>
-          Paseo is open-source software licensed under the Apache License 2.0. You can install,
-          modify, and self-host it under that license without purchasing Paseo Hub or using the
+          AgentOpsHub is open-source software licensed under the Apache License 2.0. You can install,
+          modify, and self-host it under that license without purchasing AgentOpsHub Hub or using the
           official relay.
         </p>
         <p>
@@ -53,7 +53,7 @@ function Terms() {
       </section>
 
       <section>
-        <h2>Paseo Hub</h2>
+        <h2>AgentOpsHub Hub</h2>
         <p>
           Hub lets you connect daemons, configure workflows, receive events from connected services,
           and instruct agents running on your infrastructure. Hub does not provide AI inference.
@@ -123,8 +123,8 @@ function Terms() {
       <section>
         <h2>Third-party services</h2>
         <p>
-          Paseo can connect to services such as GitHub, Slack, Discord, Linear, Anthropic, and
-          OpenAI. Those services have their own terms and privacy policies. Paseo is not responsible
+          AgentOpsHub can connect to services such as GitHub, Slack, Discord, Linear, Anthropic, and
+          OpenAI. Those services have their own terms and privacy policies. AgentOpsHub is not responsible
           for their availability, output, or handling of data.
         </p>
       </section>
@@ -160,7 +160,7 @@ function Terms() {
         </p>
         <p>
           To the extent permitted by law, the official services are provided as available and
-          without implied warranties. Paseo is not liable for indirect or consequential losses
+          without implied warranties. AgentOpsHub is not liable for indirect or consequential losses
           caused by agent output, third-party services, or your workflow configuration. Our total
           liability relating to a paid service will not exceed the amount you paid for it during the
           preceding 12 months.
@@ -181,7 +181,7 @@ function Terms() {
         <p>
           We may update these Terms as the services change. We will announce material changes
           through the service or by email where appropriate. Questions can be sent to{" "}
-          <a href="mailto:hello@moboudra.com">hello@moboudra.com</a>.
+          <a href="mailto:hello.com">hello.com</a>.
         </p>
       </section>
     </LegalPage>

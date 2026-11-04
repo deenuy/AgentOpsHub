@@ -1267,7 +1267,7 @@ export const es: TranslationResources = {
       discord: "Discord",
       github: "Crear incidencia en GitHub",
       whatsNew: "Novedades",
-      appName: "Paseo",
+      appName: "AgentOpsHub",
     },
     sections: {
       sessions: "Historial",

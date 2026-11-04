@@ -6,8 +6,8 @@ import {
   readPersistedConfig as loadPersistedConfig,
   savePersistedConfig,
   type PersistedConfig,
-} from "@getpaseo/server/configuration";
-import { readDaemonInstance, waitForDaemonReady } from "@getpaseo/server/daemon-control";
+} from "@agentopshub/server/configuration";
+import { readDaemonInstance, waitForDaemonReady } from "@agentopshub/server/daemon-control";
 import { withGlobalOptions } from "../utils/command-options.js";
 import type { CommandOptions } from "../output/index.js";
 import { launchLocalDaemon, parseTimeoutMs } from "./daemon/local-daemon.js";

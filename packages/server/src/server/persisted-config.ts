@@ -1,4 +1,4 @@
-import { PluginRegistriesSchema } from "@getpaseo/protocol/plugin-registry";
+import { PluginRegistriesSchema } from "@agentopshub/protocol/plugin-registry";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
@@ -10,10 +10,10 @@ import {
 } from "./agent/provider-launch-config.js";
 import type { AgentProviderRuntimeSettingsMap } from "./agent/provider-launch-config.js";
 import { ensurePrivateFile, writePrivateFileAtomicSync } from "./private-files.js";
-import { AgentProfileSchema, AgentSkillSelectionSchema } from "@getpaseo/protocol/agent-profile";
-import { PluginIdSchema, PluginSourceSchema } from "@getpaseo/protocol/plugin-config";
-import { TerminalProfileSchema } from "@getpaseo/protocol/terminal-profile";
-import { PaseoServicePortAllocationSchema } from "@getpaseo/protocol/paseo-config-schema";
+import { AgentProfileSchema, AgentSkillSelectionSchema } from "@agentopshub/protocol/agent-profile";
+import { PluginIdSchema, PluginSourceSchema } from "@agentopshub/protocol/plugin-config";
+import { TerminalProfileSchema } from "@agentopshub/protocol/terminal-profile";
+import { PaseoServicePortAllocationSchema } from "@agentopshub/protocol/paseo-config-schema";
 
 export const LogLevelSchema = z.enum(["trace", "debug", "info", "warn", "error", "fatal"]);
 export const LogFormatSchema = z.enum(["pretty", "json"]);

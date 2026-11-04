@@ -3,8 +3,8 @@ import {
   PluginRegistryIdSchema,
   type PluginRegistries,
   type PluginRegistryIdentity,
-} from "@getpaseo/protocol/plugin-registry";
-import type { PluginUpdateTarget } from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/plugin-registry";
+import type { PluginUpdateTarget } from "@agentopshub/protocol/messages";
 import { z } from "zod";
 
 // Install reads only these fields; the rest of a published plugin is the directory's display data.

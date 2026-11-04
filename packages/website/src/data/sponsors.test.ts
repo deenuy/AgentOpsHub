@@ -7,7 +7,7 @@ const REPO_ROOT = fileURLToPath(new URL("../../../../", import.meta.url));
 const WEBSITE_PUBLIC = fileURLToPath(new URL("../../public", import.meta.url));
 const READMES = ["README.md", "README.zh-CN.md", "README.ja.md", "README.ko.md"];
 const README_SPONSOR_CELLS = 3;
-const SPONSOR_PAGE_URL = "https://paseo.sh/sponsor";
+const SPONSOR_PAGE_URL = "https://agentopshub.local/sponsor";
 
 describe("sponsorHref", () => {
   it("tags the link with the placement it is shown in", () => {

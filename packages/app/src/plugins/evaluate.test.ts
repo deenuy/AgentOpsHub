@@ -646,11 +646,11 @@ describe("evaluatePluginClientBundle", () => {
     ).toThrow("must return a cleanup function");
   });
 
-  it("provides the host Icon component through @getpaseo/plugin/client/react-native", () => {
+  it("provides the host Icon component through @agentopshub/plugin/client/react-native", () => {
     const plugin = evaluatePluginClientBundle(
       "example",
       `(function(require) {
-        const { Icon } = require("@getpaseo/plugin/client/react-native");
+        const { Icon } = require("@agentopshub/plugin/client/react-native");
         const module = { exports: {} };
         module.exports.default = function(plugin) {
           plugin.addScreen({ id: "main", title: "Main", Component: function Surface() {
@@ -668,11 +668,11 @@ describe("evaluatePluginClientBundle", () => {
     expect(element).toMatchObject({ props: { size: 18, color: "#123456" } });
   });
 
-  it("provides Paseo UI through @getpaseo/plugin/client/react-native", () => {
+  it("provides Paseo UI through @agentopshub/plugin/client/react-native", () => {
     const plugin = evaluatePluginClientBundle(
       "example",
       `(function(require) {
-        const { Icon, Modal, useToast } = require("@getpaseo/plugin/client/react-native");
+        const { Icon, Modal, useToast } = require("@agentopshub/plugin/client/react-native");
         const module = { exports: {} };
         module.exports.default = function(plugin) {
           if (typeof Icon !== "function" || typeof Modal !== "function" || typeof Modal.Content !== "function" || typeof useToast !== "function") {
@@ -693,9 +693,9 @@ describe("evaluatePluginClientBundle", () => {
       evaluatePluginClientBundle(
         "example",
         `(function(require) {
-      const shared = require("@getpaseo/plugin");
-      const client = require("@getpaseo/plugin/client");
-      const { ExternalLink } = require("@getpaseo/plugin/client/ui");
+      const shared = require("@agentopshub/plugin");
+      const client = require("@agentopshub/plugin/client");
+      const { ExternalLink } = require("@agentopshub/plugin/client/ui");
       if (typeof ExternalLink !== "function") throw new Error("ExternalLink");
       for (const name of ["usePaseo", "useRpc", "useSettings", "useAgent", "useWorkspace", "openExternalUrl"]) {
         if (name in shared || typeof client[name] !== "function") throw new Error(name);
@@ -708,13 +708,13 @@ describe("evaluatePluginClientBundle", () => {
   });
 
   it.each([
-    "@getpaseo/plugin/server",
-    "@getpaseo/plugin/server/provider",
-    "@getpaseo/plugin/server/acp",
-    "@getpaseo/plugin/client/host",
-    "@getpaseo/plugin/react-native",
-    "@getpaseo/plugin/ui",
-    "@getpaseo/plugin/host",
+    "@agentopshub/plugin/server",
+    "@agentopshub/plugin/server/provider",
+    "@agentopshub/plugin/server/acp",
+    "@agentopshub/plugin/client/host",
+    "@agentopshub/plugin/react-native",
+    "@agentopshub/plugin/ui",
+    "@agentopshub/plugin/host",
     "@paseo/plugin",
   ])("rejects %s in the client loader", (specifier) => {
     expect(() =>
@@ -725,11 +725,11 @@ describe("evaluatePluginClientBundle", () => {
     ).toThrow("not available in plugin client code");
   });
 
-  it("resolves shared RPC helpers from @getpaseo/plugin", () => {
+  it("resolves shared RPC helpers from @agentopshub/plugin", () => {
     const plugin = evaluatePluginClientBundle(
       "example",
       `(function(require) {
-        const { defineRpc, defineAttachmentSource } = require("@getpaseo/plugin");
+        const { defineRpc, defineAttachmentSource } = require("@agentopshub/plugin");
         const search = defineRpc({ name: "issues.search", input: {}, output: {} });
         const module = { exports: {} };
         module.exports.default = function(plugin) {
@@ -791,7 +791,7 @@ it("binds imported getters to each originating installation across delayed callb
     },
   });
   const source = bundle(`
-    const { getPaseoClient } = require("@getpaseo/plugin/client");
+    const { getPaseoClient } = require("@agentopshub/plugin/client");
     getPaseoClient("entry-host");
     plugin.addCommandCenterItem({
       id: "read", title: "Read", icon: "Server", context: "global",

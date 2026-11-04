@@ -1,4 +1,4 @@
-import type { PluginServerContext } from "@getpaseo/plugin/server";
+import type { PluginServerContext } from "@agentopshub/plugin/server";
 import { searchIssues } from "./server/issues";
 import { searchIssuesRpc } from "./shared/issues";
 

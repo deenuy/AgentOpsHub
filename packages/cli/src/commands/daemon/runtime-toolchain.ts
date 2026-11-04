@@ -1,5 +1,5 @@
 import { platform } from "node:os";
-import { execCommand } from "@getpaseo/server/process";
+import { execCommand } from "@agentopshub/server/process";
 
 export interface NodePathFromPidResult {
   nodePath: string | null;

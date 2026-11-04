@@ -1,8 +1,9 @@
 {
-  "name": "@getpaseo/cli",
+  "name": "@agentopshub/cli",
   "version": "0.12.0",
-  "description": "Paseo CLI - control your AI coding agents from the command line",
+  "description": "AgentOpsHub CLI - control your AI coding agents from the command line",
   "bin": {
+    "agentopshub": "bin/paseo",
     "paseo": "bin/paseo"
   },
   "files": [
@@ -28,9 +29,9 @@
   },
   "dependencies": {
     "@clack/prompts": "^1.0.0",
-    "@getpaseo/client": "0.12.0",
-    "@getpaseo/protocol": "0.12.0",
-    "@getpaseo/server": "0.12.0",
+    "@agentopshub/client": "0.12.0",
+    "@agentopshub/protocol": "0.12.0",
+    "@agentopshub/server": "0.12.0",
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
     "mime-types": "^2.1.35",

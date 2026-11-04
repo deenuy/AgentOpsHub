@@ -8,13 +8,13 @@ category: Workspaces
 
 # Workspaces
 
-Paseo is organized around workspaces, not chats.
+AgentOpsHub is organized around workspaces, not chats.
 
 A workspace is the place where a task happens. It has a working directory and can contain multiple sessions running at the same time. In the app, each session opens as a tab.
 
 ## Projects contain workspaces
 
-The sidebar starts with projects. A project can be a git repository, a GitHub project, or any directory on a machine running the Paseo daemon.
+The sidebar starts with projects. A project can be a git repository, a GitHub project, or any directory on a machine running the AgentOpsHub daemon.
 
 Inside each project are workspaces. For example:
 
@@ -61,10 +61,10 @@ You can also create a workspace without starting an agent right away. The worksp
 
 Either way, once the workspace exists you can add more sessions to it. Open a terminal alongside an agent, start a second agent to review changes, or open a browser tab to check a local service. Every session lives as a tab inside the same workspace.
 
-Creating an agent and creating a workspace are separate actions. Pass a workspace ID when you want an agent in a specific existing workspace. A bare `paseo run` from a human shell creates a new local workspace; when one agent runs it, Paseo recognizes the caller and creates a subagent in the caller's workspace.
+Creating an agent and creating a workspace are separate actions. Pass a workspace ID when you want an agent in a specific existing workspace. A bare `agentopshub run` from a human shell creates a new local workspace; when one agent runs it, Paseo recognizes the caller and creates a subagent in the caller's workspace.
 
 ## Worktrees
 
-Every workspace in Paseo is backed by a working directory. When that directory is a git worktree, you get a separate branch and isolated environment for each task.
+Every workspace in AgentOpsHub is backed by a working directory. When that directory is a git worktree, you get a separate branch and isolated environment for each task.
 
 If you want the details on configuring setup hooks, scripts, and services, continue to [Git worktrees](/docs/worktrees).

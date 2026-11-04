@@ -4,8 +4,8 @@ import type {
   PluginPopoverProps,
   PluginScreenLocation,
   PluginSidebarItemProps,
-} from "@getpaseo/plugin/client";
-import type { PluginTheme } from "@getpaseo/plugin";
+} from "@agentopshub/plugin/client";
+import type { PluginTheme } from "@agentopshub/plugin";
 import { router, useGlobalSearchParams, usePathname } from "expo-router";
 import { useCallback, useMemo, useState, type ComponentType, type RefObject } from "react";
 import { type View } from "react-native";

@@ -8,7 +8,7 @@ category: Hub
 
 # Daemons in Hub
 
-A daemon is one of your machines running the Paseo daemon. Enroll it once with your Hub organization, then triggers can reference it.
+A daemon is one of your machines running the AgentOpsHub daemon. Enroll it once with your Hub organization, then triggers can reference it.
 
 ## Connect
 
@@ -42,7 +42,7 @@ For unattended setup, pass an organization API key without storing it:
 PASEO_HUB_URL=https://hub.example.com PASEO_HUB_API_KEY=paseo_pk_... paseo hub connect
 ```
 
-Origin precedence is explicit `[origin]`, `PASEO_HUB_URL`, active stored login, then `https://hub.paseo.sh`. An explicit `--api-key <secret>` takes precedence over the environment and an exact-origin stored login.
+Origin precedence is explicit `[origin]`, `PASEO_HUB_URL`, active stored login, then `https://hub.agentopshub.local`. An explicit `--api-key <secret>` takes precedence over the environment and an exact-origin stored login.
 
 Check and undo:
 

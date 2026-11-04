@@ -34,7 +34,7 @@ function createTempDir(prefix) {
 }
 
 async function assertBuiltinPluginsStarted(listen) {
-  const { DaemonClient } = await import("@getpaseo/client/internal/daemon-client");
+  const { DaemonClient } = await import("@agentopshub/client/internal/daemon-client");
   const { builtinPlugins } =
     await import("../../server/dist/server/server/plugins/builtin/index.js");
   const client = new DaemonClient({

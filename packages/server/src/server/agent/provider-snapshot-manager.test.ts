@@ -6,7 +6,7 @@ import type {
   ProviderEvent,
   ProviderRegistration,
   ProviderLaunch,
-} from "@getpaseo/plugin/server/provider";
+} from "@agentopshub/plugin/server/provider";
 
 import { createTestLogger } from "../../test-utils/test-logger.js";
 import type {

@@ -12,7 +12,7 @@ Start with the [plugin quickstart](/docs/plugins) to create your first plugin.
 
 Migrating an existing plugin? Follow the standalone [runtime-entry migration guide](/docs/plugins/migration).
 
-Local plugins are directory sources installed into one Paseo daemon. A plugin can contribute:
+Local plugins are directory sources installed into one AgentOpsHub daemon. A plugin can contribute:
 
 - React Native screens and sidebar header and footer items to Paseo clients;
 - workspace and agent panels opened as workspace tabs;
@@ -24,11 +24,11 @@ Local plugins are directory sources installed into one Paseo daemon. A plugin ca
 - normal Paseo operations through the TypeScript SDK;
 - searchable external resources in the message composer.
 
-Plugin code is trusted and unsandboxed. Client surfaces run in the Paseo app. Backend contributions run in a subprocess with access to the daemon machine, including its files, processes, credentials, and network.
+Plugin code is trusted and unsandboxed. Client surfaces run in the AgentOpsHub app. Backend contributions run in a subprocess with access to the daemon machine, including its files, processes, credentials, and network.
 
 ## Project files
 
-`paseo plugin init /absolute/path/to/my-plugin` creates:
+`agentopshub plugin init /absolute/path/to/my-plugin` creates:
 
 ```text
 my-plugin/
@@ -88,7 +88,7 @@ Empty strings, invalid ranges, and unknown manifest requirement keys are rejecte
 
 Prerelease Paseo versions also satisfy a range their stable core (`major.minor.patch`) satisfies, so `0.8.0-beta.1` satisfies `>=0.8.0` but not `<0.8.0`.
 
-`paseo plugin init` writes `>=` followed by the current CLI version and pins the matching SDK
+`agentopshub plugin init` writes `>=` followed by the current CLI version and pins the matching SDK
 for typechecking. Raise the minimum when adopting a newer API. Add an upper bound when a later
 release is incompatible; a minimum alone does not promise protection from future breaking changes.
 
@@ -106,7 +106,7 @@ and cannot show this new diagnostic.
 
 | Entry              | Runtime               | Receives              | Required                                                                        |
 | ------------------ | --------------------- | --------------------- | ------------------------------------------------------------------------------- |
-| `index.client.tsx` | Paseo app, per client | `PluginClientContext` | When the plugin has any UI, callback, theme, or attachment source               |
+| `index.client.tsx` | AgentOpsHub app, per client | `PluginClientContext` | When the plugin has any UI, callback, theme, or attachment source               |
 | `index.server.ts`  | Daemon subprocess     | `PluginServerContext` | When the plugin contributes handlers, hooks, settings persistence, or providers |
 
 At least one entry is required; both accept `.ts` or `.tsx`. A directory that still has only the
@@ -211,7 +211,7 @@ Use `ExternalLink` to open documentation outside Paseo:
 import { ExternalLink } from "@getpaseo/plugin/client/ui";
 
 export function DocumentationLink() {
-  return <ExternalLink href="https://paseo.sh/docs">Open documentation</ExternalLink>;
+  return <ExternalLink href="https://agentopshub.local/docs">Open documentation</ExternalLink>;
 }
 ```
 
@@ -222,7 +222,7 @@ The component has accessible link semantics and uses the same opener as
 import { openExternalUrl } from "@getpaseo/plugin/client";
 
 export async function openDocumentation() {
-  await openExternalUrl("https://paseo.sh/docs");
+  await openExternalUrl("https://agentopshub.local/docs");
 }
 ```
 
@@ -256,7 +256,7 @@ import { Pressable, Text } from "react-native";
 
 export function DocumentationPanel({ navigation, workspaceId, theme }: PluginWorkspacePanelProps) {
   const openBrowser = navigation?.openBrowser;
-  const url = "https://paseo.sh/docs";
+  const url = "https://agentopshub.local/docs";
 
   if (!openBrowser) {
     return <ExternalLink href={url}>Open documentation</ExternalLink>;
@@ -865,7 +865,7 @@ saved; environment overrides are not persisted with it.
 | [lifecycle-actions](https://github.com/getpaseo/paseo/tree/main/plugin-examples/lifecycle-actions)     | Follow-ups, permissions, environment, provider switching, worktree selection |
 | [agent-configuration](https://github.com/getpaseo/paseo/tree/main/plugin-examples/agent-configuration) | MCP injection and Codex sandbox/approval options                             |
 
-Read logger output with `paseo plugin logs lifecycle-logger` or the host's `daemon.log`.
+Read logger output with `agentopshub plugin logs lifecycle-logger` or the host's `daemon.log`.
 
 ## Screens and sidebar items
 
@@ -1333,7 +1333,7 @@ An unknown name or an SVG that breaks a rule renders nothing.
 ## Timeline items
 
 A plugin can replace an agent timeline entry with its own data and React Native renderer. Both
-registrations are client contributions. Paseo applies the transformer while building the render
+registrations are client contributions. AgentOpsHub applies the transformer while building the render
 model, including every live streaming update.
 
 ```tsx
@@ -2360,7 +2360,7 @@ reports `failed` because the plugin is absent from the runtime catalog until its
 ## Plugin sources
 
 Paste one of these source identifiers into **Settings → Plugins**, or pass it to
-`paseo plugin install`. `paseo plugin add <source>` and `paseo plugin install <source>` are aliases.
+`agentopshub plugin install`. `agentopshub plugin add <source>` and `agentopshub plugin install <source>` are aliases.
 The CLI resolves relative directory paths from your current working directory and expands `~`
 to your local home directory, preserving any `:plugin/path` suffix. With `--host`, use an absolute
 path that exists on the daemon host; plugin files are read there and are never uploaded by the CLI.
@@ -2403,8 +2403,8 @@ Paseo resolves an identifier in this order:
 5. Resolve a remaining npm package name with its optional selector through the host's registry.
    Reject anything else.
 
-The default registry is `https://plugins.paseo.sh`. Browse [published plugins](https://paseo.sh/plugins)
-and install with `paseo plugin add owner/slug`. Registry records own the revision and plugin path.
+The default registry is `https://plugins.agentopshub.local`. Browse [published plugins](https://agentopshub.local/plugins)
+and install with `agentopshub plugin add owner/slug`. Registry records own the revision and plugin path.
 Use `git:owner/repository` for explicit GitHub shorthand or a full Git URL.
 Set `PASEO_PLUGIN_REGISTRY` to use a self-hosted default URL, including a path prefix.
 Private registry credentials use `pluginRegistries: { "host": { "authorization": "Bearer token" } }`
@@ -2504,7 +2504,7 @@ Put `--host <url>` before a management command when the target is not the CLI's 
 never deletes a directory source; it deletes managed files for Git and npm sources. The install-time
 `--id` is the runtime ID and allows the same directory or repository to be installed more than once.
 
-> **Trust every plugin you add.** `paseo plugin add` and `paseo plugin install` mean “I trust this codebase.” Server code and preparation commands run unsandboxed with the daemon user's access on the daemon host; client contributions run inside Paseo. Dependencies and future updates are part of that decision. With the global `--host` option, commands run on the remote daemon host.
+> **Trust every plugin you add.** `agentopshub plugin add` and `agentopshub plugin install` mean “I trust this codebase.” Server code and preparation commands run unsandboxed with the daemon user's access on the daemon host; client contributions run inside Paseo. Dependencies and future updates are part of that decision. With the global `--host` option, commands run on the remote daemon host.
 
 Most plugins should omit `build`. Use it only when the staged checkout must install a dependency
 that Paseo does not provide, generate source or assets, or perform another required preparation
@@ -2518,7 +2518,7 @@ step:
 }
 ```
 
-`build` is a list of non-empty argv arrays. Paseo runs each executable directly, without a shell,
+`build` is a list of non-empty argv arrays. AgentOpsHub runs each executable directly, without a shell,
 from the staged plugin directory after resolving the exact commit and manifest. It never infers a
 package manager or commands from lockfiles. Install and update both run `build` before validation,
 compilation, activation, or replacement. A failing command reports its output, discards the
@@ -2534,7 +2534,7 @@ The switch is the root `pluginsEnabled` field in `config.json`. After changing i
 
 ## Load failures
 
-Use `paseo plugin ls` to read the current status and error.
+Use `agentopshub plugin ls` to read the current status and error.
 
 | Symptom                                                               | Check                                                                                                                                              |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2546,6 +2546,6 @@ Use `paseo plugin ls` to read the current status and error.
 | Sidebar item is missing                                               | The plugin is `running`, the item is not hidden in Settings > Sidebar, its component does not throw, and the client is on the installation's host. |
 | Client module is unavailable                                          | Import only the host-provided client modules listed above.                                                                                         |
 | RPC rejects                                                           | Check both Zod schemas and the daemon-side handler error.                                                                                          |
-| Edited code does not appear                                           | Run `npm run typecheck`, then `paseo plugin reload <id>`.                                                                                          |
-| Reload fails                                                          | Read `paseo plugin ls` and `paseo plugin logs <id>`, fix the source error, then reload; Paseo does not restore the previous bundle.                |
-| Plugin exits unexpectedly                                             | Read `paseo plugin logs <id>` for retained initialization, cleanup, stderr, and final crash output.                                                |
+| Edited code does not appear                                           | Run `npm run typecheck`, then `agentopshub plugin reload <id>`.                                                                                          |
+| Reload fails                                                          | Read `agentopshub plugin ls` and `agentopshub plugin logs <id>`, fix the source error, then reload; Paseo does not restore the previous bundle.                |
+| Plugin exits unexpectedly                                             | Read `agentopshub plugin logs <id>` for retained initialization, cleanup, stderr, and final crash output.                                                |

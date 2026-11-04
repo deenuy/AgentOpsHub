@@ -6,7 +6,7 @@ export const Route = createFileRoute("/privacy")({
   head: () =>
     pageMeta(
       "Privacy Policy - Paseo",
-      "What stays on your machines, what the encrypted relay can see, and what Paseo Hub stores.",
+      "What stays on your machines, what the encrypted relay can see, and what AgentOpsHub Hub stores.",
       "/privacy",
     ),
   component: Privacy,
@@ -16,10 +16,10 @@ function Privacy() {
   return (
     <LegalPage title="Privacy Policy" lastUpdated="August 29, 2026">
       <p>
-        Paseo is local-first. Installing or using the open-source software does not send us your
+        AgentOpsHub is local-first. Installing or using the open-source software does not send us your
         code, prompts, files, terminal output, or agent conversations. This policy explains the
-        separate data boundaries for local Paseo, the optional official relay, the hosted Paseo Hub,
-        and paseo.sh.
+        separate data boundaries for local Paseo, the optional official relay, the hosted AgentOpsHub Hub,
+        and agentopshub.local.
       </p>
 
       <section>
@@ -33,9 +33,9 @@ function Privacy() {
       </section>
 
       <section>
-        <h2>Local Paseo apps and daemons</h2>
+        <h2>Local AgentOpsHub apps and daemons</h2>
         <p>
-          Paseo runs on your machines. It does not send us analytics, telemetry, advertising
+          AgentOpsHub runs on your machines. It does not send us analytics, telemetry, advertising
           identifiers, or crash reports.
         </p>
         <p>
@@ -67,7 +67,7 @@ function Privacy() {
       </section>
 
       <section>
-        <h2>Paseo Hub</h2>
+        <h2>AgentOpsHub Hub</h2>
         <p>When you create or use a hosted Hub account, we process:</p>
         <ul>
           <li>Your name, email, account credentials, sessions, IP address, and user agent</li>
@@ -159,7 +159,7 @@ function Privacy() {
         <p>
           Depending on applicable law, you may request access, correction, deletion, restriction,
           objection, or portability of your personal data. Email{" "}
-          <a href="mailto:hello@moboudra.com">hello@moboudra.com</a>. You may also complain to the{" "}
+          <a href="mailto:hello.com">hello.com</a>. You may also complain to the{" "}
           <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">
             Spanish Data Protection Agency
           </a>
@@ -180,7 +180,7 @@ function Privacy() {
             security model
           </a>{" "}
           or report a vulnerability privately to{" "}
-          <a href="mailto:hello@moboudra.com">hello@moboudra.com</a>.
+          <a href="mailto:hello.com">hello.com</a>.
         </p>
       </section>
 

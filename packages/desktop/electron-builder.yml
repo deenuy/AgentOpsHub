@@ -13,20 +13,20 @@ directories:
 files:
   - dist/**/*
   - "!**/*.map"
-  - "!node_modules/@getpaseo/*/src/**"
-  - "!node_modules/@getpaseo/**/*.test.*"
-  - "!node_modules/@getpaseo/**/*.spec.*"
-  - "!node_modules/@getpaseo/server/dist/server/web-ui/**"
-  - "!node_modules/@getpaseo/server/dist/server/builtin-plugins/**"
+  - "!node_modules/@agentopshub/*/src/**"
+  - "!node_modules/@agentopshub/**/*.test.*"
+  - "!node_modules/@agentopshub/**/*.spec.*"
+  - "!node_modules/@agentopshub/server/dist/server/web-ui/**"
+  - "!node_modules/@agentopshub/server/dist/server/builtin-plugins/**"
   # Workspace packages are symlinked, so anything a dev generates inside them
   # lands in the asar. CI never has these; a local .debug run adds gigabytes.
-  - "!node_modules/@getpaseo/*/.debug/**"
-  - "!node_modules/@getpaseo/*/.tasks/**"
-  - "!node_modules/@getpaseo/*/conversations/**"
-  - "!node_modules/@getpaseo/*/test-results/**"
+  - "!node_modules/@agentopshub/*/.debug/**"
+  - "!node_modules/@agentopshub/*/.tasks/**"
+  - "!node_modules/@agentopshub/*/conversations/**"
+  - "!node_modules/@agentopshub/*/test-results/**"
 asarUnpack:
   - dist/daemon/node-entrypoint-runner.js
-  - node_modules/@getpaseo/server/dist/server/terminal/shell-integration/**/*
+  - node_modules/@agentopshub/server/dist/server/terminal/shell-integration/**/*
 extraResources:
   # Preserve physical compiler inputs, including .d.ts files omitted from packaged node_modules.
   - from: ../server/dist/server/builtin-plugins

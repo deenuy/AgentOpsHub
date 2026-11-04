@@ -10,7 +10,7 @@ category: TypeScript SDK
 
 Import every supported runtime value and TypeScript type from `@getpaseo/client`.
 
-## `createPaseoClient(config)`
+## `createAgentOpsHubClient(config)`
 
 Creates a client without opening the connection.
 

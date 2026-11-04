@@ -1,18 +1,18 @@
-import type { ConnectionOffer } from "@getpaseo/protocol/connection-offer";
+import type { ConnectionOffer } from "@agentopshub/protocol/connection-offer";
 import {
   normalizeHostPort,
   normalizeLoopbackToLocalhost,
   shouldUseTlsForDefaultHostedRelay,
-} from "@getpaseo/protocol/daemon-endpoints";
+} from "@agentopshub/protocol/daemon-endpoints";
 import {
   DirectTcpHostConnectionSchema,
   type DirectTcpHostConnection as WireDirectTcpHostConnection,
-} from "@getpaseo/protocol/host-connection-schema";
+} from "@agentopshub/protocol/host-connection-schema";
 import {
   DEFAULT_SSH_DAEMON_PORT,
   validatePort,
   validateSshHost,
-} from "@getpaseo/protocol/ssh-transport";
+} from "@agentopshub/protocol/ssh-transport";
 import {
   type HostAppearance,
   defaultHostAppearance,

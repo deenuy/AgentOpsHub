@@ -18,6 +18,6 @@ export function getBundledCliShimPath(): string {
     platform: process.platform,
     isPackaged: app.isPackaged,
     executablePath: app.getPath("exe"),
-    resolveWorkspaceCli: () => createRequire(__filename).resolve("@getpaseo/cli/bin/paseo"),
+    resolveWorkspaceCli: () => createRequire(__filename).resolve("@agentopshub/cli/bin/paseo"),
   });
 }

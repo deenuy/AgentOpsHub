@@ -1,9 +1,27 @@
 // Daemon configuration inputs. General provider credentials and executable/runtime
 // controls remain available to managed launches and their agent processes.
+//
+// AGENTOPSHUB_* keys are the primary names. PASEO_* keys are retained for backward
+// compatibility and emit a deprecation warning via resolvePaseoHome / daemon startup.
 export const DAEMON_SETTING_ENV_KEYS = [
   "MCP_DEBUG",
   "OPENAI_STT_BASE_URL",
   "OPENAI_TTS_BASE_URL",
+  // AgentOpsHub primary env vars
+  "AGENTOPSHUB_ALLOWED_HOSTS",
+  "AGENTOPSHUB_APP_BASE_URL",
+  "AGENTOPSHUB_CORS_ORIGINS",
+  "AGENTOPSHUB_HOME",
+  "AGENTOPSHUB_LISTEN",
+  "AGENTOPSHUB_PASSWORD",
+  "AGENTOPSHUB_PLUGIN_REGISTRY",
+  "AGENTOPSHUB_RELAY_ENABLED",
+  "AGENTOPSHUB_RELAY_ENDPOINT",
+  "AGENTOPSHUB_RELAY_PUBLIC_ENDPOINT",
+  "AGENTOPSHUB_RELAY_USE_TLS",
+  "AGENTOPSHUB_WEB_UI_DIST_DIR",
+  "AGENTOPSHUB_WEB_UI_ENABLED",
+  // PASEO_* keys retained for backward compatibility
   "PASEO_ALLOWED_HOSTS",
   "PASEO_APP_BASE_URL",
   "PASEO_CORS_ORIGINS",

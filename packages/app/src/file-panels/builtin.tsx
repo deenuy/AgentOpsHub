@@ -1,4 +1,4 @@
-import type { DaemonClient } from "@getpaseo/client/internal/daemon-client";
+import type { DaemonClient } from "@agentopshub/client/internal/daemon-client";
 import { ScrollView, Text, View } from "react-native";
 import { StyleSheet, withUnistyles } from "react-native-unistyles";
 import { useTranslation } from "react-i18next";

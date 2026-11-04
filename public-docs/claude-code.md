@@ -8,7 +8,7 @@ category: Providers
 
 # Claude Code
 
-Paseo runs Claude Code through the official `claude` CLI using the Claude Agent SDK.
+AgentOpsHub runs Claude Code through the official `claude` CLI using the Claude Agent SDK.
 
 ## Does Claude Code cost extra in Paseo?
 

@@ -1,6 +1,6 @@
 ---
 title: OpenCode Desktop Alternative With Native Mobile and Multi-Provider Orchestration
-description: Paseo is an OpenCode Desktop alternative for developers who want native mobile apps, a self-hosted daemon, and OpenCode alongside Claude Code, Codex, Copilot, and more.
+description: AgentOpsHub is an OpenCode Desktop alternative for developers who want native mobile apps, a self-hosted daemon, and OpenCode alongside Claude Code, Codex, Copilot, and more.
 nav: OpenCode Desktop
 order: 56
 ---
@@ -9,19 +9,19 @@ order: 56
 
 OpenCode Desktop is the desktop app for OpenCode. It is available in beta for macOS, Windows, and Linux.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
 ## The main difference
 
-OpenCode connects many model providers through the OpenCode agent runtime. Paseo runs OpenCode alongside independent Claude Code, Codex, Pi, ACP, and custom agent harnesses.
+OpenCode connects many model providers through the OpenCode agent runtime. AgentOpsHub runs OpenCode alongside independent Claude Code, Codex, Pi, ACP, and custom agent harnesses.
 
 OpenCode provides terminal, IDE, web, and beta desktop interfaces. Paseo adds native iOS and Android clients, managed worktrees and services, pull-request workflows, and application plugins.
 
 ## Architecture
 
-Paseo runs a daemon on your machine. Desktop, web, mobile, and CLI clients connect to it over a websocket. The daemon launches OpenCode and other providers as local processes, using your installed CLIs and credentials.
+AgentOpsHub runs a daemon on your machine. Desktop, web, mobile, and CLI clients connect to it over a websocket. The daemon launches OpenCode and other providers as local processes, using your installed CLIs and credentials.
 
 OpenCode Desktop is the desktop app for OpenCode. OpenCode is available as a terminal interface, desktop app, IDE extension, web surface, and integrations.
 
@@ -29,7 +29,7 @@ OpenCode Desktop is the desktop app for OpenCode. OpenCode is available as a ter
 
 OpenCode is a multi-model coding agent. It can connect to many LLM providers through its own provider system, including OpenCode Zen, local models, and API providers.
 
-Paseo is multi-provider at the agent harness layer. It runs OpenCode, Claude Code, Codex, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
+AgentOpsHub is multi-provider at the agent harness layer. It runs OpenCode, Claude Code, Codex, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 
@@ -78,19 +78,19 @@ paseo schedule create --cron "0 9 * * 1" "audit the codebase"
 
 ## Worktrees and services
 
-Paseo runs each agent in its own Git worktree. Each worktree gets its own dev server URL like `web--fix-auth--my-app.localhost`, so parallel agents don't fight for ports.
+AgentOpsHub runs each agent in its own Git worktree. Each worktree gets its own dev server URL like `web--fix-auth--my-app.localhost`, so parallel agents don't fight for ports.
 
-OpenCode supports multi-session work on the same project. If you want worktree isolation around OpenCode sessions, Paseo can provide that by launching OpenCode inside Paseo workspaces.
+OpenCode supports multi-session work on the same project. If you want worktree isolation around OpenCode sessions, AgentOpsHub can provide that by launching OpenCode inside AgentOpsHub workspaces.
 
 ## Privacy and source
 
 Both tools are open source.
 
-Paseo is Apache-2.0 and runs your agents through a daemon you control. OpenCode is open source and says it does not store your code or context data by default. OpenCode share links are public when you create them.
+AgentOpsHub is Apache-2.0 and runs your agents through a daemon you control. OpenCode is open source and says it does not store your code or context data by default. OpenCode share links are public when you create them.
 
 ## Voice
 
-Paseo supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
+AgentOpsHub supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
 
 ## Comparison
 

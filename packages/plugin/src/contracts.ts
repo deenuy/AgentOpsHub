@@ -1,4 +1,4 @@
-import type { JsonValue } from "@getpaseo/protocol/agent-types";
+import type { JsonValue } from "@agentopshub/protocol/agent-types";
 import type { PluginSerializableIcon } from "./icons.js";
 import type { PluginRpcContract } from "./rpc.js";
 

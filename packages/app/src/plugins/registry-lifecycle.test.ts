@@ -1,6 +1,6 @@
 import { createPluginHosts } from "./hosts";
-import type { DaemonClient } from "@getpaseo/client/internal/daemon-client";
-import type { PaseoApi } from "@getpaseo/client";
+import type { DaemonClient } from "@agentopshub/client/internal/daemon-client";
+import type { PaseoApi } from "@agentopshub/client";
 import { expect, test } from "vitest";
 import { PluginRegistry } from "./registry";
 

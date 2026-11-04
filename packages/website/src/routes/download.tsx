@@ -188,8 +188,8 @@ function Download() {
           <PlatformRow icon={TerminalIcon} label="npm">
             <CodeBlock size="sm">
               {onBeta
-                ? "npm install -g @getpaseo/cli@beta && paseo"
-                : "npm install -g @getpaseo/cli && paseo"}
+                ? "npm install -g @agentopshub/cli@beta && paseo"
+                : "npm install -g @agentopshub/cli && paseo"}
             </CodeBlock>
           </PlatformRow>
 

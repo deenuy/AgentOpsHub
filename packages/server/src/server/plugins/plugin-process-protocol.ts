@@ -1,16 +1,16 @@
-import { UsageScopeSchema, type UsageScope } from "@getpaseo/plugin/server/usage";
+import { UsageScopeSchema, type UsageScope } from "@agentopshub/plugin/server/usage";
 import type {
   ProviderConnectRequest,
   ProviderCatalogOptions,
   ProviderEvent,
   ProviderInput,
   ProviderStatusRequest,
-} from "@getpaseo/plugin/server/provider";
+} from "@agentopshub/plugin/server/provider";
 import {
   ProviderEventSchema,
   ProviderInputSchema,
   ProviderLaunchSchema,
-} from "@getpaseo/plugin/server/provider";
+} from "@agentopshub/plugin/server/provider";
 import { z } from "zod";
 
 export interface PluginProviderMetadata {

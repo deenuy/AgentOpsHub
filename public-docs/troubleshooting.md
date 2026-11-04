@@ -23,20 +23,20 @@ If it reports `error loading libfuse.so.2`, run without FUSE:
 ./Paseo-x86_64.AppImage --appimage-extract-and-run
 ```
 
-The Paseo window should open. You can also install the `.deb` on Debian/Ubuntu or the `.rpm` on Fedora from the [download page](https://paseo.sh/download).
+The Paseo window should open. You can also install the `.deb` on Debian/Ubuntu or the `.rpm` on Fedora from the [download page](https://agentopshub.local/download).
 
-## Paseo can't find my provider
+## AgentOpsHub can't find my provider
 
 A provider you've installed shows as **Not installed**.
 
-Paseo launches the agent CLIs you've already installed, it doesn't bundle them (see [Providers](/docs/providers)). So it has to find the command on its own `PATH`. If your shell only adds that location to `PATH` under certain conditions, Paseo can miss it.
+Paseo launches the agent CLIs you've already installed, it doesn't bundle them (see [Providers](/docs/providers)). So it has to find the command on its own `PATH`. If your shell only adds that location to `PATH` under certain conditions, AgentOpsHub can miss it.
 
 ### See what Paseo sees
 
 Open **Settings → your host → Providers**, tap the provider, then tap **Diagnostic**. The rows that matter:
 
 - **Resolved path** — where Paseo found the binary, or `not found`.
-- **Daemon PATH** — the `PATH` Paseo is searching. Compare it to `echo $PATH` in a fresh terminal.
+- **Daemon PATH** — the `PATH` AgentOpsHub is searching. Compare it to `echo $PATH` in a fresh terminal.
 - **Version** — whether the binary actually runs.
 
 From a terminal or agent, request the same diagnostic from the affected daemon:
@@ -68,15 +68,15 @@ If you'd rather pin it directly, set the binary path in `~/.paseo/config.json`:
 }
 ```
 
-`command` is `[binary, ...args]` and fully replaces the default launch command for that provider. Find the real path with `which -a claude`. `type -a claude` also tells you if `claude` is only a shell alias or function, those won't work, Paseo runs the binary directly, so use the path it points to. Reload the configuration after editing (see [below](#i-changed-configjson-but-nothing-happened)).
+`command` is `[binary, ...args]` and fully replaces the default launch command for that provider. Find the real path with `which -a claude`. `type -a claude` also tells you if `claude` is only a shell alias or function, those won't work, AgentOpsHub runs the binary directly, so use the path it points to. Reload the configuration after editing (see [below](#i-changed-configjson-but-nothing-happened)).
 
 For alternative endpoints, multiple profiles, custom binaries, and ACP agents, see [Custom providers](/docs/custom-providers). For per-agent install links, see [Supported providers](/docs/supported-providers).
 
 ## Why Paseo's environment can differ from your terminal
 
-The same mismatch shows up anywhere Paseo runs your tools, an agent, or a terminal, reporting `command not found` for something you use every day.
+The same mismatch shows up anywhere AgentOpsHub runs your tools, an agent, or a terminal, reporting `command not found` for something you use every day.
 
-When you open the **desktop app** from the Dock or Finder, the OS hands it a stripped-down environment, not your terminal's `PATH`. To compensate, Paseo runs your login shell once at startup (`$SHELL -i -l -c`), captures its environment, and hands that to the daemon and everything it spawns. The rule of thumb: **if a brand-new terminal can run the command, Paseo should too.** That's also the test, open a fresh terminal and try it there.
+When you open the **desktop app** from the Dock or Finder, the OS hands it a stripped-down environment, not your terminal's `PATH`. To compensate, AgentOpsHub runs your login shell once at startup (`$SHELL -i -l -c`), captures its environment, and hands that to the daemon and everything it spawns. The rule of thumb: **if a brand-new terminal can run the command, Paseo should too.** That's also the test, open a fresh terminal and try it there.
 
 When you start the daemon yourself from a terminal (`paseo`), there's no login-shell step, it simply inherits that terminal's environment.
 
@@ -105,9 +105,9 @@ Reload the file after editing:
 paseo reload
 ```
 
-Paseo applies runtime-safe settings and names any paths that require a restart. Invalid JSON or a schema error applies nothing; fix the reported error and run the command again. If a launch environment variable or flag owns a changed setting, reload reports it separately.
+AgentOpsHub applies runtime-safe settings and names any paths that require a restart. Invalid JSON or a schema error applies nothing; fix the reported error and run the command again. If a launch environment variable or flag owns a changed setting, reload reports it separately.
 
-Run `paseo daemon restart` only when reload requests it. In the app, open **Settings → your host → Overview** and use **Restart daemon**. Running agents keep going, and clients reconnect automatically.
+Run `agentopshub daemon restart` only when reload requests it. In the app, open **Settings → your host → Overview** and use **Restart daemon**. Running agents keep going, and clients reconnect automatically.
 
 ## Still stuck?
 

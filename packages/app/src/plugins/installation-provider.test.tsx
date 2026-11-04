@@ -1,6 +1,6 @@
-import { usePaseo, useRpc } from "@getpaseo/plugin/client";
-import { defineRpc } from "@getpaseo/plugin";
-import type { PaseoApi } from "@getpaseo/client";
+import { usePaseo, useRpc } from "@agentopshub/plugin/client";
+import { defineRpc } from "@agentopshub/plugin";
+import type { PaseoApi } from "@agentopshub/client";
 import { QueryClient } from "@tanstack/react-query";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";

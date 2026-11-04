@@ -51,7 +51,7 @@ function boundaryViolations(entry: string, runtime: "shared" | "server" | "clien
         if (runtime !== "server" && serverModule.test(module)) violations.push(label);
         pending.push(local);
       } else if (runtime === "shared") {
-        if (specifier !== "zod" && specifier !== "@getpaseo/protocol/agent-types")
+        if (specifier !== "zod" && specifier !== "@agentopshub/protocol/agent-types")
           violations.push(label);
       } else if (runtime === "server") {
         if (uiDependency.test(specifier) || /^@getpaseo\/plugin\/client(\/|$)/.test(specifier))
@@ -109,8 +109,8 @@ describe("plugin example import boundaries", () => {
       if (specifier.startsWith(".")) {
         const imported = owner(resolveLocal(file, specifier));
         if (imported !== "shared" && imported !== runtime) violations.push(specifier);
-      } else if (specifier.startsWith("@getpaseo/plugin")) {
-        const entry = specifier.replace("@getpaseo/plugin", ".") as keyof typeof entries;
+      } else if (specifier.startsWith("@agentopshub/plugin")) {
+        const entry = specifier.replace("@agentopshub/plugin", ".") as keyof typeof entries;
         if (
           entry === "./client/host" ||
           !(entry in entries) ||

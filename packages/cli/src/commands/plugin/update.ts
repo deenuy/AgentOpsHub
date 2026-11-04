@@ -3,7 +3,7 @@ import type {
   PluginUpdateResult,
   PluginUpdateSelection,
   PluginUpdateProposal,
-} from "@getpaseo/protocol/messages";
+} from "@agentopshub/protocol/messages";
 
 interface UpdateClient {
   previewPluginUpdates(input: {

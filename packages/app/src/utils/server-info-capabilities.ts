@@ -1,4 +1,4 @@
-import type { ServerCapabilityState } from "@getpaseo/protocol/messages";
+import type { ServerCapabilityState } from "@agentopshub/protocol/messages";
 import type { DaemonServerInfo } from "@/stores/session-store";
 
 export type VoiceReadinessMode = "dictation" | "voice";

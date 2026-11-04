@@ -1,4 +1,4 @@
-# @getpaseo/protocol
+# @agentopshub/protocol
 
 Shared Paseo protocol schemas, codecs, and wire types.
 

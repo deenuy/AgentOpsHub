@@ -2,7 +2,7 @@ import {
   PluginRegistryIdSchema,
   PluginRegistryIndexSchema,
   PublishedPluginDetailSchema,
-} from "@getpaseo/protocol/plugin-registry";
+} from "@agentopshub/protocol/plugin-registry";
 import { getBlockingColdCache, type WebsiteCacheContext } from "../github-cache";
 import { handlePluginThumbnailRequest } from "./thumbnails";
 import { CATEGORIES } from "./categories";
@@ -68,7 +68,7 @@ export async function handlePluginRegistryRequest(
     const index = await loadRegistryIndex(base, context);
     return handlePluginThumbnailRequest(request, index.plugins);
   }
-  if (url.hostname === "plugins.paseo.sh" && url.pathname === "/index.json")
+  if (url.hostname === "plugins.agentopshub.local" && url.pathname === "/index.json")
     return Response.json(await loadRegistryIndex(base, context));
   if (url.pathname === "/sitemap-plugins.xml") {
     const index = await loadRegistryIndex(base, context);
@@ -82,7 +82,7 @@ export async function handlePluginRegistryRequest(
       paths.add(`/plugins/${plugin.id.split("/")[0]}`);
       paths.add(`/plugins/${plugin.id}`);
     }
-    const urls = [...paths].sort().map((path) => `<url><loc>https://paseo.sh${path}</loc></url>`);
+    const urls = [...paths].sort().map((path) => `<url><loc>https://agentopshub.local${path}</loc></url>`);
     return new Response(
       `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>`,
       {

@@ -1,5 +1,5 @@
-import type { ProviderOptions } from "@getpaseo/protocol/agent-types";
-import type { HubExecutionAgentValidationIssue } from "@getpaseo/protocol/messages";
+import type { ProviderOptions } from "@agentopshub/protocol/agent-types";
+import type { HubExecutionAgentValidationIssue } from "@agentopshub/protocol/messages";
 
 import type { ProviderSnapshotEntry } from "./agent-sdk-types.js";
 import { filterSelectableAgentModels } from "./agent-sdk-types.js";

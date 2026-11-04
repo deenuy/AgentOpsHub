@@ -26,8 +26,8 @@ export {
   PaseoConfigSchema,
   type PaseoConfig,
   type PaseoConfigRaw,
-} from "@getpaseo/protocol/paseo-config-schema";
-import { PaseoConfigSchema, type PaseoConfig } from "@getpaseo/protocol/paseo-config-schema";
+} from "@agentopshub/protocol/paseo-config-schema";
+import { PaseoConfigSchema, type PaseoConfig } from "@agentopshub/protocol/paseo-config-schema";
 import {
   createPaseoWorktreeChangeRequestHint,
   normalizeBaseRefName,
@@ -47,7 +47,7 @@ import { parseGitRevParsePath, resolveGitRevParsePath } from "./git-rev-parse-pa
 import { expandTilde, getRealpathAwareRelativePath, isPathInsideRoot } from "./path.js";
 import { terminateWithTreeKill } from "./tree-kill.js";
 
-export { slugify, validateBranchSlug } from "@getpaseo/protocol/branch-slug";
+export { slugify, validateBranchSlug } from "@agentopshub/protocol/branch-slug";
 
 const execFileAsync = promisify(execFile);
 const READ_ONLY_GIT_ENV = {

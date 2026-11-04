@@ -1,9 +1,9 @@
 import type pino from "pino";
 import type { SessionDelivery } from "../owned-subscriptions/index.js";
 import { isAbsolute } from "node:path";
-import { getErrorMessage } from "@getpaseo/protocol/error-utils";
-import { getForgeDefinitionOrNeutral } from "@getpaseo/protocol/forge-manifest";
-import { validateBranchSlug } from "@getpaseo/protocol/branch-slug";
+import { getErrorMessage } from "@agentopshub/protocol/error-utils";
+import { getForgeDefinitionOrNeutral } from "@agentopshub/protocol/forge-manifest";
+import { validateBranchSlug } from "@agentopshub/protocol/branch-slug";
 import type {
   BranchSuggestionsRequest,
   CheckoutCommitsListRequest,

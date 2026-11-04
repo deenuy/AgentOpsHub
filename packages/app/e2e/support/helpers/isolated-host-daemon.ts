@@ -117,7 +117,7 @@ export async function startIsolatedHostDaemon(
           "--no-audit",
           "--no-fund",
           "--no-package-lock",
-          `@getpaseo/server@${options.publishedVersion}`,
+          `@agentopshub/server@${options.publishedVersion}`,
         ],
         { cwd: publishedPackageRoot, stdio: "ignore" },
       );

@@ -1,6 +1,6 @@
 ---
 title: OpenChamber Alternative With Multi-Provider Orchestration
-description: Paseo is an OpenChamber alternative for developers who want multiple agent harnesses, application plugins, and an Apache-2.0 codebase.
+description: AgentOpsHub is an OpenChamber alternative for developers who want multiple agent harnesses, application plugins, and an Apache-2.0 codebase.
 nav: OpenChamber
 order: 52
 ---
@@ -15,7 +15,7 @@ Paseo orchestrates many coding-agent harnesses from desktop, mobile, web, and th
 
 ## The main difference
 
-OpenChamber builds its agent workflow around OpenCode. Paseo runs OpenCode alongside Claude Code, Codex, Pi, ACP agents, and custom providers.
+OpenChamber builds its agent workflow around OpenCode. AgentOpsHub runs OpenCode alongside Claude Code, Codex, Pi, ACP agents, and custom providers.
 
 OpenChamber packages its web interface for iOS and Android with Capacitor. The interface runs inside WKWebView or Android WebView, with native integrations for notifications, secure storage, QR pairing, and widgets. Paseo's mobile client is built with React Native and distributed through the App Store and Google Play.
 
@@ -29,7 +29,7 @@ Paseo's daemon launches each provider through its own native harness or through 
 
 OpenChamber uses OpenCode as its agent runtime. OpenCode can connect to many model providers, and OpenChamber also offers integrations for subscriptions such as Claude.
 
-Paseo is multi-provider at the agent-harness layer. It runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
+AgentOpsHub is multi-provider at the agent-harness layer. It runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ agents through its ACP catalog and any custom CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 

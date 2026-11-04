@@ -1,9 +1,9 @@
 import { lstatSync } from "node:fs";
-import { getErrorMessage } from "@getpaseo/protocol/error-utils";
+import { getErrorMessage } from "@agentopshub/protocol/error-utils";
 import { z } from "zod";
 import { execCommand } from "../../../utils/spawn.js";
 
-export const PASEO_CLI_PACKAGE = "@getpaseo/cli";
+export const PASEO_CLI_PACKAGE = "@agentopshub/cli";
 
 const NPM_PROBE_TIMEOUT_MS = 10_000;
 const NPM_INSTALL_TIMEOUT_MS = 300_000;

@@ -1,6 +1,6 @@
 ---
 title: Open Source Claude Desktop Alternative With Native Mobile and Multi-Provider Support
-description: Paseo is an open source Claude Desktop alternative that runs on your machines without a required Paseo account, telemetry, or cloud service.
+description: AgentOpsHub is an open source Claude Desktop alternative that runs on your machines without a required Paseo account, telemetry, or cloud service.
 nav: Claude Desktop
 order: 55
 ---
@@ -9,7 +9,7 @@ order: 55
 
 Claude Desktop is Anthropic's app for Claude Chat, Cowork, and Claude Code on macOS, Windows, and Linux.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
@@ -17,13 +17,13 @@ Paseo is an open source agentic development environment. Run parallel agents in 
 
 Claude Desktop is Anthropic's first-party interface for Claude and requires a Claude account. It can run Claude Code locally, over SSH, or on Anthropic's infrastructure.
 
-Paseo is an open source control plane that runs on machines you control. It does not require a Paseo account, collect telemetry, or depend on a Paseo cloud service. Connect directly from desktop, mobile, web, or the CLI, or use the optional end-to-end encrypted relay when the daemon is behind a firewall.
+AgentOpsHub is an open source control plane that runs on machines you control. It does not require a Paseo account, collect telemetry, or depend on a Paseo cloud service. Connect directly from desktop, mobile, web, or the CLI, or use the optional end-to-end encrypted relay when the daemon is behind a firewall.
 
 Paseo does not upload or store your code. The relay cannot read your code, messages, or agent output. You can also self-host the daemon, web client, and relay.
 
 ## Architecture
 
-Paseo runs an independent daemon on your laptop, workstation, VM, home lab, or cloud machine. Its clients connect directly or through the optional end-to-end encrypted relay. The daemon launches your installed providers with their existing credentials, skills, MCP servers, and project configuration.
+AgentOpsHub runs an independent daemon on your laptop, workstation, VM, home lab, or cloud machine. Its clients connect directly or through the optional end-to-end encrypted relay. The daemon launches your installed providers with their existing credentials, skills, MCP servers, and project configuration.
 
 Claude Desktop is the Anthropic-controlled host application. Claude Code can run locally, connect over SSH, or use Anthropic-managed cloud sessions.
 
@@ -31,7 +31,7 @@ Claude Desktop is the Anthropic-controlled host application. Claude Code can run
 
 Claude Desktop runs Claude Code.
 
-Paseo runs Claude Code too, plus Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Claude Code too, plus Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
 
 ## Application plugins
 
@@ -88,7 +88,7 @@ Paseo also gives each worktree its own dev server URL. Two agents running their 
 
 ## Voice
 
-Paseo supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
+AgentOpsHub supports dictation and realtime voice mode. Speech-to-text and text-to-speech can run locally on your device.
 
 Claude supports voice in Claude's own mobile and app surfaces. Claude Code itself is available in Claude Desktop, terminal, IDE, web, and mobile Remote Control workflows.
 

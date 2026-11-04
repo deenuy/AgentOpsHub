@@ -3,7 +3,7 @@ import {
   useHosts,
   usePaseo,
   type PluginSurfaceProps,
-} from "@getpaseo/plugin/client";
+} from "@agentopshub/plugin/client";
 import { useCallback, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 

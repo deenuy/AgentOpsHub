@@ -9,7 +9,7 @@ order: 53
 
 Happy Coder connects Claude Code and Codex sessions across its macOS, web, iOS, and Android apps. It wraps the agent CLI on your laptop and syncs sessions over an end-to-end encrypted relay. Open source under MIT.
 
-Paseo is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
+AgentOpsHub is an open source agentic development environment. Run parallel agents in separate worktrees, edit files, review diffs and pull requests, and test your app with terminals and a built-in desktop browser. Available on desktop, mobile, web, and CLI under Apache-2.0.
 
 ![Paseo desktop and mobile app](/hero-mockup.png)
 
@@ -17,11 +17,11 @@ Paseo is an open source agentic development environment. Run parallel agents in 
 
 Happy Coder focuses on connecting Claude Code and Codex sessions to its mobile, web, and macOS clients through an end-to-end encrypted relay.
 
-Paseo supports the same two providers alongside OpenCode, Pi, ACP agents, and custom providers. It also manages workspaces, worktrees, services, pull-request review, and application plugins through the same daemon.
+AgentOpsHub supports the same two providers alongside OpenCode, Pi, ACP agents, and custom providers. It also manages workspaces, worktrees, services, pull-request review, and application plugins through the same daemon.
 
 ## Architecture
 
-Paseo runs the agent inside its own daemon. The daemon owns the agent lifecycle, the worktree, and the dev servers. Clients connect over a websocket and drive the daemon.
+AgentOpsHub runs the agent inside its own daemon. The daemon owns the agent lifecycle, the worktree, and the dev servers. Clients connect over a websocket and drive the daemon.
 
 Happy Coder runs the agent through its CLI on your laptop and syncs the session to its desktop, mobile, and web clients through an end-to-end encrypted relay.
 
@@ -41,7 +41,7 @@ The mobile app is the full app, native on iOS and Android, with full feature par
 
 ## Providers
 
-Paseo runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
+AgentOpsHub runs Claude Code, Codex, OpenCode, Pi, Antigravity, and Muse Code natively, plus 30+ more agents through the in-app catalog including GitHub Copilot, Cursor, Gemini CLI, and Amp. Paseo speaks the [Agent Client Protocol](https://agentclientprotocol.com), so any ACP agent works. Custom providers run any CLI agent. See [all supported providers](/agents).
 
 Happy Coder runs Claude Code and Codex.
 
@@ -53,7 +53,7 @@ Happy Coder does not document an application extension API for adding both serve
 
 ## Worktrees and services
 
-Paseo runs each agent in its own git worktree. Each worktree gets its own dev server URL like `web--fix-auth--my-app.localhost`, so parallel agents don't fight for the same port.
+AgentOpsHub runs each agent in its own git worktree. Each worktree gets its own dev server URL like `web--fix-auth--my-app.localhost`, so parallel agents don't fight for the same port.
 
 Happy Coder can start an agent in a selected machine path, including an existing Git worktree. It does not currently create or manage the worktree lifecycle.
 
@@ -75,7 +75,7 @@ Happy Coder has CLIs for launching wrapped sessions and for creating, sending to
 
 ## Voice
 
-Both products support voice interaction. Paseo can run speech-to-text and text-to-speech locally on the device.
+Both products support voice interaction. AgentOpsHub can run speech-to-text and text-to-speech locally on the device.
 
 ## Comparison
 

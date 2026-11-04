@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.13.0 - 2026-11-04
+
+## What's New in AgentOpsHub 0.13.0
+
+### New Features
+- Added AgentOpsHub as a distinct product identity derived from the Paseo open-source project, making it possible to self-host a governed agent operations platform.
+- Added `agentopshub` CLI command as the primary interface for delegating and observing AI coding agents.
+- Added `AGENTOPSHUB_*` environment variable support with automatic fallback to legacy `PASEO_*` variables for backward compatibility.
+- Added governance documentation covering agent lifecycle, task delegation, approval policies, and audit events.
+- Added security model documentation defining approval gates for shell execution, file writes, dependency installation, and deployment.
+
+### Changed
+- Changed all npm package scopes from `@getpaseo/*` to `@agentopshub/*` to reflect the product rebrand.
+- Changed app display names across CLI, web UI, mobile, and desktop surfaces to AgentOpsHub.
+- Changed default home directory from `~/.paseo` to `~/.agentopshub` (migration: `cp -r ~/.paseo ~/.agentopshub`).
+
+---
+
 ## 0.12.0 - 2026-10-19
 
 Background workspaces, a new Markdown renderer with selection across paragraphs on phones, a reworked phone layout, and more than 120 fixes.

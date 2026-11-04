@@ -1,5 +1,5 @@
-import { parseCronExpression } from "@getpaseo/protocol/schedule/cron-expression";
-import type { ScheduleCadence } from "@getpaseo/protocol/schedule/types";
+import { parseCronExpression } from "@agentopshub/protocol/schedule/cron-expression";
+import type { ScheduleCadence } from "@agentopshub/protocol/schedule/types";
 
 interface CronDateParts {
   minute: number;

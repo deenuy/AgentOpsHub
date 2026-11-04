@@ -1,10 +1,10 @@
 import type { AgentTimelineItem } from "./agent-sdk-types.js";
-import type { AgentMessage } from "@getpaseo/protocol/agent-message";
-import type { AgentAttachment } from "@getpaseo/protocol/messages";
+import type { AgentMessage } from "@agentopshub/protocol/agent-message";
+import type { AgentAttachment } from "@agentopshub/protocol/messages";
 import type { AgentTimelineRow } from "./agent-timeline-store-types.js";
-import { isLikelyExternalToolName } from "@getpaseo/protocol/tool-name-normalization";
-import { buildAgentMessageDisplay } from "@getpaseo/protocol/paseo-tool-presentation/index";
-import { buildToolCallDisplayModel } from "@getpaseo/protocol/tool-call-display";
+import { isLikelyExternalToolName } from "@agentopshub/protocol/tool-name-normalization";
+import { buildAgentMessageDisplay } from "@agentopshub/protocol/paseo-tool-presentation/index";
+import { buildToolCallDisplayModel } from "@agentopshub/protocol/tool-call-display";
 import { projectTimelineRows } from "./timeline-projection.js";
 
 const DEFAULT_MAX_ITEMS = 0;

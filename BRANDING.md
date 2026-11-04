@@ -24,11 +24,11 @@ The factual attribution "AgentOpsHub is based on the Apache-2.0 Paseo project" i
 
 ## Product Surfaces
 
-| Surface | Display Name |
-|---|---|
-| App (mobile/web) | AgentOpsHub |
-| Desktop app | AgentOpsHub |
-| CLI primary command | `agentopshub` |
-| Daemon | AgentOpsHub Daemon |
-| Documentation | AgentOpsHub Documentation |
-| Web UI title | AgentOpsHub |
+| Surface             | Display Name              |
+| ------------------- | ------------------------- |
+| App (mobile/web)    | AgentOpsHub               |
+| Desktop app         | AgentOpsHub               |
+| CLI primary command | `agentopshub`             |
+| Daemon              | AgentOpsHub Daemon        |
+| Documentation       | AgentOpsHub Documentation |
+| Web UI title        | AgentOpsHub               |

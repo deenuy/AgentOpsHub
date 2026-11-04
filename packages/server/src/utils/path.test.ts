@@ -29,7 +29,9 @@ describe("path equivalence", () => {
   });
 
   test("checks POSIX root containment without prefix false positives", () => {
-    expect(isPathInsideRoot("/opt/paseo", "/opt/paseo/node_modules/@agentopshub/server")).toBe(true);
+    expect(isPathInsideRoot("/opt/paseo", "/opt/paseo/node_modules/@agentopshub/server")).toBe(
+      true,
+    );
     expect(isPathInsideRoot("/opt/paseo", "/opt/paseo-other")).toBe(false);
   });
 

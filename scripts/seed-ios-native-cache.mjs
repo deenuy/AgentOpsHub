@@ -3,10 +3,15 @@ import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
 import { basename, join } from "node:path";
 
-const sourceRoot = process.env.PASEO_SOURCE_CHECKOUT_PATH;
-const targetRoot = process.env.PASEO_WORKTREE_PATH || process.cwd();
+const sourceRoot =
+  process.env.AGENTOPSHUB_SOURCE_CHECKOUT_PATH ?? process.env.PASEO_SOURCE_CHECKOUT_PATH;
+const targetRoot =
+  process.env.AGENTOPSHUB_WORKTREE_PATH ?? process.env.PASEO_WORKTREE_PATH ?? process.cwd();
 
-if (process.env.PASEO_SKIP_IOS_NATIVE_CACHE === "1") {
+if (
+  process.env.AGENTOPSHUB_SKIP_IOS_NATIVE_CACHE === "1" ||
+  process.env.PASEO_SKIP_IOS_NATIVE_CACHE === "1"
+) {
   process.exit(0);
 }
 
@@ -57,8 +62,9 @@ function newestDirectory(parent) {
 }
 
 function simulatorSlug() {
-  const worktreeName = process.env.PASEO_BRANCH_NAME || basename(targetRoot);
+  const worktreeName =
+    process.env.AGENTOPSHUB_BRANCH_NAME ?? process.env.PASEO_BRANCH_NAME ?? basename(targetRoot);
   const worktreeHash = createHash("sha1").update(targetRoot).digest("hex").slice(0, 8);
-  const simulatorName = `Paseo ${worktreeName} ${worktreeHash}`;
+  const simulatorName = `AgentOpsHub ${worktreeName} ${worktreeHash}`;
   return `${simulatorName.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}-${worktreeHash}`;
 }

@@ -13,7 +13,10 @@ import {
   UnsupportedForgeCheckoutTargetError,
   type WorktreeCreationIntent,
 } from "./resolve-worktree-creation-intent.js";
-import type { ChangeRequestCheckoutSource, FirstAgentContext } from "@agentopshub/protocol/messages";
+import type {
+  ChangeRequestCheckoutSource,
+  FirstAgentContext,
+} from "@agentopshub/protocol/messages";
 import type { WorkspaceGitService } from "./workspace-git-service.js";
 import { runWithGitCommandPriority } from "../utils/run-git-command.js";
 

@@ -1,1 +1,1 @@
-{ "id": "hoplite-provider", "requirements": { "paseo": ">=0.11.0" } }
+{ "id": "hoplite-provider", "requirements": { "agentopshub": ">=0.11.0" } }

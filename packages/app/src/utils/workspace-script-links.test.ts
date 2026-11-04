@@ -30,13 +30,13 @@ describe("resolveWorkspaceScriptLink", () => {
       resolveLink({ type: "directTcp", endpoint: "localhost:6767", display: "localhost:6767" }),
     ).toEqual({
       primary: {
-        kind: "paseo",
+        kind: "agentopshub",
         label: "web--feature--paseo.localhost:6767",
         url: "http://web--feature--paseo.localhost:6767",
       },
       targets: [
         {
-          kind: "paseo",
+          kind: "agentopshub",
           label: "web--feature--paseo.localhost:6767",
           url: "http://web--feature--paseo.localhost:6767",
         },
@@ -65,7 +65,7 @@ describe("resolveWorkspaceScriptLink", () => {
           url: publicUrl,
         },
         {
-          kind: "paseo",
+          kind: "agentopshub",
           label: "web--feature--paseo.localhost:6767",
           url: "http://web--feature--paseo.localhost:6767",
         },
@@ -83,13 +83,13 @@ describe("resolveWorkspaceScriptLink", () => {
       }),
     ).toEqual({
       primary: {
-        kind: "paseo",
+        kind: "agentopshub",
         label: "web--feature--paseo.localhost:6767",
         url: "http://web--feature--paseo.localhost:6767",
       },
       targets: [
         {
-          kind: "paseo",
+          kind: "agentopshub",
           label: "web--feature--paseo.localhost:6767",
           url: "http://web--feature--paseo.localhost:6767",
         },
@@ -112,7 +112,7 @@ describe("resolveWorkspaceScriptLink", () => {
     ).toEqual([
       { kind: "public", label: "web--feature--paseo.services.example.com", url: publicUrl },
       {
-        kind: "paseo",
+        kind: "agentopshub",
         label: "web--feature--paseo.localhost:6767",
         url: "http://web--feature--paseo.localhost:6767",
       },
@@ -132,13 +132,13 @@ describe("resolveWorkspaceScriptLink", () => {
     };
     expect(resolveLink(relay)).toEqual({
       primary: {
-        kind: "paseo",
+        kind: "agentopshub",
         label: "web--feature--paseo.localhost:6767",
         url: "http://web--feature--paseo.localhost:6767",
       },
       targets: [
         {
-          kind: "paseo",
+          kind: "agentopshub",
           label: "web--feature--paseo.localhost:6767",
           url: "http://web--feature--paseo.localhost:6767",
         },
@@ -162,7 +162,7 @@ describe("resolveWorkspaceScriptLink", () => {
           url: publicUrl,
         },
         {
-          kind: "paseo",
+          kind: "agentopshub",
           label: "web--feature--paseo.localhost:6767",
           url: "http://web--feature--paseo.localhost:6767",
         },

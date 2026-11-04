@@ -39,6 +39,15 @@ export function isLikelyNamespacedToolName(name: string): boolean {
   return false;
 }
 
+function isAgentOpsHubNamespace(segment: string): boolean {
+  return (
+    segment === "agentopshub" ||
+    segment.startsWith("agentopshub_") ||
+    segment === "paseo" ||
+    segment.startsWith("paseo_")
+  );
+}
+
 export function isPaseoToolName(name: string): boolean {
   const normalized = normalizeToolName(name);
   if (isSpeakToolName(normalized)) {
@@ -46,41 +55,39 @@ export function isPaseoToolName(name: string): boolean {
   }
   if (normalized.includes("__")) {
     const segments = normalized.split("__").filter((s) => s.length > 0);
-    return (
-      segments.length >= 3 &&
-      segments[0] === "mcp" &&
-      (segments[1] === "paseo" || segments[1].startsWith("paseo_"))
-    );
+    return segments.length >= 3 && segments[0] === "mcp" && isAgentOpsHubNamespace(segments[1]);
   }
   if (normalized.includes(".")) {
     const firstSegment = normalized.split(".")[0];
-    return firstSegment === "paseo" || firstSegment.startsWith("paseo_");
+    return isAgentOpsHubNamespace(firstSegment);
   }
   return false;
 }
+
+/** @deprecated Use {@link isPaseoToolName} — it now matches both paseo and agentopshub namespaces. */
+export const isAgentOpsHubToolName = isPaseoToolName;
 
 export function getPaseoToolLeafName(name: string): string | null {
   const normalized = normalizeToolName(name);
   if (normalized.includes("__")) {
     const segments = normalized.split("__").filter((s) => s.length > 0);
-    if (
-      segments.length >= 3 &&
-      segments[0] === "mcp" &&
-      (segments[1] === "paseo" || segments[1].startsWith("paseo_"))
-    ) {
+    if (segments.length >= 3 && segments[0] === "mcp" && isAgentOpsHubNamespace(segments[1])) {
       return segments.slice(2).join("__");
     }
     return null;
   }
   if (normalized.includes(".")) {
     const firstSegment = normalized.split(".")[0];
-    if (firstSegment === "paseo" || firstSegment.startsWith("paseo_")) {
+    if (isAgentOpsHubNamespace(firstSegment)) {
       return normalized.split(".").slice(1).join(".");
     }
     return null;
   }
   return null;
 }
+
+/** @deprecated Use {@link getPaseoToolLeafName} — it now matches both paseo and agentopshub namespaces. */
+export const getAgentOpsHubToolLeafName = getPaseoToolLeafName;
 
 export function isLikelyExternalToolName(name: string): boolean {
   const normalized = normalizeToolName(name);

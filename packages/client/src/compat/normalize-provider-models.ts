@@ -1,4 +1,7 @@
-import type { AgentModelDefinition, ProviderSnapshotEntry } from "@agentopshub/protocol/agent-types";
+import type {
+  AgentModelDefinition,
+  ProviderSnapshotEntry,
+} from "@agentopshub/protocol/agent-types";
 import { normalizeAgentModelDefinition } from "@agentopshub/protocol/agent-types";
 import { expandProviderSnapshot } from "@agentopshub/protocol/provider-snapshot-codec";
 import type {

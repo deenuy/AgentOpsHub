@@ -6,7 +6,10 @@ import type {
   TerminalStateSnapshotOptions,
 } from "./terminal.js";
 import type { TerminalState } from "@agentopshub/protocol/messages";
-import type { TerminalActivity, TerminalActivityState } from "@agentopshub/protocol/terminal-activity";
+import type {
+  TerminalActivity,
+  TerminalActivityState,
+} from "@agentopshub/protocol/terminal-activity";
 import type { CaptureTerminalLinesResult } from "./terminal-capture.js";
 
 export interface WorkerTerminalInfo {

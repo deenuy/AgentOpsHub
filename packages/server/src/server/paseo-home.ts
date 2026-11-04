@@ -13,9 +13,7 @@ function expandHomeDir(input: string): string {
 
 export function resolvePaseoHome(env: NodeJS.ProcessEnv = process.env): string {
   if (env.PASEO_HOME && !env.AGENTOPSHUB_HOME) {
-    console.warn(
-      "[AgentOpsHub] PASEO_HOME is deprecated; use AGENTOPSHUB_HOME instead.",
-    );
+    console.warn("[AgentOpsHub] PASEO_HOME is deprecated; use AGENTOPSHUB_HOME instead.");
   }
   const raw = env.AGENTOPSHUB_HOME ?? env.PASEO_HOME ?? "~/.agentopshub";
   const resolved = path.resolve(expandHomeDir(raw));

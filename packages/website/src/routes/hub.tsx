@@ -553,9 +553,9 @@ function FaqSection() {
       <h2 className="text-3xl font-medium">FAQ</h2>
       <div className="space-y-6">
         <FAQItem question="What is the Hub?">
-          A separate service that sits above your AgentOpsHub daemons. You connect one or more daemons to
-          it and it gives them GitHub, Slack, and Discord triggers, with collaboration features
-          planned. AgentOpsHub works fully without it.
+          A separate service that sits above your AgentOpsHub daemons. You connect one or more
+          daemons to it and it gives them GitHub, Slack, and Discord triggers, with collaboration
+          features planned. AgentOpsHub works fully without it.
         </FAQItem>
         <FAQItem question="Why is it a separate service instead of part of the daemon?">
           <p>
@@ -568,8 +568,8 @@ function FaqSection() {
           </p>
         </FAQItem>
         <FAQItem question="Can I run it myself?">
-          Yes. Run <code>npx @agentopshub/hub</code> and complete setup in the browser. The source is
-          available on{" "}
+          Yes. Run <code>npx @agentopshub/hub</code> and complete setup in the browser. The source
+          is available on{" "}
           <a href="https://github.com/getpaseo/hub" className={LINK_CLASS}>
             GitHub
           </a>
@@ -580,8 +580,8 @@ function FaqSection() {
           covers more involved deployments.
         </FAQItem>
         <FAQItem question="What do I need to run it?">
-          Node.js and a running AgentOpsHub daemon. Hub guides you through connecting the provider apps
-          you want.
+          Node.js and a running AgentOpsHub daemon. Hub guides you through connecting the provider
+          apps you want.
         </FAQItem>
         <FAQItem question="Is there a hosted version?">
           Yes. The hosted service runs the same Hub software you can self-host.
@@ -596,7 +596,8 @@ function FaqSection() {
         </FAQItem>
         <FAQItem question="Do I have to move my team to a new tool?">
           No. The Hub works in the Slack or Discord your team already uses, and on the daemons you
-          already run. When the work gets serious you switch to the AgentOpsHub app on those same daemons.
+          already run. When the work gets serious you switch to the AgentOpsHub app on those same
+          daemons.
         </FAQItem>
         <FAQItem question="Which agents does it run?">
           Whichever ones your daemons have configured, with your own subscriptions and skills. The

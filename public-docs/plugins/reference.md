@@ -104,10 +104,10 @@ and cannot show this new diagnostic.
 
 ### Runtime entries
 
-| Entry              | Runtime               | Receives              | Required                                                                        |
-| ------------------ | --------------------- | --------------------- | ------------------------------------------------------------------------------- |
+| Entry              | Runtime                     | Receives              | Required                                                                        |
+| ------------------ | --------------------------- | --------------------- | ------------------------------------------------------------------------------- |
 | `index.client.tsx` | AgentOpsHub app, per client | `PluginClientContext` | When the plugin has any UI, callback, theme, or attachment source               |
-| `index.server.ts`  | Daemon subprocess     | `PluginServerContext` | When the plugin contributes handlers, hooks, settings persistence, or providers |
+| `index.server.ts`  | Daemon subprocess           | `PluginServerContext` | When the plugin contributes handlers, hooks, settings persistence, or providers |
 
 At least one entry is required; both accept `.ts` or `.tsx`. A directory that still has only the
 old `index.ts` fails to load and points at the [migration guide](/docs/plugins/migration).
@@ -2546,6 +2546,6 @@ Use `agentopshub plugin ls` to read the current status and error.
 | Sidebar item is missing                                               | The plugin is `running`, the item is not hidden in Settings > Sidebar, its component does not throw, and the client is on the installation's host. |
 | Client module is unavailable                                          | Import only the host-provided client modules listed above.                                                                                         |
 | RPC rejects                                                           | Check both Zod schemas and the daemon-side handler error.                                                                                          |
-| Edited code does not appear                                           | Run `npm run typecheck`, then `agentopshub plugin reload <id>`.                                                                                          |
-| Reload fails                                                          | Read `agentopshub plugin ls` and `agentopshub plugin logs <id>`, fix the source error, then reload; Paseo does not restore the previous bundle.                |
-| Plugin exits unexpectedly                                             | Read `agentopshub plugin logs <id>` for retained initialization, cleanup, stderr, and final crash output.                                                |
+| Edited code does not appear                                           | Run `npm run typecheck`, then `agentopshub plugin reload <id>`.                                                                                    |
+| Reload fails                                                          | Read `agentopshub plugin ls` and `agentopshub plugin logs <id>`, fix the source error, then reload; Paseo does not restore the previous bundle.    |
+| Plugin exits unexpectedly                                             | Read `agentopshub plugin logs <id>` for retained initialization, cleanup, stderr, and final crash output.                                          |

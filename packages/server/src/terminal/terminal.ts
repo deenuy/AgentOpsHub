@@ -23,7 +23,10 @@ import {
 import type { TerminalCell, TerminalState } from "@agentopshub/protocol/messages";
 import { TerminalInputModeTracker } from "@agentopshub/protocol/terminal-input-mode";
 import { TerminalActivityTracker } from "./activity/terminal-activity-tracker.js";
-import type { TerminalActivity, TerminalActivityState } from "@agentopshub/protocol/terminal-activity";
+import type {
+  TerminalActivity,
+  TerminalActivityState,
+} from "@agentopshub/protocol/terminal-activity";
 
 const { Terminal } = xterm;
 const require = createRequire(import.meta.url);

@@ -16,10 +16,10 @@ function Privacy() {
   return (
     <LegalPage title="Privacy Policy" lastUpdated="August 29, 2026">
       <p>
-        AgentOpsHub is local-first. Installing or using the open-source software does not send us your
-        code, prompts, files, terminal output, or agent conversations. This policy explains the
-        separate data boundaries for local Paseo, the optional official relay, the hosted AgentOpsHub Hub,
-        and agentopshub.local.
+        AgentOpsHub is local-first. Installing or using the open-source software does not send us
+        your code, prompts, files, terminal output, or agent conversations. This policy explains the
+        separate data boundaries for local Paseo, the optional official relay, the hosted
+        AgentOpsHub Hub, and agentopshub.local.
       </p>
 
       <section>
@@ -179,8 +179,7 @@ function Privacy() {
           >
             security model
           </a>{" "}
-          or report a vulnerability privately to{" "}
-          <a href="mailto:hello.com">hello.com</a>.
+          or report a vulnerability privately to <a href="mailto:hello.com">hello.com</a>.
         </p>
       </section>
 

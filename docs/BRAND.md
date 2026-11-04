@@ -40,6 +40,7 @@ delegation, governance, observability, and control.
 ## Colors and Assets
 
 AgentOpsHub-specific logo and icon assets should replace the Paseo SVG/PNG assets in:
+
 - `packages/website/public/logo.svg`
 - `packages/app/assets/`
 - `packages/desktop/assets/`

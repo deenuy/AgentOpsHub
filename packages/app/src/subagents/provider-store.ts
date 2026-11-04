@@ -3,7 +3,10 @@ import type {
   ProviderSubagentDescriptorPayload,
   SessionOutboundMessage,
 } from "@agentopshub/protocol/messages";
-import { DaemonConnectionError, type DaemonClient } from "@agentopshub/client/internal/daemon-client";
+import {
+  DaemonConnectionError,
+  type DaemonClient,
+} from "@agentopshub/client/internal/daemon-client";
 import { create } from "zustand";
 import { applyStreamEvent } from "@/types/stream";
 import {

@@ -5,6 +5,7 @@ This document explains how to delegate a task to an AI coding agent via AgentOps
 ## What is a Task?
 
 A task is a unit of delegated work with:
+
 - A **prompt** (what to do)
 - A **repository/worktree** (where to do it)
 - A **policy profile** (what the agent is allowed to do)
@@ -104,16 +105,17 @@ the full timeline, and any artifact links.
 
 ## Policy Profiles
 
-| Profile | Shell | File writes | git push | Deployment | Use case |
-|---|---|---|---|---|---|
-| `readonly` | ✗ | ✗ | ✗ | ✗ | Analysis, review |
-| `strict` | Approve | Approve | Approve | Approve | Sensitive repos |
-| `standard` | Approve | Approve (outside worktree) | Approve | Approve | Most tasks |
-| `permissive` | Auto | Auto | Approve | Approve | Trusted, fast iterations |
+| Profile      | Shell   | File writes                | git push | Deployment | Use case                 |
+| ------------ | ------- | -------------------------- | -------- | ---------- | ------------------------ |
+| `readonly`   | ✗       | ✗                          | ✗        | ✗          | Analysis, review         |
+| `strict`     | Approve | Approve                    | Approve  | Approve    | Sensitive repos          |
+| `standard`   | Approve | Approve (outside worktree) | Approve  | Approve    | Most tasks               |
+| `permissive` | Auto    | Auto                       | Approve  | Approve    | Trusted, fast iterations |
 
 ## Task Metadata
 
 Every task records:
+
 - `task_id`: stable identifier
 - `created_at`: ISO timestamp
 - `owner`: user who created it

@@ -507,9 +507,15 @@ export interface SessionOptions {
     updateSources(
       pluginId?: string,
     ): Promise<import("@agentopshub/protocol/messages").PluginSourceUpdateItem[]>;
-    reloadPlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
-    enablePlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
-    disablePlugin(pluginId: string): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
+    reloadPlugin(
+      pluginId: string,
+    ): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
+    enablePlugin(
+      pluginId: string,
+    ): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
+    disablePlugin(
+      pluginId: string,
+    ): Promise<import("@agentopshub/protocol/messages").PluginListItem>;
     removePlugin(pluginId: string): Promise<void>;
     subscribe(listener: (pluginId: string) => void): () => void;
     subscribeSettings?(listener: (pluginId: string, settingsId: string) => void): () => void;

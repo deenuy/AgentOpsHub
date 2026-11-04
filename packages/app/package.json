@@ -39,6 +39,11 @@
     "build:mermaid-runtime": "node ./src/components/markdown/fence/mermaid/build-runtime.mjs"
   },
   "dependencies": {
+    "@agentopshub/client": "*",
+    "@agentopshub/expo-two-way-audio": "*",
+    "@agentopshub/highlight": "*",
+    "@agentopshub/plugin": "*",
+    "@agentopshub/protocol": "*",
     "@codemirror/commands": "6.10.4",
     "@codemirror/language": "6.12.4",
     "@codemirror/search": "6.7.1",
@@ -48,11 +53,6 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@floating-ui/react-native": "^0.10.7",
-    "@agentopshub/client": "*",
-    "@agentopshub/expo-two-way-audio": "*",
-    "@agentopshub/highlight": "*",
-    "@agentopshub/plugin": "*",
-    "@agentopshub/protocol": "*",
     "@gorhom/bottom-sheet": "^5.2.14",
     "@gorhom/portal": "^1.0.14",
     "@marijn/find-cluster-break": "^1.0.2",

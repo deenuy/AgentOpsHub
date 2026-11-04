@@ -314,7 +314,7 @@ describe("selectSubagentsForParent", () => {
 
     expect(rows).toEqual([
       {
-        kind: "paseo",
+        kind: "agentopshub",
         id: "child",
         provider: "claude",
         title: "Review child",

@@ -143,6 +143,7 @@ npm run lint
 ## Governance
 
 See [docs/GOVERNANCE.md](docs/GOVERNANCE.md) for the agent governance model, including:
+
 - Approval policies for risky operations
 - Audit event log format
 - Policy profiles

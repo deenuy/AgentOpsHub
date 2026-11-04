@@ -2,7 +2,10 @@ import { execFileSync } from "node:child_process";
 import type { z } from "zod";
 import { BUILTIN_PROVIDER_IDS } from "@agentopshub/protocol/provider-manifest";
 import { WebSocket } from "ws";
-import { SessionInboundMessageSchema, WSOutboundMessageSchema } from "@agentopshub/protocol/messages";
+import {
+  SessionInboundMessageSchema,
+  WSOutboundMessageSchema,
+} from "@agentopshub/protocol/messages";
 import { randomUUID } from "node:crypto";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";

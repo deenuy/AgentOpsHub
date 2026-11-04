@@ -6,8 +6,8 @@ import { useSessionStore, type Agent } from "@/stores/session-store";
 import { refreshProviderSubagents, useProviderSubagentStore } from "./provider-store";
 import type { ProviderSubagentDescriptorPayload } from "@agentopshub/protocol/messages";
 
-export interface PaseoSubagentRow {
-  kind: "paseo";
+export interface AgentOpsHubSubagentRow {
+  kind: "agentopshub";
   id: Agent["id"];
   provider: Agent["provider"];
   title: Agent["title"];
@@ -37,7 +37,7 @@ export interface ProviderSubagentRow {
   createdAt: Date;
 }
 
-export type SubagentRow = PaseoSubagentRow | ProviderSubagentRow;
+export type SubagentRow = AgentOpsHubSubagentRow | ProviderSubagentRow;
 
 type SessionStoreSnapshot = ReturnType<typeof useSessionStore.getState>;
 type ProviderSubagentStoreSnapshot = ReturnType<typeof useProviderSubagentStore.getState>;
@@ -54,7 +54,7 @@ const EMPTY_PROVIDER_SUBAGENT_ROWS: ProviderSubagentRow[] = [];
 
 function toSubagentRow(agent: Agent): SubagentRow {
   return {
-    kind: "paseo",
+    kind: "agentopshub",
     id: agent.id,
     provider: agent.provider,
     title: agent.title,
@@ -160,11 +160,11 @@ export function selectProviderSubagentsForParent(
 export function useSubagentsForParent(params: SelectSubagentsParams): SubagentRow[] {
   const { serverId, parentAgentId } = params;
   const pendingArchiveIds = usePendingArchiveAgentIds(serverId);
-  const selectPaseoRows = useMemo(
+  const selectAgentOpsHubRows = useMemo(
     () => createSubagentsForParentSelector({ serverId, parentAgentId }, pendingArchiveIds),
     [serverId, parentAgentId, pendingArchiveIds],
   );
-  const paseoRows = useStoreWithEqualityFn(useSessionStore, selectPaseoRows, equal);
+  const agentOpsHubRows = useStoreWithEqualityFn(useSessionStore, selectAgentOpsHubRows, equal);
   const supported = useSessionStore(
     (state) => state.sessions[params.serverId]?.serverInfo?.features?.providerSubagents === true,
   );
@@ -188,9 +188,9 @@ export function useSubagentsForParent(params: SelectSubagentsParams): SubagentRo
 
   return useMemo(() => {
     if (params.providerParentSubagentId) return providerRows;
-    if (providerRows.length === 0) return paseoRows;
-    const rows = [...paseoRows, ...providerRows];
+    if (providerRows.length === 0) return agentOpsHubRows;
+    const rows = [...agentOpsHubRows, ...providerRows];
     rows.sort((left, right) => left.createdAt.getTime() - right.createdAt.getTime());
     return rows;
-  }, [params.providerParentSubagentId, paseoRows, providerRows]);
+  }, [params.providerParentSubagentId, agentOpsHubRows, providerRows]);
 }

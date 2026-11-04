@@ -100,6 +100,11 @@ export function isPidLockOwnerRunning(lock: PidLockInfo): boolean {
 }
 
 function getPidFilePath(paseoHome: string): string {
+  return join(paseoHome, "agentopshub.pid");
+}
+
+// COMPAT(paseo): fall back to legacy pid file; added in v0.13, remove after 2027-01
+function getLegacyPidFilePath(paseoHome: string): string {
   return join(paseoHome, "paseo.pid");
 }
 
@@ -220,8 +225,21 @@ export async function acquirePidLock(
   options?: AcquirePidLockOptions,
 ): Promise<void> {
   const pidPath = getPidFilePath(paseoHome);
+  const legacyPidPath = getLegacyPidFilePath(paseoHome);
 
   ensurePrivateDirectory(paseoHome);
+
+  // COMPAT(paseo): also check legacy pid file; added in v0.13, remove after 2027-01
+  const legacyLock = await readPidLock(legacyPidPath);
+  if (legacyLock && isPidLockOwnerRunning(legacyLock)) {
+    throw Object.assign(
+      new PidLockError(
+        `Another daemon is already running (PID ${legacyLock.pid}, started ${legacyLock.startedAt})`,
+        legacyLock,
+      ),
+      { code: "DAEMON_ALREADY_RUNNING" },
+    );
+  }
 
   // Try to read existing lock
   const existingLock = await readPidLock(pidPath);
@@ -399,7 +417,10 @@ export async function releasePidLock(
 
 export async function getPidLockInfo(paseoHome: string): Promise<PidLockInfo | null> {
   const pidPath = getPidFilePath(paseoHome);
-  return readPidLock(pidPath);
+  const lock = await readPidLock(pidPath);
+  if (lock) return lock;
+  // COMPAT(paseo): fall back to legacy pid file; added in v0.13, remove after 2027-01
+  return readPidLock(getLegacyPidFilePath(paseoHome));
 }
 
 export async function isLocked(

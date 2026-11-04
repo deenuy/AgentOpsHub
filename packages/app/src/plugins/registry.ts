@@ -55,7 +55,8 @@ export class PluginRegistry {
           plugin.id !== options.replacePluginId &&
           plugin.id === entry.id &&
           plugin.clientBundle === entry.clientBundle &&
-          plugin.requirements?.paseo === entry.requirements?.paseo,
+          (plugin.requirements?.agentopshub ?? plugin.requirements?.paseo) ===
+            (entry.requirements?.agentopshub ?? entry.requirements?.paseo),
       );
       return existing ? [existing] : [];
     });

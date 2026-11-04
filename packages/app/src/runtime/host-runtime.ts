@@ -29,7 +29,10 @@ import {
   shouldUseTlsForDefaultHostedRelay,
 } from "@/utils/daemon-endpoints";
 import { resolveAppVersion } from "@/utils/app-version";
-import { ConnectionOfferSchema, type ConnectionOffer } from "@agentopshub/protocol/connection-offer";
+import {
+  ConnectionOfferSchema,
+  type ConnectionOffer,
+} from "@agentopshub/protocol/connection-offer";
 import { HostConfirmations, type HostConfirmationRequest } from "./host-confirmation";
 import { shouldUseDesktopDaemon } from "@/desktop/daemon/desktop-daemon";
 import { isWeb } from "@/constants/platform";

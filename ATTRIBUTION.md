@@ -14,19 +14,19 @@ AgentOpsHub is not affiliated with, endorsed by, or sponsored by the Paseo proje
 
 All packages in this monorepo are derived from their upstream Paseo equivalents:
 
-| AgentOpsHub Package | Upstream Paseo Package | Notes |
-|---|---|---|
-| `@agentopshub/server` | `@getpaseo/server` | Agent daemon, WebSocket API, MCP server |
-| `@agentopshub/cli` | `@getpaseo/cli` | CLI binary |
-| `@agentopshub/client` | `@getpaseo/client` | TypeScript SDK |
-| `@agentopshub/protocol` | `@getpaseo/protocol` | Wire protocol definitions |
-| `@agentopshub/relay` | `@getpaseo/relay` | E2E encrypted relay |
-| `@agentopshub/app` | `@getpaseo/app` | Expo mobile/web app |
-| `@agentopshub/desktop` | `@getpaseo/desktop` | Electron desktop app |
-| `@agentopshub/website` | `@getpaseo/website` | Marketing/docs site |
-| `@agentopshub/plugin` | `@getpaseo/plugin` | Plugin SDK |
-| `@agentopshub/highlight` | `@getpaseo/highlight` | Syntax highlighting |
-| `@agentopshub/expo-two-way-audio` | `@getpaseo/expo-two-way-audio` | Audio module |
+| AgentOpsHub Package               | Upstream Paseo Package         | Notes                                   |
+| --------------------------------- | ------------------------------ | --------------------------------------- |
+| `@agentopshub/server`             | `@getpaseo/server`             | Agent daemon, WebSocket API, MCP server |
+| `@agentopshub/cli`                | `@getpaseo/cli`                | CLI binary                              |
+| `@agentopshub/client`             | `@getpaseo/client`             | TypeScript SDK                          |
+| `@agentopshub/protocol`           | `@getpaseo/protocol`           | Wire protocol definitions               |
+| `@agentopshub/relay`              | `@getpaseo/relay`              | E2E encrypted relay                     |
+| `@agentopshub/app`                | `@getpaseo/app`                | Expo mobile/web app                     |
+| `@agentopshub/desktop`            | `@getpaseo/desktop`            | Electron desktop app                    |
+| `@agentopshub/website`            | `@getpaseo/website`            | Marketing/docs site                     |
+| `@agentopshub/plugin`             | `@getpaseo/plugin`             | Plugin SDK                              |
+| `@agentopshub/highlight`          | `@getpaseo/highlight`          | Syntax highlighting                     |
+| `@agentopshub/expo-two-way-audio` | `@getpaseo/expo-two-way-audio` | Audio module                            |
 
 ## License
 

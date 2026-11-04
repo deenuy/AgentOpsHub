@@ -47,10 +47,12 @@ async function waitForPlugins(input: PluginReadinessInput): Promise<void> {
           client.plugin.list({ location }, { signal: requestSignal }),
         );
         if (!requireBridge && plugins.data.length > 0) return;
-        const bridge = plugins.data.find((plugin) => plugin.id === "paseo");
+        const bridge = plugins.data.find(
+          (plugin) => plugin.id === "agentopshub" || plugin.id === "paseo",
+        );
         if (requireBridge && bridge?.state.status === "active") return;
         if (requireBridge && bridge?.state.status === "failed")
-          throw new Error(`OpenCode Paseo tool bridge plugin failed: ${bridge.state.error}`);
+          throw new Error(`OpenCode AgentOpsHub tool bridge plugin failed: ${bridge.state.error}`);
       } catch (error) {
         lifetime.throwIfAborted();
         if (!requestTimeout.aborted) throw error;

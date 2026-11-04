@@ -5,13 +5,13 @@
   "description": "AgentOpsHub: self-hosted agent operations platform for delegating, governing, and observing AI coding agents.",
   "keywords": [
     "agent-operations",
-    "orchestration",
-    "governance",
-    "observability",
+    "agentic-ai",
     "claude-code",
     "codex",
+    "governance",
     "mcp",
-    "agentic-ai"
+    "observability",
+    "orchestration"
   ],
   "homepage": "https://agentopshub.local",
   "license": "Apache-2.0",

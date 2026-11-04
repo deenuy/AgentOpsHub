@@ -1231,7 +1231,7 @@ export const ar: TranslationResources = {
       discord: "Discord",
       github: "إنشاء مشكلة على GitHub",
       whatsNew: "ما الجديد",
-      appName: "Paseo",
+      appName: "AgentOpsHub",
     },
     sections: {
       sessions: "السجل",

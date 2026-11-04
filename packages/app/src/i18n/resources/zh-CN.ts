@@ -1223,7 +1223,7 @@ export const zhCN: TranslationResources = {
       discord: "Discord",
       github: "创建 GitHub Issue",
       whatsNew: "新功能",
-      appName: "Paseo",
+      appName: "AgentOpsHub",
     },
     sections: {
       sessions: "历史",

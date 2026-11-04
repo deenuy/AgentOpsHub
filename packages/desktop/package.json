@@ -2,8 +2,8 @@
   "name": "@agentopshub/desktop",
   "version": "0.12.0",
   "private": true,
-  "description": "Paseo desktop app (Electron wrapper)",
-  "homepage": "https://paseo.sh",
+  "description": "AgentOpsHub desktop app (Electron wrapper)",
+  "homepage": "https://agentopshub.local",
   "license": "Apache-2.0",
   "author": {
     "name": "Mohamed Boudra",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getpaseo/paseo.git"
+    "url": "https://github.com/deenuy/AgentOpsHub.git"
   },
   "main": "dist/main.js",
   "scripts": {
@@ -47,5 +47,5 @@
     "vitest": "^4.1.6",
     "wait-on": "8.0.5"
   },
-  "desktopName": "Paseo.desktop"
+  "desktopName": "AgentOpsHub.desktop"
 }

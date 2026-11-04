@@ -1261,7 +1261,7 @@ export const fr: TranslationResources = {
       discord: "Discord",
       github: "Créer un ticket GitHub",
       whatsNew: "Nouveautés",
-      appName: "Paseo",
+      appName: "AgentOpsHub",
     },
     sections: {
       sessions: "Historique",

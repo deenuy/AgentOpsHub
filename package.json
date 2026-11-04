@@ -1,6 +1,6 @@
 {
   "name": "agentopshub",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "private": true,
   "description": "AgentOpsHub: self-hosted agent operations platform for delegating, governing, and observing AI coding agents.",
   "keywords": [

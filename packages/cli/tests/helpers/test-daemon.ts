@@ -1,13 +1,13 @@
 /**
  * Test Daemon Helper
  *
- * Provides utilities for launching real Paseo daemons in E2E tests.
- * Each test gets an isolated daemon on an available local port with its own PASEO_HOME.
+ * Provides utilities for launching real AgentOpsHub daemons in E2E tests.
+ * Each test gets an isolated daemon on an available local port with its own AGENTOPSHUB_HOME.
  *
  * CRITICAL RULES (from design doc):
  * 1. Port: Use an available ephemeral local port - NEVER use 6767 (production)
  * 2. Protocol: WebSocket ONLY - daemon has no HTTP endpoints
- * 3. Temp dirs: Create temp directories for PASEO_HOME and agent --cwd
+ * 3. Temp dirs: Create temp directories for AGENTOPSHUB_HOME and agent --cwd
  * 4. Model: Always use claude provider with haiku model for fast, cheap tests
  * 5. Cleanup: Kill daemon and remove temp dirs after each test
  */
